@@ -42,6 +42,7 @@ a.co-btn,
   $btn-outline: (
     blue-1: $color-blue-1,
     navy-1: $color-navy-1,
+    black-op4: $color-black-op4,
   );
   @each $class, $line in $btn-outline {
     &.is-outline-#{$class} {

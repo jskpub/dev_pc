@@ -789,6 +789,13 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
 }
 
 // = Accordion
+.co-accrodion-list {
+  > li {
+    & ~ li {
+      margin-top: 20px;
+    }
+  }
+}
 .co-accordion {
   border: 1px solid $color-gray-4;
   border-radius: $radius-12;
@@ -815,13 +822,45 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
     }
   }
 
+  .btn-accrodion {
+    display: flex;
+    flex: 1 1 auto;
+    max-width: 100%;
+    justify-content: space-between;
+    font-size: 0;
+    .col {
+      padding: {
+        left: 0;
+        right: 0;
+      }
+    }
+    .inner {
+      display: flex;
+      align-items: center;
+    }
+    .txt {
+      @include fontStyle(16px, 32px, 500);
+    }
+
+    .cnt {
+      @include coTxtBasic;
+      color: $color-gray-2;
+
+      & + .ico-accordion {
+        margin-left: 16px;
+      }
+    }
+  }
+
   // + on
   &.on {
     border-color: $color-navy-1;
 
     .btn-accrodion {
       background-color: $color-gray-8;
-      color: $color-navy-1;
+      .txt {
+        color: $color-navy-1;
+      }
     }
 
     .ico-accordion {
@@ -839,13 +878,12 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
 }
 .btn-accrodion {
   position: relative;
-  padding: 16px 24px;
+  padding: 11px 19px;
   display: block;
 }
+
 .ico-accordion {
-  position: absolute;
-  top: 11px;
-  right: 23px;
+  display: inline-block;
   width: 32px;
   height: 32px;
   border-radius: $radius-12;
