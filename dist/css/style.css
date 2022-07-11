@@ -5067,7 +5067,7 @@ a.co-link,
 		background-color: #ecf1f8;
 }
 .co-badge.type02 {
-		color: #777776;
+		color: #494949;
 		background-color: #e9e9e9;
 }
 .co-badge.type03 {
@@ -7288,6 +7288,10 @@ a.co-link,
 }
 .contents-area.main-contents-area .main-notice-list > li:hover {
 		background-color: #f3f3f3;
+}
+.contents-area.main-contents-area .main-notice-list .co-badge {
+		min-width: 50px;
+		text-align: center;
 }
 .contents-area.main-contents-area .main-card > .co-title-field {
 		margin-bottom: 12px;

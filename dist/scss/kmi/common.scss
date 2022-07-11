@@ -23,8 +23,7 @@ $fonts: (
       style: normal;
     }
 
-    src: url('#{$font-path}#{$font-name}-#{$name}.woff') format('woff'), url('#{$font-path}#{$font-name}-#{$name}.woff2') format('woff2'),
-      url('#{$font-path}#{$font-name}-#{$name}.otf') format('opentype');
+    src: url('#{$font-path}#{$font-name}-#{$name}.woff') format('woff'), url('#{$font-path}#{$font-name}-#{$name}.woff2') format('woff2'), url('#{$font-path}#{$font-name}-#{$name}.otf') format('opentype');
   }
 }
 
@@ -241,7 +240,7 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
     background-color: $color-gray-8;
   }
   &.type02 {
-    color: $color-gray-2;
+    color: $color-gray-1;
     background-color: $color-gray-5;
   }
   &.type03 {
