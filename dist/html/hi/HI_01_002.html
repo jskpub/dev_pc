@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper health-info-wrap">
+            <!-- Contents -->
+            <section class="contents">
+                <!-- [comment]
+						- 퍼블리싱 화면 팝업 확인용 버튼 / 실제 버튼 연동시 해당 버튼 소스 활용하여 구현
+						- 팝업 연결 button [data-target] - .c-layer-popup [id] 동일 속성값 부여 
+						-  .c-layer-popup [aria-labelledby] - .c-modal-title-field > .c-title  동일 속성값 부여 
+					-->
+                <button type="button" class="co-btn btn-open-popup" data-toggle="modal" data-target="#popoupCheckupItem01"><span>open popup</span></button>
+
+                <div class="c-layer-popup type03" id="popoupCheckupItem01" role="dialog" aria-labelledby="popoupCheckupItem01_Label" aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap">
+                        <div class="modal-field">
+                            <!-- modal Header -->
+                            <div class="c-modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popoupCheckupItem01_Label">위 내시경 (Esophagogastroduodenoscopy)</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn"><span class="skip">팝업 닫기</span></button>
+                            </div>
+
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <div class="checkup-item-detail-field">
+                                        <div class="detail-contents">
+                                            <div class="img">
+                                                <img src="" alt="" />
+                                            </div>
+                                            <div class="datail-card">
+                                                <p class="title">정의</p>
+                                                <div class="cont">
+                                                    <p>
+                                                        위 내시경검사는 입으로 내시경 기구를 삽입하여 식도, 위, 십이지장을 관찰하면서 염증이나 종양 등을 진단하는 검사방법입니다. 위 내시경검사는 검사의 목적뿐만 아니라 이상이
+                                                        있는 부위를 바로 조직검사 할 수 있으며, 병변의 절제도 가능하고 출혈이 있을시 지혈도 가능하여 치료적 목적으로도 시행할 수 있습니다. 
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="datail-card">
+                                                <p class="title">준비사항</p>
+                                                <div class="cont">
+                                                    <ul>
+                                                        <li>검사 전 8시간 이상의 금식이 필요합니다.</li>
+                                                        <li>틀니가 있으신 분은 미리 틀니를 제거하세요.</li>
+                                                        <li>최근 치과 치료 중이거나 흔들리는 치아가 있으신 분은 검사 전 미리 말씀해주십시오.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="datail-card">
+                                                <p class="title">검사/시술 방법</p>
+                                                <div class="cont">
+                                                    <ol class="co-list-card number02">
+                                                        <li>시야 확보를 위해 위장 내 기포제거제와 위장 운동 억제제를 투약합니다.</li>
+                                                        <li>내시경이 삽입되는 부위의 국소마취를 시행합니다.</li>
+                                                        <li>수면 내시경의 경우 진정제를 투약합니다.</li>
+                                                        <li>왼쪽으로 누운 상태에서 검사를 진행합니다.</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                            <p class="co-ref-txt">검사 소요시간은 검사뿐만 아니라 치료적 목적의 시술을 시행할 수 있기 때문에 환자마다 다르지만 보통 10~15분 정도 입니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // modal body -->
+
+                            <!-- modal-footer -->
+                            <div class="c-modal-footer">
+                                <div class="inner">
+                                    <div class="buttons">
+                                        <button type="button" class="co-btn is-outline-navy-1 popup-cls-btn"><span>취소</span></button>
+                                        <button type="button" class="co-btn bg-navy-1"><span>다음</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- = type03  -->
+                    <!-- [ // layer popup] -->
+                </div>
+            </section>
+            <!-- // Contents -->
+
+
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>

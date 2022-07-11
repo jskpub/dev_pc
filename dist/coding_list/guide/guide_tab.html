@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Layout Guide</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- guide css -->
+    <link rel="stylesheet" href="../css/base.css" />
+
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="wrap" class="coding_guide">
+      <h1 class="h1_guide">Tab</h1>
+
+      <!-- [Tab - 페이지 이동 ] -->
+      <div class="title-box">
+        <h2 class="h2_guide">Tab</h2>
+      </div>
+
+      <div class="guide_descbox">
+        <h3 class="g-title"></h3>
+        <div class="inner_desc">
+          <ul>
+            <li>동일 속성값 매칭 <br />1. role="tab"의 ID / role="tabpanel" aria-labelledby <br />2. role="tab"의 aria-controls / role="tabpanel" 의 ID</li>
+            <li>Tab script 적용 : [class=tab-event]</li>
+            <li>style, scipt 제어 : [class=on]</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="h3_guide">Sample</h3>
+      <div class="d_desc code">
+        <!-- ? view -->
+        <div class="login-categeory">
+          <ul class="co-tab-list tab-event type01 tab-2" role="tablist">
+            <li>
+              <a href="javascript:;" class="on" role="tab" aria-selected="true" id="loginTab_01" aria-controls="loginTabPanel_01">통합 로그인</a>
+            </li>
+            <li>
+              <a href="javascript:;" role="tab" aria-selected="false" id="loginTab_02" aria-controls="loginTabPanel_02">사업장 로그인</a>
+            </li>
+          </ul>
+        </div>
+        <div class="login-box type tab-cont-wrap">
+          <!-- loginTab_01 -->
+          <div class="login-form tab-content on" role="tabpanel" id="loginTabPanel_01" aria-labelledby="loginTab_01" tabindex="0">TAB CONTENTS01</div>
+          <!-- loginTab_02 -->
+          <div class="login-form tab-content" role="tabpanel" id="loginTabPanel_02" aria-labelledby="loginTab_02" tabindex="0">TAB CONTENTS02</div>
+        </div>
+
+        <!-- ? // view -->
+        <!-- ! code -->
+        <xmp class="prettyprint linenums javascript"></xmp>
+        <!-- ! // code -->
+      </div>
+      <!-- [ // Tab - 페이지 이동 ] -->
+    </div>
+    <!-- guide script -->
+    <script src="../js/pretty.js"></script>
+
+    <script defer src="../../js/common.js"></script>
+  </body>
+</html>

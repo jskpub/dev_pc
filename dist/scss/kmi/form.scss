@@ -1,0 +1,1369 @@
+@import 'variables';
+@import 'mixin';
+
+.c-layer-popup {
+  textarea {
+    &[readonly='readonly'] {
+      background-color: $color-white-2;
+    }
+  }
+}
+
+// + input
+.c-input-group {
+  min-height: 46px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.c-input {
+  width: 100%;
+}
+label.title-md {
+  color: $color-gray-1;
+}
+
+.label-input {
+  label,
+  .c-label-txt {
+    margin-bottom: $gap-8;
+    display: flex;
+  }
+  .c-select {
+    width: 100%;
+  }
+
+  .co-btn {
+    width: 100%;
+  }
+}
+
+// = input List Detail
+
+.input-list {
+  &.detail-list {
+    $gap: $gap-20;
+    padding: $gap $gap-40;
+    .row {
+      margin: {
+        left: -$gap;
+        right: -$gap;
+      }
+      > [class*='col'] {
+        padding: {
+          left: $gap;
+          right: $gap;
+        }
+      }
+    }
+  }
+}
+
+.label-input {
+  &.detail {
+    > label,
+    .c-label-txt {
+      margin-bottom: 0;
+    }
+    .input-view {
+      line-height: $g-lineheight-2;
+      color: $color-gray-1;
+
+      input[type='text'],
+      input[type='password'] {
+        @include ellipsisLine01;
+        padding-left: 0;
+        width: 100%;
+        border: 0;
+        border-radius: 0;
+        cursor: default;
+
+        &:focus {
+          transition: none;
+          box-shadow: none;
+        }
+      }
+      border-bottom: 1px solid $color-gray-5;
+    }
+  }
+}
+
+.c-btn {
+  &.input-btn {
+    width: 100%;
+    height: 100%;
+    border-radius: $radius-8;
+    padding: {
+      left: 0;
+      right: 0;
+    }
+    span {
+      line-height: $input-basic-lineheight;
+      display: block;
+    }
+  }
+}
+
+// = Input search
+
+.search-box {
+  width: 230px;
+}
+.search-input {
+  border-radius: 0;
+  border: none;
+  min-width: 186px;
+  &:focus {
+    transition: none;
+    box-shadow: none;
+    border-color: inherit;
+  }
+}
+
+.c-input-search {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  input[type='text'] {
+    border: 1px solid $input-border-color;
+    border-radius: $input-border-radius;
+    flex: 1 1 auto;
+    line-height: 1.6;
+    min-height: 40px;
+    padding: 8px 44px 8px 12px;
+    width: 100%;
+
+    &:focus {
+      @include inputTextFocus;
+    }
+    // readonly
+    &[readonly='readonly'] {
+      @include inputReadonly;
+      &:focus {
+        @include inputReadonlyFocus;
+      }
+    }
+  }
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .btn-search {
+    background: url($image-ico-path + 'ico_search_01.svg') 0/20px no-repeat;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    content: '';
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  // + input-view
+  &.input-view {
+    .btn-search {
+      right: 0;
+    }
+  }
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  input {
+    flex: 1 1 auto;
+  }
+}
+
+.is-nec {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  &:before {
+    content: '*';
+    color: $color-orange-1;
+    font: {
+      size: $fs-small;
+      weight: $weight-400;
+    }
+  }
+  width: 8px;
+  height: 10px;
+}
+
+/*
+	= checkbox, Radio
+*/
+
+// + check group
+.c-chk-group {
+  width: 100%;
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  .c-chk-list {
+    margin-left: -10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    .c-chkbox,
+    .c-rdochk {
+      & ~ .c-chkbox,
+      & ~ .c-rdochk,
+      & ~ .c-multi-input-group {
+        margin-left: 12px;
+      }
+    }
+  }
+}
+
+.c-multi-input-group {
+  > .c-chkbox {
+    margin-right: 8px;
+  }
+}
+
+.c-article.input-list {
+  .input-chk-wrap {
+    .c-chk-list {
+      padding-bottom: 12px;
+    }
+  }
+}
+
+// + 다중 인풋 유형 결합
+$multi-input-ml: 1.714rem;
+// .c-m-input-group {
+//   &:after {
+//     @include after;
+//   }
+//   width: 100%;
+//   display: table;
+//   table-layout: fixed;
+//   align-items: center;
+//   justify-content: flex-start;
+//   > li {
+//     & + li {
+//       margin-left: $multi-input-ml;
+//     }
+//   }
+//   .input-col {
+//     &:first-child {
+//       padding-right: 1.714rem;
+//     }
+//     display: table-cell;
+//     align-items: center;
+//     flex-grow: 1;
+
+//     .inner {
+//       display: flex;
+//     }
+//   }
+
+//   .c-chk-list {
+//     flex: 1 0 auto;
+//     + input {
+//       margin-left: $multi-input-ml;
+//       flex-grow: 1;
+//     }
+//   }
+
+//   .input-date-group {
+//     padding-left: 10px;
+//     .label-input:first-child {
+//       padding-left: 0;
+//     }
+//     .label-input:last-child {
+//       padding-right: 0;
+//     }
+//   }
+// }
+
+// = 다중 인풋 타입
+// + c-m-input-list
+
+label {
+  & + .c-m-input-list {
+    margin-top: 12px;
+  }
+}
+.c-m-input-list {
+  @include align-items-center;
+  flex: 1 1 auto;
+  width: 100%;
+  white-space: nowrap;
+  .input-col {
+    padding: 0 !important;
+    & ~ .input-col {
+      padding: 0;
+      margin-left: 20px;
+    }
+  }
+  display: flex;
+  // flex: 1 0 auto;
+
+  &.row.inner {
+    margin: {
+      left: 0;
+      right: 0;
+    }
+    .c-chk-group {
+      padding: {
+        left: $gap-6;
+        right: $gap-6;
+      }
+    }
+    .c-chk-list {
+      // margin: {
+      //   left: -$gap-6;
+      //   right: -$gap-6;
+      // }
+    }
+    .c-multi-input-group {
+      width: 100%;
+      input[type='text'] {
+        width: 100%;
+      }
+    }
+
+    // > .col {
+    //   padding: {
+    //     left: $gap-10;
+    //     right: $gap-10;input-cont
+    //   }
+    // }
+  }
+}
+
+.c-check-list {
+  > .row {
+    & + .row {
+      margin-top: 20px;
+    }
+  }
+}
+
+// + multi-input-group
+.c-multi-input-group {
+  @include align-items-center;
+  flex-wrap: nowrap;
+  .c-rdochk,
+  .c-chkbox {
+    & + input[type='text'] {
+      margin-left: 0.857rem;
+    }
+  }
+  .input-date-group {
+    margin-left: 0;
+  }
+  .c-btn {
+    margin-left: 1.714rem;
+  }
+  .c-input {
+    // width: auto;
+    flex: 1 1 auto;
+  }
+}
+
+.label-input {
+  .c-input-group {
+    min-height: 40px;
+  }
+}
+
+.chk-label {
+  > i,
+  > span {
+    display: table-cell;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+}
+
+.chk-label > span {
+  font: {
+    size: $fs-nomal;
+  }
+  color: $color-gray-3;
+}
+
+// = radio
+.c-rdochk {
+  input[type='radio'] {
+    opacity: 0;
+    cursor: pointer;
+
+    & + .chk-label {
+      i {
+      }
+    }
+    &:checked {
+      + .chk-label > span {
+        color: $color-navy-1;
+      }
+      + .chk-label i {
+        background-position: -56px 0;
+      }
+      &:disabled {
+        + .chk-label i {
+          cursor: default;
+          background-position: -84px 0;
+        }
+      }
+    }
+    &:disabled {
+      + .chk-label i {
+        cursor: default;
+        background-position: -28px 0;
+      }
+    }
+  }
+}
+
+/*
+	= Date
+*/
+.c-input-date-group {
+  @at-root .c-multi-input-group {
+    .row.c-input-date-group {
+      margin-left: 5px;
+      flex: 1 1 auto;
+    }
+  }
+}
+
+.row {
+  &.c-input-date-group {
+    $gap: $gap-12;
+    margin: {
+      left: -$gap;
+      right: -$gap;
+    }
+    @include justify-row;
+    > [class*='col-'] {
+      padding: {
+        left: $gap;
+        right: $gap;
+      }
+      > {
+        & {
+          @include paddingH(15px);
+        }
+      }
+    }
+    .input-email-01 {
+      position: relative;
+      &:after {
+        content: '@';
+        position: absolute;
+        bottom: 10px;
+        right: -7px;
+        color: $color-gray-3;
+        font: {
+          size: $fs-nomal;
+          weight: $weight-400;
+        }
+        line-height: $g-lineheight-2;
+      }
+    }
+    .input-email-02 {
+      > .row {
+        margin: {
+          left: -$gap-6;
+          right: -$gap-6;
+        }
+        > .col-6 {
+          padding: {
+            left: $gap-6;
+            right: $gap-4;
+          }
+        }
+      }
+    }
+  }
+}
+
+.c-article {
+  &.input-list {
+    .input-date-group {
+      [class*='col-'] {
+        padding: {
+          top: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// + input date
+.c-input-date {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  input[type='text'] {
+    border: 1px solid #d2d2d1;
+    border-radius: 8px;
+    flex: 1 1 auto;
+    padding-right: 44px;
+    + span {
+      display: inline-block;
+
+      i.date-btn {
+        background-image: url(../images/ico/ico_date.svg);
+        background-position: right center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 22px;
+        height: 22px;
+        content: '';
+        display: inline-block;
+        overflow: hidden;
+      }
+    }
+
+    &:focus {
+      @include inputTextFocus;
+    }
+
+    // readonly
+    &[readonly='readonly'] {
+      @include inputReadonly;
+      &:focus {
+        @include inputReadonlyFocus;
+      }
+    }
+  }
+}
+
+// = c-input-unit
+.c-input-unit {
+  position: relative;
+  input[type='text'] {
+    width: 100%;
+    padding-right: 36px;
+  }
+  .unit {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    text-align: center;
+    color: $color-gray-3;
+    width: 24px;
+    text-align: right;
+  }
+
+  // + input view
+  @at-root .c-input-unit.input-view {
+    input[type='text'] {
+      padding-right: 36px;
+    }
+  }
+}
+
+// + Input File
+.c-input-file-group {
+  position: relative;
+  width: 100%;
+  height: 40px;
+
+  input.c-input-file,
+  .c-file-label {
+    padding: 8px 12px 8px 107px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    line-height: $input-basic-lineheight;
+    background-color: $color-white-1;
+  }
+
+  input.c-input-file {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+  }
+
+  label:focus {
+    @include inputTextFocus;
+  }
+  .c-file-label {
+    @include inputText;
+    margin-bottom: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    font: {
+      size: $fs-nomal;
+      weight: $weight-400;
+    }
+    display: inline-block;
+    @include ellipsisLine01;
+
+    &:after {
+      position: absolute;
+      left: -1px;
+      right: auto;
+      top: -1px;
+      bottom: -1px;
+      z-index: 3;
+      display: block;
+      padding: 7px 20px;
+      line-height: 1.7;
+      color: $color-gray-1;
+      content: '파일 선택';
+      background-color: $color-gray-5;
+      border-left: inherit;
+      overflow: hidden;
+      border-radius: 0;
+    }
+  }
+}
+.c-input-file-list {
+  margin-top: 12px;
+  > li {
+    margin-top: 4px;
+  }
+
+  .file-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .name {
+    @include ellipsisLine01;
+    flex-grow: 1;
+  }
+  .btn-del {
+    margin-left: 4px;
+    flex-basis: 20px;
+    background: url($image-ico-path + '/ico_del_01.svg') 0/20px no-repeat;
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+  }
+}
+
+// + c-input-mark
+.c-input-mark {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.is-rate {
+  position: absolute;
+  right: 0;
+  bottom: 12px;
+  font-size: $fs-small;
+  text-align: right;
+}
+// + Input + Button
+
+// = Address
+// + input write
+
+.c-input-address-group {
+  $gap: 8px;
+  > .row {
+    margin: {
+      left: -$gap;
+      right: -$gap;
+    }
+    & ~ .row {
+      margin-top: 16px;
+    }
+  }
+
+  .input-addr-01 {
+    @include colFixedWidth(100px, 6px);
+  }
+  .input-addr-03 {
+    @include colFixedWidth(92px, 6px);
+    button {
+      padding: 8px;
+    }
+  }
+
+  // + view
+  &.input-view {
+    > .row {
+      margin: 0;
+      display: block;
+      > .col {
+        padding: 0;
+        display: inline-block;
+      }
+    }
+    .input-addr-01 {
+    }
+    input[type='text'] {
+      border-bottom: 0;
+    }
+  }
+}
+
+.inner.c-input-address-group {
+  margin: {
+    left: -$gap-6;
+    right: -$gap-6;
+  }
+  .col {
+    padding: {
+      left: $gap-6;
+      right: $gap-6;
+    }
+  }
+}
+
+// + Input + Button
+.c-input-btn-group {
+  $gap: $gap-8;
+  margin: {
+    left: -$gap-8;
+    right: -$gap-8;
+  }
+  [class*='col'] {
+    @include paddingH(8px);
+  }
+
+  .co-btn {
+    width: 100%;
+  }
+}
+
+// = input download
+.c-input-download {
+  position: relative;
+  width: 100%;
+
+  .btn-download {
+    position: relative;
+    padding: 8px 28px 8px 0;
+    min-height: 40px;
+    display: block;
+
+    &:after {
+      background: url($image-ico-path + 'ico_download_01.svg') 0/24px no-repeat;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      content: '';
+      display: inline-block;
+      overflow: hidden;
+      content: '';
+    }
+  }
+  .filename {
+    border-bottom: 1px solid $color-blue-1;
+    color: $color-blue-1;
+    overflow: hidden;
+  }
+
+  &.input-view {
+    border-bottom: 1px solid $color-gray-5;
+  }
+}
+
+// = input url
+.c-input-url {
+  padding: {
+    top: 8px;
+    bottom: 8px;
+  }
+  > a {
+    color: $color-blue-1;
+    border-bottom: 1px solid $color-blue-1;
+  }
+
+  &.input-view {
+    border-bottom: 1px solid $color-gray-5;
+  }
+}
+
+// + detail input
+
+.c-input-search {
+  &.detail-input {
+    input[type='text'] {
+      @include inputReadonly;
+
+      &:focus {
+        @include inputReadonlyFocus;
+      }
+    }
+  }
+}
+
+// + c-input-badge-group
+.c-input-badge-group {
+  border-bottom: 1px solid $input-detail-border-color;
+  padding-bottom: 2px;
+  display: flex;
+  align-items: center;
+  .c-badge-list {
+    margin: {
+      left: -4px;
+      right: -4px;
+    }
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .badge-card {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+  }
+}
+.c-badge {
+  padding: 2px 12px;
+  background-color: $color-navy-1;
+  border-radius: $radius-8;
+  > span {
+    line-height: 1.7;
+    color: $color-white-1;
+  }
+}
+.c-badge-detail {
+  padding-left: 12px;
+  line-height: 1.7;
+}
+
+// ============================================== FORM
+
+// = Input & Textarea
+
+input,
+input {
+  &[type='text'],
+  &[type='password'] {
+    max-width: 100%;
+    @include inputText;
+    border: 1px solid $color-gray-4;
+    color: $color-black-1;
+
+    // + focus
+    &:focus {
+      outline: 0;
+      @include inputTextFocus;
+      transition: all 0.5s;
+    }
+
+    // + disabled
+    &:disabled {
+      border-color: $input-disabled-border-color;
+      background-color: $input-disabled-bg-color;
+      color: $input-disabled-font-color;
+    }
+
+    // + readonly
+    &[readonly='readonly'] {
+      @include inputReadonly;
+      &:focus {
+        @include inputReadonlyFocus;
+      }
+    }
+
+    // + error
+    &.error {
+      border-color: $input-error-border-dolor;
+    }
+  }
+}
+
+label,
+.c-label-txt {
+  @include coTxtSmall01;
+  color: $color-gray-2;
+}
+
+.input-ref-txt {
+  margin-top: 8px;
+  @include fontStyleSmall01;
+  color: $color-gray-3;
+}
+
+// = textarea
+.c-txtarea-field {
+  height: 100%;
+  width: 100%;
+}
+textarea,
+.c-txt-area {
+  display: block;
+  border: 1px solid $color-gray-4;
+  height: 120px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: $gap-12;
+  min-width: 100%;
+  color: $color-gray-1;
+  @include inputText;
+
+  &:focus {
+    @include inputTextFocus;
+  }
+
+  textarea {
+    &[readonly='readonly'] {
+      @include txtareaReadonly;
+      min-height: initial;
+      height: 100%;
+      overflow: auto;
+      padding: 12px 0;
+      &:focus {
+        @include inputTextFocus;
+        border: 0;
+        box-shadow: none;
+        transition: none;
+      }
+    }
+  }
+}
+
+// = Checkbox, Radio
+
+.c-chkbox,
+.c-rdochk {
+  //opacity: 0;
+  cursor: pointer;
+
+  // type01, type02
+  &.type01,
+  &.type02 {
+    position: relative;
+    input {
+      position: absolute;
+      top: 7px;
+      left: 7px;
+      opacity: 0;
+      & + .chk-label,
+      & + label.chk-label {
+        line-height: 1;
+        display: table;
+        i {
+          cursor: pointer;
+          margin-right: 4px;
+          content: '';
+          display: inline-block;
+          width: 28px;
+          height: 28px;
+          background: {
+            image: url($image-ico-sprite02);
+            position: -86px -10px;
+            size: auto 48px;
+            repeat: no-repeat;
+          }
+        }
+      }
+    }
+  }
+
+  .chk-label,
+  label.chk-label {
+    margin-bottom: 0;
+  }
+}
+
+// + check box
+.c-chkbox {
+  // - blue
+  &.type01 {
+    input[type='radio'],
+    input[type='checkbox'] {
+      &:checked + .chk-label {
+        i {
+          background-position-x: -124px;
+        }
+      }
+    }
+  }
+
+  // - navy
+  &.type02 {
+    input[type='radio'],
+    input[type='checkbox'] {
+      &:checked + .chk-label {
+        i {
+          background-position-x: -10px;
+        }
+      }
+    }
+  }
+}
+
+.c-chkbox,
+.c-rdochk {
+  position: relative;
+  input {
+    opacity: 0;
+    width: $input-check-size;
+    height: $input-check-size;
+    position: absolute;
+    top: 0;
+    left: 0;
+    & + .chk-label,
+    & + label.chk-label {
+      line-height: 18px;
+      display: table;
+      i {
+        cursor: pointer;
+        margin-right: 8px;
+        content: '';
+        display: inline-block;
+        width: $input-check-size;
+        height: $input-check-size;
+        background: {
+          position: 0 0;
+          size: auto 18px;
+          repeat: no-repeat;
+        }
+      }
+    }
+  }
+
+  .chk-label,
+  label.chk-label {
+    margin-bottom: 0;
+  }
+}
+
+// + checkbox basic
+input[type='checkbox'] {
+  & + .chk-label {
+    i {
+      background-image: url($image-ico-path + 'ico_sprites_chkbox.svg');
+    }
+  }
+  &:checked {
+    + .chk-label i {
+      background-position: -56px 0;
+    }
+    &:disabled {
+      + .chk-label i {
+        cursor: default;
+        background-position: -84px 0;
+      }
+    }
+  }
+  &:disabled {
+    + .chk-label i {
+      cursor: default;
+      background-position: -28px 0;
+    }
+  }
+}
+
+// + radio
+.c-rdochk {
+  input[type='radio'] {
+    opacity: 0;
+    cursor: pointer;
+
+    & + .chk-label {
+      i {
+        background-image: url($image-ico-path + 'ico_sprites_radio.svg');
+      }
+    }
+    &:checked {
+      + .chk-label > span {
+        color: $color-navy-1;
+      }
+      + .chk-label i {
+        background-position: -56px 0;
+      }
+      &:disabled {
+        + .chk-label i {
+          cursor: default;
+          background-position: -84px 0;
+        }
+      }
+    }
+    &:disabled {
+      + .chk-label i {
+        cursor: default;
+        background-position: -28px 0;
+      }
+    }
+  }
+}
+
+/* 
+	 = Select
+*/
+
+.select-box {
+  &.region01 {
+    width: 120px;
+  }
+
+  &.region02 {
+    width: 160px;
+  }
+}
+.c-select-list {
+  display: flex;
+}
+.c-select {
+  position: relative;
+  &:after {
+    background: {
+      image: url($image-ico-path + 'ico_arrow_09.svg');
+      position: right center;
+      size: 16px auto;
+      repeat: no-repeat;
+    }
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    content: '';
+    display: inline-block;
+  }
+
+  select::ms-expand {
+    display: none;
+  }
+  select {
+    border: 1px solid $color-gray-4;
+    border-radius: $radius-8;
+    background-color: $color-white-1;
+    color: $color-gray-1;
+    min-height: 46px;
+    width: 100%;
+    padding: 7px 36px 7px 12px;
+    line-height: $p-lineheight-normal;
+
+    &:focus {
+      @include inputTextFocus;
+    }
+    &:disabled {
+      $input-disabled-border-color: $color-gray-4;
+      $input-disabled-bg-color: $color-gray-5;
+      $input-disabled-font-color: $color-gray-2;
+    }
+  }
+
+  &.type02 {
+    select {
+      line-height: 20px;
+    }
+  }
+}
+
+.c-select {
+  & + .c-select {
+    margin-left: 8px;
+  }
+}
+
+// = c-input-btn-group
+.c-input-btn-group {
+  $gap: 8px;
+  &.row.inner {
+    margin : {
+      left: -$gap;
+      right: -$gap;
+    }
+  }
+
+  .col {
+    padding: {
+      left: $gap;
+      right: $gap;
+    }
+
+    &.buttons {
+      @include colFixedWidth(92px, 8px);
+    }
+  }
+}
+
+// = c-input-form-list
+.c-input-list-basic {
+  $gap: 16px;
+  > .row {
+    &:not(:first-of-type) {
+      padding-top: $gap;
+    }
+    &:not(:last-of-type),
+    &:only-child {
+      padding-bottom: $gap;
+    }
+    margin: {
+      left: -$gap;
+      right: -$gap;
+    }
+
+    > [class|='col'],
+    > .col {
+      padding: {
+        left: $gap;
+        right: $gap;
+      }
+    }
+  }
+
+  &.input-cont {
+    $gap: 16px;
+    > .row {
+      padding: {
+        left: $gap;
+        right: $gap;
+      }
+    }
+  }
+}
+
+// = Email
+.c-input-email-group {
+  > .row {
+    $gap: 15px;
+    margin: {
+      left: -$gap;
+      right: -$gap;
+    }
+    padding: {
+      top: 0;
+      bottom: 0;
+    }
+    @include justify-row;
+    > .col,
+    .col-6 {
+      padding: {
+        left: $gap;
+        right: $gap;
+      }
+    }
+    .input-email-01 {
+      position: relative;
+      &:after {
+        content: '@';
+        position: absolute;
+        top: 10px;
+        right: -7px;
+        color: $color-gray-3;
+        font: {
+          size: $fs-nomal;
+          weight: $weight-400;
+        }
+        line-height: $g-lineheight-2;
+      }
+    }
+    .input-email-02 {
+      > .row {
+        margin: {
+          left: -$gap-6;
+          right: -$gap-6;
+        }
+        > .col-6 {
+          padding: {
+            left: $gap-8;
+            right: $gap-8;
+          }
+        }
+      }
+    }
+
+    select {
+      min-width: auto;
+    }
+
+    & + .row {
+      margin-top: 20px;
+    }
+  }
+
+  &.certified {
+    $gap: 6px;
+    .row {
+      &.w-btn {
+        margin-right: -$gap;
+        .input-email-02 {
+          padding-right: $gap;
+        }
+        .buttons {
+          padding: {
+            left: $gap;
+            right: $gap;
+          }
+        }
+      }
+    }
+    .buttons {
+      @include colFixedWidth(92px, 6px);
+    }
+  }
+}
+
+// + phone
+.c-input-phone-group {
+  > .row {
+    $gap: $gap-8;
+    margin: {
+      left: -$gap-8;
+      right: -$gap-8;
+    }
+    padding: {
+      top: 0;
+      bottom: 0;
+    }
+
+    & + .row {
+      margin-top: 16px;
+    }
+    .input-phone-01 {
+      @include colFixedWidth(92px, 8px);
+    }
+
+    > .col {
+      padding: {
+        left: $gap-8;
+        right: $gap-8;
+      }
+    }
+  }
+  // - certified
+  &.certified {
+    .w-btn {
+      $gap: 6px;
+      margin-right: -$gap;
+
+      .input-phone-03 {
+        padding-right: $gap;
+      }
+      .buttons {
+        padding: {
+          left: $gap;
+          right: $gap;
+        }
+      }
+    }
+    .buttons {
+      @include colFixedWidth(92px, 6px);
+    }
+  }
+}
+
+.input-btn-type {
+  display: flex;
+  align-items: flex-end;
+}
