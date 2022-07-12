@@ -265,6 +265,21 @@
     }
   }
 
+  //  = cont-type04
+  &.cont-type04 {
+    table {
+      thead {
+        th {
+          background-color: $color-gray-8;
+        }
+      }
+      th,
+      td {
+        padding: 8px 12px;
+      }
+    }
+  }
+
   // = striped
   &.striped {
     tbody {

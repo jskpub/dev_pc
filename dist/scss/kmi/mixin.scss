@@ -127,6 +127,11 @@
   }
 }
 
+// + is-error
+@mixin inputError {
+  border-color: $color-orange-1;
+}
+
 // + focus
 @mixin inputTextFocus {
   transition: all 0.5s;
@@ -135,15 +140,10 @@
 }
 
 // + readonly
-@mixin inputReadonly {
-  line-height: $p-lineheight-normal;
-  color: $color-gray-1;
-  border: 0;
-  border-radius: 0;
-  padding-left: 0;
-  background: transparent;
-}
 @mixin inputReadonlyFocus {
+  border-color: $color-gray-4;
+  transition: none;
+
   box-shadow: none;
 }
 

@@ -92,7 +92,7 @@ a.co-link,
   background-color: $color-orange-1 !important;
 }
 
-$color-list: ($color-gray-1, $color-gray-2, $color-gray-3, $color-gray-4, $color-gray-5, $color-gray-6, $color-gray-7, $color-gray-8, $color-gray-9, $color-gray-10);
+$color-list: ($color-gray-1, $color-gray-2, $color-gray-3, $color-gray-4, $color-gray-5, $color-gray-6, $color-gray-7, $color-gray-8, $color-gray-9, $color-gray-10, $color-gray-11, $color-gray-12, $color-gray-13);
 
 /* $color_list[$i]*/
 @for $i from 1 through length($color-list) {
@@ -281,14 +281,11 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
 .co-list-card {
   > li {
     white-space: initial;
-    color: $color-gray-2;
   }
 
-  // circle01
-  &.circle01 {
-    li {
-      @include fontStyle(12px, 20px, 400);
-      padding-left: 18px;
+  &.circle01,
+  &.circle02 {
+    > li {
       position: relative;
       &:before {
         content: '';
@@ -298,7 +295,31 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
         background-color: $color-gray-3;
         display: inline-block;
         position: absolute;
+      }
+    }
+  }
+  // circle01
+  &.circle01 {
+    li {
+      color: $color-gray-2;
+      @include fontStyle(12px, 20px, 400);
+      padding-left: 18px;
+      &:before {
         top: 8px;
+        left: 4px;
+      }
+    }
+  }
+  // circle02
+  &.circle02 {
+    li {
+      @include fontStyle(14px, 30px, 400);
+      padding-left: 14px;
+      & ~ li {
+        margin-top: 8px;
+      }
+      &:before {
+        top: 14px;
         left: 4px;
       }
     }
@@ -665,6 +686,10 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   &.input-cont-article {
     background-color: $color-white-1;
     padding: 32px 16px;
+
+    &.type02 {
+      background-color: $color-white-2;
+    }
   }
 }
 
@@ -1011,4 +1036,11 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
 
 .co-caption-txt {
   @include fontStyle(12px, 20px, 400);
+}
+
+// = co-subcont-field
+.co-subcont-field {
+  & ~ .co-article {
+    margin-top: 20px;
+  }
 }

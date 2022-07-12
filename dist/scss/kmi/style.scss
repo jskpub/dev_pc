@@ -1116,6 +1116,75 @@
   }
 }
 
+// = 검진 결과 별도 창
+#container {
+  &.rsv-exam-container {
+    .content-wrapper {
+      padding-left: 0;
+    }
+
+    .header {
+      padding-left: 0;
+    }
+
+    .co-title-field {
+      &.top {
+        display: block;
+        .title {
+          padding-bottom: 20px;
+          border-bottom: 1px solid $color-black-op1;
+        }
+      }
+    }
+
+    .reserve-contents-area {
+      .co-title-field {
+        &.top {
+          padding: 40px 60px 0;
+        }
+      }
+    }
+
+    .top-sub-cont {
+      margin: {
+        bottom: 40px;
+      }
+    }
+
+    .contents {
+      max-width: 2560px;
+    }
+
+    .footer {
+      .container {
+        max-width: 2560px;
+      }
+    }
+  }
+
+  .top-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding: 22px 40px;
+    border-bottom: 1px solid $color-gray-5;
+    background-color: $color-white-3;
+
+    .slogan {
+      padding-left: 20px;
+      p {
+        font: {
+          size: $p-fs-large-2;
+          weight: $weight-700;
+        }
+        color: $color-gray-1;
+        line-height: 35px;
+      }
+    }
+  }
+}
+
 // = Join
 .join-login-field {
   .co-terms-chk-list {
@@ -3045,21 +3114,6 @@
 }
 
 // = 세부검진항목
-.co-table {
-  &.tbl-detail-chkctg-view {
-    table {
-      thead {
-        th {
-          background-color: $color-gray-8;
-        }
-      }
-      th,
-      td {
-        padding: 8px 12px;
-      }
-    }
-  }
-}
 
 // = 검진 예약
 .resevation-container {
@@ -3091,6 +3145,7 @@
       padding: {
         left: 60px;
         right: 60px;
+        bottom: 40px;
       }
     }
   }
@@ -3674,11 +3729,6 @@
           }
         }
       }
-      th,
-      td {
-        padding: 8px 12px;
-      }
-
       tbody {
         tr {
           &:last-child {
@@ -3688,6 +3738,9 @@
               }
             }
           }
+        }
+        .tbl-in-cont {
+          padding: 4px;
         }
       }
     }
@@ -3880,27 +3933,6 @@
     border-radius: 12px;
     color: $color-gray-1;
     background-color: $color-white-2;
-    .list-card {
-      &.circle {
-        li {
-          @include fontStyle(14px, 30px, 400);
-          color: $color-gray-1;
-          padding-left: 18px;
-          position: relative;
-          &:before {
-            content: '';
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            background-color: $color-gray-3;
-            display: inline-block;
-            position: absolute;
-            top: 14px;
-            left: 0;
-          }
-        }
-      }
-    }
   }
 }
 
@@ -3909,3 +3941,128 @@
   &.chkupresult-list {
   }
 }
+
+//= 검진 결과 상세 type
+// + type01
+.type01 {
+}
+
+.chkup-result-cont {
+  &.type01 {
+    > .row {
+      $gap: 10px;
+      margin: {
+        left: -$gap;
+        right: -$gap;
+      }
+      > [class|='col'] {
+        padding: $gap;
+      }
+    }
+    .result-card01 {
+      border: 1px solid $color-gray-5;
+      border-radius: 12px;
+      padding: 12px 20px;
+      background-color: $color-white-1;
+
+      .title {
+        @include fontStyle(14px, 30px, 400);
+      }
+
+      .col-title,
+      .col-compare,
+      .col-btn {
+        display: flex;
+        align-items: center;
+      }
+      [class|='col'] {
+        padding: {
+          left: 0;
+          right: 0;
+        }
+      }
+      .compare-info {
+        justify-content: center;
+        font-size: 0;
+        display: flex;
+        align-items: center;
+        .r-value {
+          @include fontStyle(16px, 32px, 500);
+        }
+        .unit {
+          display: inline-block;
+          padding-left: 4px;
+          @include fontStyleSmall01;
+        }
+
+        .divide {
+          padding: 5px 12px 0;
+          @include coTxtSmall01;
+          color: $color-gray-2;
+        }
+      }
+
+      .col-compare {
+        justify-content: center;
+      }
+
+      .col-btn {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .btn-chkup-info-detail {
+    margin-top: 2px;
+    font-size: 0;
+  }
+}
+
+.co-btn {
+  &.btn-result-compare {
+    padding: 2px 16px;
+    min-width: 84px;
+    min-height: 36px;
+
+    > span {
+      @include fontStyle(14px, 24px, 500);
+    }
+  }
+}
+
+// 검진 결과 비교
+.tbl-chkresult-compare {
+  margin-top: 20px;
+}
+.co-table {
+  &.tbl-chkresult-compare {
+    table {
+      tbody {
+        th,
+        td {
+          padding: 12px;
+        }
+      }
+    }
+  }
+}
+
+.exam-result-inquiry {
+  .input-list-field {
+    > .row {
+      $gap: 16px;
+      margin: {
+        left: -$gap;
+        right: -$gap;
+      }
+      > [class|='col'] {
+        padding: {
+          left: $gap;
+          right: $gap;
+        }
+      }
+    }
+  }
+}
+
+// rv-01-013
