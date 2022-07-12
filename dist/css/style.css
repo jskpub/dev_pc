@@ -1560,6 +1560,12 @@ label + .c-m-input-list {
 		color: #a4a4a4;
 }
 
+.c-chkbox.txt-type02 span,
+.c-rdochk.txt-type02 span {
+		font-size: 12px;
+		line-height: 1.4166666667;
+}
+
 .c-rdochk input[type=radio] {
 		opacity: 0;
 		cursor: pointer;
@@ -2009,7 +2015,7 @@ textarea,
 		width: 100%;
 		overflow-x: hidden;
 		overflow-y: auto;
-		padding: 12px;
+		padding: 16px 20px;
 		min-width: 100%;
 		color: #494949;
 		border-radius: 8px;
@@ -2048,6 +2054,14 @@ textarea textarea[readonly=readonly]:focus,
 		box-shadow: none;
 		-webkit-transition: none;
 		transition: none;
+}
+textarea.type01,
+.c-txt-area.type01 {
+		height: 172px;
+}
+textarea.type02,
+.c-txt-area.type02 {
+		height: 300px;
 }
 
 .c-chkbox,
@@ -2101,6 +2115,10 @@ textarea textarea[readonly=readonly]:focus,
 .c-chkbox.type01 input[type=radio]:checked + .chk-label i,
 .c-chkbox.type01 input[type=checkbox]:checked + .chk-label i {
 		background-position-x: -124px;
+}
+.c-chkbox.type01 input[type=radio]:checked + .chk-label > span,
+.c-chkbox.type01 input[type=checkbox]:checked + .chk-label > span {
+		color: #253981;
 }
 .c-chkbox.type02 input[type=radio]:checked + .chk-label i,
 .c-chkbox.type02 input[type=checkbox]:checked + .chk-label i {
@@ -5172,9 +5190,6 @@ a.co-link,
 		line-height: 2.1428571429;
 		padding-left: 14px;
 }
-.co-list-card.circle02 li ~ li {
-		margin-top: 8px;
-}
 .co-list-card.circle02 li:before {
 		top: 14px;
 		left: 4px;
@@ -5594,11 +5609,12 @@ a.co-link,
 		padding: 15px 20px 15px 15px;
 }
 .co-cont-article.input-cont-article {
-		background-color: #fff;
+		background-color: #fcfcfc;
 		padding: 32px 16px;
 }
-.co-cont-article.input-cont-article.type02 {
-		background-color: #fcfcfc;
+.co-cont-article.terms-type {
+		background-color: #fff;
+		padding: 20px;
 }
 
 .co-inner-cont-article {
@@ -5640,6 +5656,11 @@ a.co-link,
 .co-ref-txt {
 		color: #a4a4a4;
 }
+.co-ref-txt.fs-small {
+		font-size: 12px;
+		line-height: 1.6666666667;
+		color: #a4a4a4;
+}
 
 .txt-type01 {
 		font-size: 14px;
@@ -5650,6 +5671,12 @@ a.co-link,
 .txt-type02 {
 		font-size: 12px;
 		line-height: 1.6666666667;
+		color: #777776;
+}
+
+.txt-type03 {
+		font-size: 14px;
+		line-height: 2.1428571429;
 		color: #777776;
 }
 
@@ -5889,6 +5916,9 @@ a.co-link,
 }
 
 .co-terms-chk-list > li {
+		margin-top: 20px;
+}
+.co-terms-chk-list ~ .co-ref-txt {
 		margin-top: 20px;
 }
 
@@ -10304,5 +10334,9 @@ a.co-link,
 .exam-result-inquiry .input-list-field > .row > [class|=col] {
 		padding-left: 16px;
 		padding-right: 16px;
+}
+
+.co-cont-article.terms-type .co-terms-chk-list > li ~ li {
+		margin-top: 40px;
 }
 /*# sourceMappingURL=maps/style.css.map */
