@@ -45,7 +45,7 @@ $color-black-op6: rgba(28, 28, 27, 0.6) !default;
 $color-black-op8: rgba(28, 28, 27, 0.8) !default;
 
 $color-blue-1: #2f7ad3 !default;
-$color-blue-1: #879ce6 !default;
+$color-blue-: #879ce6 !default;
 
 $color-navy-1: #253981 !default;
 $color-navy-1-op2: rgba(37, 57, 129, 0.2) !default;
@@ -89,7 +89,6 @@ $font-name: 'NotoSansKR';
 $font-path: '../fonts/';
 
 // - delete
-// - // delete
 
 // + font weight
 $weight-100: 100; // Thin
@@ -117,6 +116,8 @@ $image-path: '../images/';
 $image-ico-path: $image-path + 'ico/';
 $image-ico-sprite01: $image-ico-path + 'ico_sprites_01.svg';
 $image-ico-sprite02: $image-ico-path + 'ico_sprites_02.svg';
+$image-ico-chkbox-sprite01: $image-ico-path + 'ico_sprites_checkbox01.svg';
+$image-ico-chkbox-sprite02: $image-ico-path + 'ico_sprites_checkbox02.svg';
 $image-logo-path: $image-path + 'logo/';
 $image-logo-kmi-path: $image-path + 'logo/kmi/';
 

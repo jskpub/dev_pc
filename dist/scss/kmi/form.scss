@@ -390,21 +390,26 @@ label {
   color: $color-gray-3;
 }
 
+.c-chkbox,
+.c-rdochk {
+  &.txt-type02 {
+    span {
+      @include fontStyle(12px, 17px, 400);
+    }
+  }
+}
+
 // = radio
 .c-rdochk {
   input[type='radio'] {
     opacity: 0;
     cursor: pointer;
 
-    & + .chk-label {
-      i {
-      }
-    }
     &:checked {
-      + .chk-label > span {
+      & + .chk-label > span {
         color: $color-navy-1;
       }
-      + .chk-label i {
+      & + .chk-label i {
         background-position: -56px 0;
       }
       &:disabled {
@@ -423,6 +428,7 @@ label {
   }
 }
 
+// + chk-btn-type
 /*
 	= Date
 */
@@ -505,21 +511,43 @@ label {
   input[type='text'] {
     width: 100%;
     padding-right: 36px;
+
+    &[readonly='readonly'] {
+      @include coSubTitle;
+    }
   }
+
   .unit {
     position: absolute;
-    top: 12px;
+    top: 50%;
+    transform: translateY(-50%);
     right: 12px;
     text-align: center;
     color: $color-gray-3;
-    width: 24px;
-    text-align: right;
-  }
+    @include coSubTitle;
+    color: $color-gray-3;
 
-  // + input view
-  @at-root .c-input-unit.input-view {
+    // + input view
+    @at-root .c-input-unit.input-view {
+      input[type='text'] {
+        padding-right: 36px;
+      }
+    }
+  }
+}
+
+// + c-input-unit-type02
+
+.in-input-row {
+  .c-input-unit-field {
+    border: 1px solid $color-gray-4;
+    background-color: $color-white-1;
+    border-radius: 12px;
+    padding: 12px 20px;
+
     input[type='text'] {
-      padding-right: 36px;
+      border: 0;
+      padding: 0;
     }
   }
 }
@@ -855,10 +883,10 @@ textarea,
   width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: $gap-12;
+  @include inputText;
+  padding: 16px 20px;
   min-width: 100%;
   color: $color-gray-1;
-  @include inputText;
 
   &:focus {
     @include inputTextFocus;
@@ -870,7 +898,6 @@ textarea,
       min-height: initial;
       height: 100%;
       overflow: auto;
-      padding: 12px 0;
       &:focus {
         @include inputTextFocus;
         border: 0;
@@ -878,6 +905,15 @@ textarea,
         transition: none;
       }
     }
+  }
+
+  // + type01
+  &.type01 {
+    height: 172px;
+  }
+  // + type02
+  &.type02 {
+    height: 300px;
   }
 }
 
@@ -888,12 +924,30 @@ textarea,
   //opacity: 0;
   cursor: pointer;
 
+  position: relative;
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    position: absolute;
+    opacity: 0;
+    & + .chk-label,
+    & + label.chk-label {
+      line-height: 1;
+      display: table;
+      i {
+        cursor: pointer;
+        display: inline-block;
+        background: {
+          repeat: no-repeat;
+        }
+      }
+    }
+  }
   // type01, type02
   &.type01,
   &.type02 {
-    position: relative;
-    input {
-      position: absolute;
+    input[type='checkbox'],
+    input[type='radio'] {
       top: 7px;
       left: 7px;
       opacity: 0;
@@ -902,17 +956,39 @@ textarea,
         line-height: 1;
         display: table;
         i {
-          cursor: pointer;
           margin-right: 4px;
-          content: '';
+          cursor: pointer;
           display: inline-block;
           width: 28px;
           height: 28px;
           background: {
-            image: url($image-ico-sprite02);
-            position: -86px -10px;
-            size: auto 48px;
-            repeat: no-repeat;
+            image: url($image-ico-chkbox-sprite01);
+            position: 0 0;
+            size: auto 29px;
+          }
+        }
+      }
+    }
+    &.type01 {
+      input[type='checkbox'],
+      input[type='radio'] {
+        &:checked {
+          & + .chk-label {
+            > span {
+              color: $color-navy-1;
+            }
+          }
+        }
+      }
+    }
+    &.type02 {
+      input[type='checkbox'],
+      input[type='radio'] {
+        &:checked {
+          & + .chk-label {
+            > span {
+              color: $color-navy-1;
+            }
           }
         }
       }
@@ -933,7 +1009,10 @@ textarea,
     input[type='checkbox'] {
       &:checked + .chk-label {
         i {
-          background-position-x: -124px;
+          background-position-x: -76px;
+        }
+        > span {
+          color: $color-navy-1;
         }
       }
     }
@@ -945,71 +1024,45 @@ textarea,
     input[type='checkbox'] {
       &:checked + .chk-label {
         i {
-          background-position-x: -10px;
+          background-position-x: -76px;
         }
       }
     }
-  }
-}
-
-.c-chkbox,
-.c-rdochk {
-  position: relative;
-  input {
-    opacity: 0;
-    width: $input-check-size;
-    height: $input-check-size;
-    position: absolute;
-    top: 0;
-    left: 0;
-    & + .chk-label,
-    & + label.chk-label {
-      line-height: 18px;
-      display: table;
-      i {
-        cursor: pointer;
-        margin-right: 8px;
-        content: '';
-        display: inline-block;
-        width: $input-check-size;
-        height: $input-check-size;
-        background: {
-          position: 0 0;
-          size: auto 18px;
-          repeat: no-repeat;
-        }
-      }
-    }
-  }
-
-  .chk-label,
-  label.chk-label {
-    margin-bottom: 0;
   }
 }
 
 // + checkbox basic
-input[type='checkbox'] {
-  & + .chk-label {
-    i {
-      background-image: url($image-ico-path + 'ico_sprites_chkbox.svg');
+.c-chkbox {
+  position: relative;
+  input[type='checkbox'] {
+    & + .chk-label {
+      i {
+        margin-right: 8px;
+        background: {
+          image: url($image-ico-chkbox-sprite02);
+          size: auto 18px;
+        }
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+      }
     }
-  }
-  &:checked {
-    + .chk-label i {
-      background-position: -56px 0;
+    &:checked {
+      + .chk-label i {
+        background-position: -56px 0;
+      }
+      &:disabled {
+        + .chk-label i {
+          cursor: default;
+          background-position: -84px 0;
+        }
+      }
     }
     &:disabled {
       + .chk-label i {
         cursor: default;
-        background-position: -84px 0;
+        background-position: -28px 0;
       }
-    }
-  }
-  &:disabled {
-    + .chk-label i {
-      cursor: default;
-      background-position: -28px 0;
     }
   }
 }
@@ -1022,7 +1075,11 @@ input[type='checkbox'] {
 
     & + .chk-label {
       i {
+        margin-right: 8px;
         background-image: url($image-ico-path + 'ico_sprites_radio.svg');
+        width: 18px;
+        height: 18px;
+        display: inline-block;
       }
     }
     &:checked {
@@ -1325,7 +1382,7 @@ input[type='checkbox'] {
   align-items: center;
   position: relative;
   input[type='text'] {
-    border: 1px solid #d2d2d1;
+    border: 1px solid $color-gray-4;
     border-radius: 8px;
     flex: 1 1 auto;
     padding-right: 44px;
@@ -1372,6 +1429,266 @@ input[type='checkbox'] {
   &.is-error {
     select {
       @include inputError;
+    }
+  }
+}
+
+// = detail input
+.row {
+  &.input-view {
+    .label-input {
+      > label {
+        margin-bottom: 4px;
+      }
+    }
+    input[type='text'],
+    input[type='password'] {
+      &[readonly='readonly'] {
+        @include inputDetail;
+      }
+    }
+  }
+}
+
+// = datepicker
+.ui-widget {
+  @include fontStyle(14px, 30px, 400);
+}
+.ui-datepicker {
+  border: 1px solid $color-gray-5;
+  box-shadow: 4px 4px 4px -3px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  width: 428px;
+  padding: 0;
+  overflow: hidden;
+
+  .ui-datepicker-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-blue-1;
+    &,
+    > span {
+      @include fontStyle(24px, 36px, 500);
+    }
+    margin: 0;
+
+    select {
+      color: $color-blue-1;
+      border: 0;
+      width: auto;
+      margin: 0;
+      line-height: 34px;
+      vertical-align: top;
+      > option {
+        @include coTxtBasic;
+        color: $color-black-1;
+      }
+    }
+    .ui-datepicker-month {
+      text-align: center;
+      margin: {
+        top: 1px;
+      }
+    }
+  }
+
+  .ui-widget-header {
+    border-radius: 0;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid $color-gray-5;
+    padding: 20px 0;
+  }
+
+  .ui-datepicker-calendar {
+    border-collapse: inherit;
+    margin: 20px 0;
+    padding: 0 12px;
+    background-color: $color-white-1;
+
+    thead {
+      tr {
+        th {
+          color: $color-gray-2;
+          padding: 4px 0;
+          text-align: center;
+          > span {
+            @include fontStyle(16px, 32px, 500);
+          }
+
+          &:first-child {
+            color: $color-orange-1;
+          }
+        }
+      }
+    }
+
+    .ui-datepicker-week-end {
+      &:first-child {
+        a {
+          color: $color-orange-1;
+        }
+      }
+    }
+
+    td {
+      padding: 0;
+
+      .ui-state-default {
+        background: transparent;
+        border: 0;
+        border-radius: 4px;
+
+        @include fontStyle(16px, 32px, 700);
+        color: $color-gray-2;
+        text-align: center;
+        padding: 4px 0;
+
+        &.ui-state-active,
+        &.ui-state-hover {
+          color: $color-white-1;
+          background: $color-blue-1;
+          opacity: 1;
+        }
+
+        &.ui-state-hover {
+          border: 0;
+          opacity: 0.3;
+        }
+
+        &.ui-state-highlight {
+          background: $color-navy-1;
+          color: $color-white-1;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .ui-datepicker-buttonpane {
+    height: 55px;
+    margin: 0;
+    min-height: 30px;
+  }
+
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 30px;
+    height: 30px;
+
+    .ui-icon {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      margin: 0;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    > .ui-icon {
+      width: 28px;
+      height: 28px;
+      background: {
+        position: 0 0;
+        size: 28px;
+        repeat: no-repeat;
+      }
+    }
+  }
+
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    &:hover {
+      background-color: transparent;
+      border: 0;
+    }
+  }
+
+  .ui-datepicker-prev {
+    left: 109px;
+    .ui-icon {
+      background-image: url($image-ico-path + 'ico_date_arrow_prev.svg');
+    }
+  }
+
+  .ui-datepicker-next {
+    right: 109px;
+
+    .ui-icon {
+      background-image: url($image-ico-path + 'ico_date_arrow_next.svg');
+    }
+  }
+
+  .ui-datepicker-buttonpane {
+    padding: 12px 0;
+
+    button {
+      display: none;
+    }
+
+    .datepicker-caption-warp {
+      text-align: center;
+
+      .datepicker-caption {
+        display: inline-block;
+        padding: 0 10px;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          border-radius: 100%;
+          position: relative;
+          top: -2px;
+          margin-right: 8px;
+        }
+
+        &.toDay {
+          color: $color-navy-1;
+          &::before {
+            background-color: $color-navy-1;
+          }
+        }
+
+        &.selectDay {
+          color: $color-blue-1;
+          &::before {
+            background-color: $color-blue-1;
+          }
+        }
+
+        &.holiDay {
+          color: $color-orange-1;
+          &::before {
+            background-color: $color-orange-1;
+          }
+        }
+
+        &.deadDay {
+          color: $color-gray-4;
+          &::before {
+            background-color: $color-gray-4;
+          }
+        }
+      }
+    }
+  }
+  tr {
+    td:first-child {
+      &.ui-datepicker-week-end {
+        &.ui-state-disabled {
+          .ui-state-default {
+            color: $color-orange-1;
+          }
+        }
+      }
     }
   }
 }

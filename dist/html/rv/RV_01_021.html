@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>회원가입 및 확인</title>
+    <title>KMI 한국의학연구소</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
     <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
     <link rel="stylesheet" href="../../css/style.css" />
     <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
 </head>
 
 <body>
@@ -20,10 +22,11 @@
             <!-- Contents -->
             <section class="contents">
                 <!-- [comment]
+						- 퍼블리싱 화면 팝업 확인용 버튼 / 실제 버튼 연동시 해당 버튼 소스 활용하여 구현
 						- 팝업 연결 button [data-target] - .c-layer-popup [id] 동일 속성값 부여 
 						-  .c-layer-popup [aria-labelledby] - .c-modal-title-field > .c-title  동일 속성값 부여 
 					-->
-                <button type="button" class="co-btn btn-open-popup" data-toggle="modal" data-target="#popupAddExamFamily01"><span>open popup</span></button>
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupAddExamFamily01"><span>popup (가족검진 신청 대상자 추가) </span></button>
 
                 <div class="c-layer-popup type03" id="popupAddExamFamily01" role="dialog" aria-labelledby="popupAddExamFamily01_Label" aria-modal="true" aria-hidden="true">
                     <div class="modal-wrap modal-dialog-centered">
@@ -115,6 +118,27 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="co-terms-chk-card">
+                                                        <div class="c-chkbox type01">
+                                                            <input type="checkbox" id="termsChk_01_01" />
+                                                            <label for="termsChk_01_01" class="chk-label"><i></i><span>개인정보 처리방침 동의</span></label>
+                                                        </div>
+                                                        <div class="co-terms-detail terms-scroll">
+                                                            <div class="inner">
+                                                                <div class="terms-row">
+                                                                    <p class="title">제공 받는자</p>
+                                                                    <div class="cont">
+                                                                        건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자
+                                                                        1980년에 시작되었음. 건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -136,17 +160,17 @@
                     <!-- [ // layer popup] -->
                 </div>
 
+                <br />
                 <!-- [comment]
-						- 퍼블리싱 화면 팝업 확인용 버튼 / 실제 버튼 연동시 해당 버튼 소스 활용하여 구현
 					-->
-                <button type="button" class="co-btn btn-open-popup" data-toggle="modal" data-target="#alertAddExamFamily01_01"><span>안내 popup</span></button>
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#alertAddExamFamily01_01"><span>popup (검진자를 선택해주세요.)</span></button>
                 <!--  안내창 팝업 레이아웃 	-->
-                <div class="c-layer-popup type01" id="alertAddExamFamily01_01" role="dialog" aria-labelledby="alertAddExamFamily01_01_Label" aria-modal="true" aria-hidden="true">
+                <div class="c-layer-popup type01" id="alertAddExamFamily01_01" role="dialog" aria-labelledby="alertAddExamFamily01_Label01" aria-modal="true" aria-hidden="true">
                     <div class="modal-wrap">
                         <div class="modal-field" tabindex="0">
                             <div class="c-modal-body">
                                 <div class="c-modal-inner">
-                                    <h4 class="c-title skip" id="alertAddExamFamily01_01_Label">입력 안내</h4>
+                                    <h4 class="c-title skip" id="alertAddExamFamily01_Label01">입력 안내</h4>
                                     <p>검진자를 선택해주세요.</p>
                                 </div>
                             </div>
@@ -162,6 +186,43 @@
                     </div>
                 </div>
                 <!--  // 안내창 팝업 레이아웃	-->
+
+                <br />
+
+                <!-- 출장검진 예약 관련 안내 popup -->
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#alertAddExamFamily01_02"><span>popup (출장검진 예약 관련 안내)</span></button>
+
+                <div class="c-layer-popup type01" id="alertAddExamFamily01_02" role="dialog" aria-labelledby="alertAddExamFamily01_Label02" aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap">
+                        <div class="modal-field" tabindex="0">
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <h4 class="c-title skip" id="alertAddExamFamily01_Label02">출장검진 예약 관련 안내</h4>
+                                    <div class="in-cont">
+                                        <p>
+                                            2021.5.15 AM 9시에 출장검진이 <br />
+                                            예정되어 있습니다.
+                                        </p>
+                                        <p>
+                                            내원 검진예약으로 변경하시거나<br />
+                                            다른 검진상품으로 변경하여 내원검진으로 <br />
+                                            예약하시겠습니까?
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="c-modal-footer">
+                                <div class="inner">
+                                    <div class="buttons">
+                                        <button class="co-btn is-outline-navy-1 popup-cls-btn"><span>취소</span></button>
+                                        <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <!-- // Contents -->
 

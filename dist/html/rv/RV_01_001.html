@@ -9,8 +9,10 @@
     <title>KMI 한국의학연구소</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
     <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
     <link rel="stylesheet" href="../../css/style.css" />
     <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
 </head>
 
 <body>
@@ -124,7 +126,7 @@
             </header>
             <!-- // Header-->
 
-            <div class="contents-wrap">
+            <div class="contents-wrap select-target-wrap">
                 <!-- Contents -->
                 <section class="contents">
                     <div class="cont-wrap">
@@ -140,43 +142,39 @@
 										-->
                                     <ul class="reservation-step-list">
                                         <li class="is-now">
-                                            <a href="javascript:;">
+                                            <div class="rsv-step">
                                                 <p class="rsv-title">01. 대상자 선택</p>
-                                            </a>
+                                            </div>
                                         </li>
                                         <li>
-                                            <a href="javascript:;">
+                                            <div class="rsv-step">
                                                 <p class="rsv-title">02. 검진기관 및 검진항목</p>
-                                            </a>
+                                            </div>
                                         </li>
                                         <li>
-                                            <a href="javascript:;">
+                                            <div class="rsv-step">
                                                 <p class="rsv-title">03. 선택검사</p>
-                                            </a>
+                                            </div>
                                         </li>
-
                                         <li>
-                                            <a href="javascript:;">
+                                            <div class="rsv-step">
                                                 <p class="rsv-title">04. 추가검사</p>
-                                            </a>
+                                            </div>
                                         </li>
-
                                         <li>
-                                            <a href="javascript:;">
+                                            <div class="rsv-step">
                                                 <p class="rsv-title">05. 검진일자</p>
-                                            </a>
+                                            </div>
                                         </li>
-
                                         <li>
-                                            <a href="javascript:;">
+                                            <div class="rsv-step">
                                                 <p class="rsv-title">06. 검진자 정보 입력</p>
-                                            </a>
+                                            </div>
                                         </li>
-
                                         <li>
-                                            <a href="javascript:;">
+                                            <div class="rsv-step">
                                                 <p class="rsv-title">07. 최종 확인</p>
-                                            </a>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -330,13 +328,15 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="resevation-btmbar-wrap fixed">
+                            <div class="resevation-btmbar-wrap">
                                 <div class="resevation-btm-bar type01">
                                     <div class="buttons">
                                         <div class="left">
+
                                             <a href="javascript:;" class="co-btn btn-reservation-prev"><span>이전</span></a>
                                         </div>
                                         <div class="right">
+
                                             <a href="javascript:;" class="co-btn btn-reservation-next"><span>다음</span></a>
                                         </div>
                                     </div>
@@ -378,15 +378,20 @@
     <script src="../../js/common.js"></script>
 
     <script>
+        clientActiveCard();
+
         $(window).on('resize load', function() {
-            reserveContSideNav();
+            reservationSideBarFloating();
 
             var categorySwiper = new Swiper('.category-swiper', {
                 slidesPerView: 'auto',
                 spaceBetween: 8
             });
         });
-        clientActiveCard();
+
+        $(window).on('load resize scroll', function() {
+            reservationBtmBarFixed();
+        });
     </script>
 </body>
 

@@ -9,8 +9,10 @@
     <title>KMI 한국의학연구소</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
     <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
     <link rel="stylesheet" href="../../css/style.css" />
     <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
 </head>
 
 <body>
@@ -18,8 +20,8 @@
         <!-- Content-Wrapper -->
         <div class="content-wrapper">
             <section class="contents">
-                <!-- = 약관 동의 시 팝업 -->
-                <button type="button" class="btn-open-popup co-btn" data-toggle="modal" data-target="#popupAgreeTerms01"><span>약관동의 팝업</span></button>
+                <!-- popup -->
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupAgreeTerms01"><span>popup (약관동의 팝업)</span></button>
                 <div class="c-layer-popup type03" id="popupAgreeTerms01" role="dialog" aria-labelledby="popupAgreeTerms01_Label" aria-modal="true" aria-hidden="true">
                     <div class="modal-wrap">
                         <div class="modal-field" tabindex="0">
@@ -45,11 +47,13 @@
                                                     </div>
                                                     <div class="co-terms-detail terms-scroll">
                                                         <div class="inner">
-                                                            <p class="title">제공 받는자</p>
-                                                            <div class="terms-cont">
-                                                                건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은
-                                                                건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은 건강보험가입자들의 건강을
-                                                                유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음.
+                                                            <div class="terms-row">
+                                                                <p class="title">제공 받는자</p>
+                                                                <div class="cont">
+                                                                    건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은
+                                                                    건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은 건강보험가입자들의 건강을
+                                                                    유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음.
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -63,11 +67,13 @@
                                                     </div>
                                                     <div class="co-terms-detail terms-scroll">
                                                         <div class="inner">
-                                                            <p class="title">제공 받는자</p>
-                                                            <div class="terms-cont">
-                                                                건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은
-                                                                건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은 건강보험가입자들의 건강을
-                                                                유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음.
+                                                            <div class="terms-row">
+                                                                <p class="title">제공 받는자</p>
+                                                                <div class="cont">
+                                                                    건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은
+                                                                    건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은 건강보험가입자들의 건강을
+                                                                    유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음.
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -90,10 +96,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- = 예 선택시  팝업 -->
-                <!-- alertAgreeTerms01_01 -->
-                <!-- 버튼 연결  부분 사용 -->
-                <button type="button" class="co-btn bg-navy-1 btn-open-popup" data-toggle="modal" data-target="#alertAgreeTerms01_01"><span>예 선택 시 팝업</span></button>
+
+                <br />
+                <!-- popup -->
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#alertAgreeTerms01_01">
+                    <span>popup (검진 기관에 검진 결과 등록을 요청하였습니다, 검진 결과 등록 처리는 검진기관에 따라 다소 시간이 소요될 수 있습니다.)</span>
+                </button>
                 <!-- 버튼 연결  부분 사용 -->
 
                 <div class="c-layer-popup type01" id="alertAgreeTerms01_01" role="dialog" aria-labelledby="alertAgreeTerms01_01_Label" aria-modal="true" aria-hidden="true">
@@ -116,7 +124,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- // alertAgreeTerms01_01 -->
             </section>
         </div>
         <!-- // Contents -->

@@ -9,8 +9,10 @@
     <title>KMI 한국의학연구소</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
     <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
     <link rel="stylesheet" href="../../css/style.css" />
     <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
 </head>
 
 <body>
@@ -140,44 +142,51 @@
 																-->
                                     <ul class="reservation-step-list">
                                         <li class="is-end">
-                                            <a href="javascript:;">
-                                                <p class="rsv-title">01. 대상자 선택</p>
-                                                <p class="rsv-data">김크미</p>
-                                            </a>
+                                            <div class="rsv-step">
+                                                <a href="javascript:;">
+                                                    <p class="rsv-title">01. 대상자 선택</p>
+                                                    <p class="rsv-data">김크미</p>
+                                                </a>
+                                            </div>
                                         </li>
                                         <li class="is-end">
-                                            <a href="javascript:;">
-                                                <p class="rsv-title">02. 검진기관 및 검진항목</p>
-                                                <p class="rsv-data">한국의학연구소 강남 센터 (...</p>
-                                            </a>
+                                            <div class="rsv-step">
+                                                <a href="javascript:;">
+                                                    <p class="rsv-title">02. 검진기관 및 검진항목</p>
+                                                    <p class="rsv-data">검진기관 및 검진항목검진기관 및 검진항목</p>
+                                                </a>
+                                            </div>
                                         </li>
                                         <li class="is-end">
-                                            <a href="javascript:;">
-                                                <p class="rsv-title">03. 선택검사</p>
-                                                <p class="rsv-data">선택 1 : 대장 내시경 / 선택 2 ...</p>
-                                            </a>
+                                            <div class="rsv-step">
+                                                <a href="javascript:;">
+                                                    <p class="rsv-title">03. 선택검사</p>
+                                                    <p class="rsv-data">선택검사선택검사선택검사</p>
+                                                </a>
+                                            </div>
                                         </li>
                                         <li class="is-end">
-                                            <a href="javascript:;">
-                                                <p class="rsv-title">04. 추가검사</p>
-                                                <p class="rsv-data">선택 1 : 대장 내시경 / 선택 2 ...</p>
-                                            </a>
+                                            <div class="rsv-step">
+                                                <a href="javascript:;">
+                                                    <p class="rsv-title">04. 추가검사</p>
+                                                    <p class="rsv-data">추가검사추가검사추가검사추가검사</p>
+                                                </a>
+                                            </div>
                                         </li>
                                         <li class="is-now">
-                                            <a href="javascript:;">
+                                            <div class="rsv-step">
                                                 <p class="rsv-title">05. 검진일자</p>
-                                            </a>
+                                            </div>
                                         </li>
                                         <li>
-                                            <a href="javascript:;">
+                                            <div class="rsv-step">
                                                 <p class="rsv-title">06. 검진자 정보 입력</p>
-                                            </a>
+                                            </div>
                                         </li>
-
                                         <li>
-                                            <a href="javascript:;">
+                                            <div class="rsv-step">
                                                 <p class="rsv-title">07. 최종 확인</p>
-                                            </a>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -206,9 +215,10 @@
                                 <div class="co-subcont-field">
                                     <p class="co-ref-txt">검진기관 예약 특이사항 : 오전 7시부터 검진이 가능하며, 오전 일찍 내원해 주실수록 대기시간을 줄이실 수 있음을 안내 드립니다.</p>
                                 </div>
-                                <div class="co-article">
-                                    <div class="row type02">
-                                        <div class="col-6">
+                                <div class="row type02">
+                                    <div class="col-6">
+                                        <div class="co-article">
+                                            <!-- guide datepicker 파일 참조 -->
                                             <div class="co-title-field">
                                                 <h2 class="sub-title">1차 희망 신청일자</h2>
                                                 <div class="c-chkbox">
@@ -216,13 +226,13 @@
                                                     <label for="chkOnlyMorningDate01" class="chk-label"><i></i><span>오전 예약 가능일만 보기</span></label>
                                                 </div>
                                             </div>
-                                            <div class="co-cont-article input-cont-article type02">
+                                            <div class="co-cont-article input-cont-article">
                                                 <div class="c-input-list-basic input-cont">
                                                     <div class="row">
                                                         <div class="col label-input">
                                                             <label for="rsvHopeDate01_01">예약일자</label>
                                                             <div class="c-input-date">
-                                                                <input type="text" class="c-input" id="rsvHopeDate01_01" placeholder="YYYY-MM-DD" />
+                                                                <input type="text" class="c-input" id="rsvHopeDate01_01" placeholder="YYYY-MM-DD" autocomplete="off" />
                                                                 <span><i class="date-btn"></i></span>
                                                             </div>
                                                         </div>
@@ -243,17 +253,19 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-6">
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="co-article">
                                             <div class="co-title-field">
                                                 <h2 class="sub-title">2차 희망 신청일자</h2>
                                             </div>
-                                            <div class="co-cont-article input-cont-article type02">
+                                            <div class="co-cont-article input-cont-article">
                                                 <div class="c-input-list-basic input-cont">
                                                     <div class="row">
                                                         <div class="col label-input">
                                                             <label for="rsvHopeDate02">예약일자</label>
                                                             <div class="c-input-date">
-                                                                <input type="text" class="c-input" id="rsvHopeDate02" placeholder="YYYY-MM-DD" />
+                                                                <input type="text" class="c-input" id="rsvHopeDate02" placeholder="YYYY-MM-DD" autocomplete="off" />
                                                                 <span><i class="date-btn"></i></span>
                                                             </div>
                                                         </div>
@@ -277,13 +289,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="resevation-btmbar-wrap fixed">
+                            <div class="resevation-btmbar-wrap">
                                 <div class="resevation-btm-bar type01">
                                     <div class="buttons">
                                         <div class="left">
-                                            <a href="javascript:;" class="co-btn btn-reservation-prev"><span>이전</span></a>
+                                            <a href="javascript:;" class="co-btn btn-reservation-prev is-active"><span>이전</span></a>
                                         </div>
                                         <div class="right">
+
                                             <a href="javascript:;" class="co-btn btn-reservation-next"><span>다음</span></a>
                                         </div>
                                     </div>
@@ -324,6 +337,15 @@
     <script src="../../lib/swiper/js/swiper.js"></script>
     <script src="../../js/common.js"></script>
 
+    <script>
+        $(window).on('load resize', function() {
+            reservationSideBarFloating();
+        });
+
+        $(window).on('load resize scroll', function() {
+            reservationBtmBarFixed();
+        });
+    </script>
 </body>
 
 </html>

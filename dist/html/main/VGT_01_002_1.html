@@ -9,8 +9,10 @@
     <title>KMI 한국의학연구소</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
     <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
     <link rel="stylesheet" href="../../css/style.css" />
     <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
 </head>
 
 <body>
@@ -23,8 +25,8 @@
             <!--  aria-labelledby === title id -->
 
             <section class="contents">
-                <!-- = 재직 알림 팝업 -->
-                <button type="button" class="btn-open-popup co-btn" data-toggle="modal" data-target="#popupHoldOffice01"><span>팝업 보기</span></button>
+                <!-- popup-->
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupHoldOffice01"><span>popup (재직 알림)</span></button>
                 <div class="c-layer-popup type04" id="popupHoldOffice01" role="dialog" aria-labelledby="popupHoldOffice01_Label" aria-modal="true" aria-hidden="true">
                     <div class="modal-wrap">
                         <div class="modal-field" tabindex="0">
@@ -128,12 +130,13 @@
                             </div>
                         </div>
                     </div>
-                    <!-- = type03  -->
                 </div>
 
-                <!-- = alert popup 1 -->
-                <!-- 버튼 연결 부분 사용 -->
-                <button type="button" class="co-btn btn-open-popup co-btn" data-toggle="modal" data-target="#alertHoldOffice01_01"><span>항목 미선택시 팝업</span></button>
+                <br />
+                <!-- popup-->
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#alertHoldOffice01_01">
+                    <span>popup (퇴직하실 회사를 선택하지 않았습니다. 선택하신 후 눌러 주시기 바랍니다.)</span>
+                </button>
 
                 <div class="c-layer-popup type01" id="alertHoldOffice01_01" role="dialog" aria-labelledby="alertHoldOffice01_01_Label" aria-modal="true" aria-hidden="true">
                     <div class="modal-wrap">
@@ -157,54 +160,60 @@
                         </div>
                     </div>
                 </div>
+
+                <br />
+                <!-- popup-->
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#alertHoldOffice01_02">
+                    <span>popup (퇴직 처리시 해당 회사의 검진예약은 이용이 불가능하며, 예약 진행 중인 퇴직자의 검진 예약은 자동 취소 됩니다. 해당 회사에서 퇴직처리 하시겠습니까?) </span>
+                </button>
+                <div class="c-layer-popup type01" id="alertHoldOffice01_02" role="dialog" aria-labelledby="alertHoldOffice02_02_Label" aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap">
+                        <div class="modal-field" tabindex="0">
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <h4 class="c-title skip" id="alertHoldOffice02_02_Label">퇴직처리 확인(</h4>
+                                    <p class="ta-l">
+                                        퇴직 처리시 해당 회사의 검진예약은 이용이 불가능하며, 예약 진행 중인 퇴직자의 검진 예약은 자동 취소 됩니다. <br /><br />
+                                        해당 회사에서 퇴직처리 하시겠습니까?
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="c-modal-footer">
+                                <div class="inner">
+                                    <div class="buttons">
+                                        <button class="co-btn is-outline-navy-1 popup-cls-btn"><span>취소</span></button>
+                                        <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <!-- popup-->
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#alertHoldOffice01_03"><span>popup (퇴직 처리되었습니다.) </span></button>
+                <div class="c-layer-popup type01" id="alertHoldOffice01_03" role="dialog" aria-labelledby="alertHoldOffice01_03_Label" aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap">
+                        <div class="modal-field" tabindex="0">
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <h4 class="c-title skip" id="alertHoldOffice01_03_Label">퇴직처리 완료</h4>
+                                    <p>퇴직 처리되었습니다.</p>
+                                </div>
+                            </div>
+                            <div class="c-modal-footer">
+                                <div class="inner">
+                                    <div class="buttons">
+                                        <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // Contents -->
             </section>
-            <!-- = alert popup 2 -->
-            <button type="button" class="btn-open-popup co-btn" data-toggle="modal" data-target="#alertHoldOffice01_02"><span>퇴직처리 확인 팝업 </span></button>
-            <div class="c-layer-popup type01" id="alertHoldOffice01_02" role="dialog" aria-labelledby="alertHoldOffice02_02_Label" aria-modal="true" aria-hidden="true">
-                <div class="modal-wrap">
-                    <div class="modal-field" tabindex="0">
-                        <div class="c-modal-body">
-                            <div class="c-modal-inner">
-                                <h4 class="c-title skip" id="alertHoldOffice02_02_Label">퇴직처리 확인</h4>
-                                <p class="ta-l">
-                                    퇴직 처리시 해당 회사의 검진예약은 이용이 불가능하며, 예약 진행 중인 퇴직자의 검진 예약은 자동 취소 됩니다. <br /><br />
-                                    해당 회사에서 퇴직처리 하시겠습니까?
-                                </p>
-                            </div>
-                        </div>
-                        <div class="c-modal-footer">
-                            <div class="inner">
-                                <div class="buttons">
-                                    <button class="co-btn is-outline-navy-1 popup-cls-btn"><span>취소</span></button>
-                                    <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- = alert popup 3 -->
-            <button type="button" class="btn-open-popup co-btn" data-toggle="modal" data-target="#alertHoldOffice01_03"><span>퇴직처리 확인 팝업 </span></button>
-            <div class="c-layer-popup type01" id="alertHoldOffice01_03" role="dialog" aria-labelledby="alertHoldOffice01_03_Label" aria-modal="true" aria-hidden="true">
-                <div class="modal-wrap">
-                    <div class="modal-field" tabindex="0">
-                        <div class="c-modal-body">
-                            <div class="c-modal-inner">
-                                <h4 class="c-title skip" id="alertHoldOffice01_03_Label">퇴직처리 완료</h4>
-                                <p>퇴직 처리되었습니다.</p>
-                            </div>
-                        </div>
-                        <div class="c-modal-footer">
-                            <div class="inner">
-                                <div class="buttons">
-                                    <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- // Contents -->
         </div>
         <!-- // Content-Wrapper -->
     </div>

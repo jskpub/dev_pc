@@ -9,8 +9,10 @@
     <title>KMI 한국의학연구소</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
     <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
     <link rel="stylesheet" href="../../css/style.css" />
     <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
 </head>
 
 <body>
@@ -130,7 +132,7 @@
                 <section class="contents">
                     <div class="cont-wrap">
                         <!-- reservation-sidebar -->
-                        <div class="reservation-sidebar">
+                        <div class="reservation-sidebar rsv-sidebar-fixed">
                             <div class="inner-wrap">
                                 <em class="top-title">바로가기</em>
                                 <div class="reservation-step-field">
@@ -141,30 +143,39 @@
 																-->
                                     <ul class="reservation-step-list">
                                         <li class="is-now">
-                                            <a href="javascript:;">
-                                                <p class="rsv-title">종합소견</p>
-                                            </a>
+                                            <div class="rsv-step">
+                                                <a href="javascrpit:;">
+                                                    <p class="rsv-title">종합소견</p>
+                                                </a>
+                                            </div>
                                         </li>
                                         <li>
-                                            <a href="javascript:;">
-                                                <p class="rsv-title">기초검사</p>
-                                            </a>
+                                            <div class="rsv-step">
+                                                <a href="javascrpit:;">
+                                                    <p class="rsv-title">기초검사</p>
+                                                </a>
+                                            </div>
                                         </li>
                                         <li>
-                                            <a href="javascript:;">
-                                                <p class="rsv-title">혈액검사</p>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="javascript:;">
-                                                <p class="rsv-title">장비검사</p>
-                                            </a>
+                                            <div class="rsv-step">
+                                                <a href="javascrpit:;">
+                                                    <p class="rsv-title">혈액검사</p>
+                                                </a>
+                                            </div>
                                         </li>
                                         <li>
-                                            <a href="javascript:;">
-                                                <p class="rsv-title">기타검사</p>
-                                            </a>
+                                            <div class="rsv-step">
+                                                <a href="javascrpit:;">
+                                                    <p class="rsv-title">장비검사</p>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="rsv-step">
+                                                <a href="javascrpit:;">
+                                                    <p class="rsv-title">기타검사</p>
+                                                </a>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -265,17 +276,16 @@
                                         </div>
                                         <div class="list-field">
                                             <ul class="co-list-card circle02">
-                                                <li>비밀번호 생성 시 영문자, 소문자, 특수문자 중 3가지 이상 조합 시 8자리 이상 또는 2가지 문자 조합 시 10자리 이상으로 권고함</li>
-                                                <li>특수문자 중 -,…, //(하이픈, 마침표, 슬래시 연달아 2개)는 사용 불가</li>
-                                                <li>숫자, 영문자의 조합으로 8~12자리로 입력해주세요</li>
-                                                <li>연속된 문자열 (123또는 4321. abcd, dcba 등)을 4자 이상 사용 할 수 없습니다.</li>
-                                                <li>이전 비밀번호는 다시 사용 불가 합니다.</li>
+                                                <li>흉부촬영상 좌상의 비활동성 섬유흔 소견 입니다. 이전 염증등에 의한 변화로 현재 임상적 의의는 없으며 정기적인 검사를 하시기 바랍니다.</li>
+                                                <li>유방 X-선 검사상, 우상중 경계가 부분적으로 보이는 결절성 음영 소견입니다. 유방조직의 중첩에 의한 가성병변을 감별하기 위해 서 초음파검사로 확인을 요합니다.</li>
+                                                <li>심초음파 검사상 특별한 이상 소견 없습니다. 특이 증상 (흉통, 두근거림, 호흡곤란 등) 이 있으면 전문의 상담 바랍니다.</li>
+                                                <li>자궁초음파 검사에서 자궁 근종(3.7cm이하)이 나타납니다. 자궁 근종은 자궁근층에서 유래되는 가장 흔한 양성 신생물로 정기적 으로 크기 변화를 관찰하시기 바랍니다.</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="result-article">
                                         <div class="faq-list-field">
-                                            <ul class="co-accrodion-list chkupresult-list">
+                                            <ul class="co-accrodion-list medical-chkup-result-list">
                                                 <li>
                                                     <div class="co-accordion on">
                                                         <a href="javascript:;" role="button" class="btn-accrodion">
@@ -324,7 +334,9 @@
                                                                             <div class="row inner result-card01">
                                                                                 <div class="col-4 col-title">
                                                                                     <p class="title">혈압</p>
-                                                                                    <button class="btn-chkup-info-detail"><i class="ico-type01 t-i-info01-02">자세히 보기</i></button>
+                                                                                    <button class="btn-chkup-info-detail">
+                                                                                        <i class="ico-type01 t-i-info01"><span>설명 자세히 보기</span></i>
+                                                                                    </button>
                                                                                 </div>
                                                                                 <div class="col-4 col-compare">
                                                                                     <div class="compare-info">
@@ -378,7 +390,9 @@
                                                                             <div class="row inner result-card01">
                                                                                 <div class="col-4 col-title">
                                                                                     <p class="title">허리둘레복위cm</p>
-                                                                                    <button class="btn-chkup-info-detail"><i class="ico-type01 t-i-info01-02">자세히 보기</i></button>
+                                                                                    <button class="btn-chkup-info-detail">
+                                                                                        <i class="ico-type01 t-i-info01"><span>설명 자세히 보기</span></i>
+                                                                                    </button>
                                                                                 </div>
                                                                                 <div class="col-4 col-compare">
                                                                                     <div class="compare-info">
@@ -407,7 +421,9 @@
                                                                             <div class="row inner result-card01">
                                                                                 <div class="col-4 col-title">
                                                                                     <p class="title">체질량지수</p>
-                                                                                    <button class="btn-chkup-info-detail"><i class="ico-type01 t-i-info01-02">자세히 보기</i></button>
+                                                                                    <button class="btn-chkup-info-detail">
+                                                                                        <i class="ico-type01 t-i-info01"><span>설명 자세히 보기</span></i>
+                                                                                    </button>
                                                                                 </div>
                                                                                 <div class="col-4 col-compare">
                                                                                     <div class="compare-info">

@@ -463,8 +463,14 @@
         right: $gap;
       }
     }
+
+    .inner-full-cont {
+      flex: 1 1 auto;
+      height: 100%;
+    }
     .co-cont-article {
       flex: 1 1 auto;
+      height: 100%;
     }
   }
 }
@@ -528,6 +534,17 @@
       padding: {
         left: $gap;
         right: $gap;
+      }
+    }
+  }
+}
+
+//= cont-list
+.co-cont-list {
+  &.type01 {
+    .co-cont-article {
+      & ~ .co-cont-article {
+        margin-top: 12px;
       }
     }
   }

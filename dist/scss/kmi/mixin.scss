@@ -127,6 +127,31 @@
   }
 }
 
+// +  detail  (readonly)
+@mixin inputDetail {
+  line-height: 30px;
+  color: $color-gray-1;
+  min-height: initial;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  padding-left: 0;
+  background: transparent;
+}
+
+@mixin txtareaDetail {
+  line-height: 30px;
+  color: $color-black-1;
+  background-color: $color-white-1;
+  border: 0;
+}
+
+@mixin inputDetailFocus {
+  transition: none;
+  border-color: $input-detail-border-color;
+  box-shadow: none;
+}
+
 // + is-error
 @mixin inputError {
   border-color: $color-orange-1;

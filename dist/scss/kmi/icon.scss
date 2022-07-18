@@ -3,11 +3,40 @@
 
 //  = ico-type01
 $ico-sprite01-res: 0; // 첫번째 x
-.help {
+.t-i-help01 {
   background-position: 0 #{-$result}px;
 }
 
-$ico-list01: (info01, arrow01-01, arrow01-double, arrow03-01, arrow02-01, date, time, search, close01-01, home, profile, nav01, nav02, nav03, nav04, nav05, add-ci, datepick, document-search, arrow-full, map, favorite01, assignment, refresh, check, close02, down, eye);
+$ico-list01: (
+  info01,
+  arrow01-01,
+  arrow01-double,
+  arrow03-01,
+  arrow02-01,
+  date,
+  time,
+  search,
+  close01-01,
+  home,
+  profile,
+  nav01,
+  nav02,
+  nav03,
+  nav04,
+  nav05,
+  add-ci,
+  datepick,
+  document-search,
+  arrow-full,
+  map,
+  favorite01,
+  assignment,
+  refresh,
+  check,
+  close02,
+  down,
+  eye
+);
 
 .ico-type01 {
   $size: 28px !default;
@@ -28,10 +57,11 @@ $ico-list01: (info01, arrow01-01, arrow01-double, arrow03-01, arrow02-01, date, 
       background-position: #{-$ico-sprite01-res}px $ico-sprite01-t-y;
     }
   }
-}
-// + info02
-.ico-type01.t-i-info01-02 {
-  background-position: 0 -38px;
+
+  // + help
+  &.t-i-help01-02 {
+    background-position: 0 -38px;
+  }
 }
 
 // + arrow01
@@ -150,6 +180,34 @@ $ico-list02: (check01, check02, check03, check04, arrow-left01, arrow-left02, ar
   background: url($image-ico-path + 'ico_search_01.svg') center/100% no-repeat;
   width: 17px;
   height: 17px;
+}
+
+// = icon checkbox
+$ico-chkbox-sprite-res: 0; // 첫번째 x
+$ico-chkbox-list01: (is-default, is-white, is-main, is-sub, is-red, is-full);
+.ico-checkbox {
+  $size: 28px !default;
+  background: {
+    image: url($image-ico-chkbox-sprite01);
+    size: auto 28px;
+    repeat: no-repeat;
+  }
+  width: $size;
+  height: $size;
+  display: inline-block;
+  @include is-blind;
+
+  &.is-default {
+    background-position: 0 0;
+  }
+
+  @each $icon in $ico-chkbox-list01 {
+    $ico-sprite01-res: $ico-chkbox-sprite-res + 38;
+
+    &.#{$icon} {
+      background-position: #{-$ico-chkbox-sprite-res}px 0;
+    }
+  }
 }
 
 // = chekup-item
@@ -285,8 +343,8 @@ $ico-list02: (check01, check02, check03, check04, arrow-left01, arrow-left02, ar
     &.favorite {
       background-position: -834px 2px;
     }
-    &.info01-02 {
-      background-position: 2px -36px;
+    &.info01 {
+      background-position: -36px 2px;
     }
 
     &.assignment {

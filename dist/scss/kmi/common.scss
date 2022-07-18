@@ -23,7 +23,8 @@ $fonts: (
       style: normal;
     }
 
-    src: url('#{$font-path}#{$font-name}-#{$name}.woff') format('woff'), url('#{$font-path}#{$font-name}-#{$name}.woff2') format('woff2'), url('#{$font-path}#{$font-name}-#{$name}.otf') format('opentype');
+    src: url('#{$font-path}#{$font-name}-#{$name}.woff') format('woff'), url('#{$font-path}#{$font-name}-#{$name}.woff2') format('woff2'),
+      url('#{$font-path}#{$font-name}-#{$name}.otf') format('opentype');
   }
 }
 
@@ -92,7 +93,21 @@ a.co-link,
   background-color: $color-orange-1 !important;
 }
 
-$color-list: ($color-gray-1, $color-gray-2, $color-gray-3, $color-gray-4, $color-gray-5, $color-gray-6, $color-gray-7, $color-gray-8, $color-gray-9, $color-gray-10, $color-gray-11, $color-gray-12, $color-gray-13);
+$color-list: (
+  $color-gray-1,
+  $color-gray-2,
+  $color-gray-3,
+  $color-gray-4,
+  $color-gray-5,
+  $color-gray-6,
+  $color-gray-7,
+  $color-gray-8,
+  $color-gray-9,
+  $color-gray-10,
+  $color-gray-11,
+  $color-gray-12,
+  $color-gray-13
+);
 
 /* $color_list[$i]*/
 @for $i from 1 through length($color-list) {
@@ -206,13 +221,13 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   justify-content: space-between !important;
 }
 // flex-align
-.align-itme-s {
+.align-item-s {
   align-items: flex-start !important;
 }
-.align-itme-e {
+.align-item-e {
   align-items: flex-end !important;
 }
-.align-itme-c {
+.align-item-c {
   align-items: center !important;
 }
 
@@ -303,10 +318,10 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
     li {
       color: $color-gray-2;
       @include fontStyle(12px, 20px, 400);
-      padding-left: 18px;
+      padding-left: 14px;
       &:before {
         top: 8px;
-        left: 4px;
+        left: 0;
       }
     }
   }
@@ -314,13 +329,10 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   &.circle02 {
     li {
       @include fontStyle(14px, 30px, 400);
-      padding-left: 14px;
-      & ~ li {
-        margin-top: 8px;
-      }
+      padding-left: 12px;
       &:before {
         top: 14px;
-        left: 4px;
+        left: 0;
       }
     }
   }
@@ -386,6 +398,10 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   width: 100%;
   display: flex;
   align-items: center;
+
+  &.w-auto {
+    width: auto;
+  }
   > li {
     text-align: center;
 
@@ -480,13 +496,13 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   justify-content: space-between !important;
 }
 // flex-align
-.align-itme-s {
+.align-item-s {
   align-items: flex-start !important;
 }
-.align-itme-e {
+.align-item-e {
   align-items: flex-end !important;
 }
-.align-itme-c {
+.align-item-c {
   align-items: center !important;
 }
 
@@ -616,17 +632,19 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
 
 .co-location {
   display: flex;
-  @include fontStyleSmall01;
+  font-size: 0;
+  align-items: center;
   > p {
+    @include fontStyleSmall01;
     & ~ p {
       &:before {
         content: '/';
         display: inline-block;
         padding: {
-          left: 8px;
-          right: 8px;
+          left: 4px;
+          right: 4px;
         }
-        color: $color-gray-3;
+        color: $color-gray-5;
       }
     }
   }
@@ -661,9 +679,16 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   }
 }
 
+.co-article {
+  .co-title-field {
+    &.co-cont-list {
+      margin-top: 8px;
+    }
+  }
+}
+
 // = contents type
 .co-cont-article {
-  padding: 5px 5px 5px 5px;
   border: 1px solid $color-gray-5;
   border-radius: 12px;
   color: $color-gray-1;
@@ -684,11 +709,23 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   }
   // + input-cont-article
   &.input-cont-article {
-    background-color: $color-white-1;
+    background-color: $color-white-2;
     padding: 32px 16px;
+  }
 
-    &.type02 {
-      background-color: $color-white-2;
+  // + terms-type
+  &.terms-type {
+    background-color: $color-white-1;
+    padding: 20px;
+  }
+
+  // = input-view-type
+  // + input-view-type01
+  &.input-view {
+    background-color: $color-white-2;
+
+    &.type01 {
+      padding: 32px;
     }
   }
 }
@@ -738,8 +775,13 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   }
 }
 
+// = co-ref-txt
 .co-ref-txt {
   color: $color-gray-3;
+
+  &.fs-small {
+    @include fontStyleSmall01;
+  }
 }
 
 // = cont-txt
@@ -749,6 +791,10 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
 }
 .txt-type02 {
   @include fontStyle(12px, 20px, 400);
+  color: $color-gray-2;
+}
+.txt-type03 {
+  @include fontStyle(14px, 30px, 400);
   color: $color-gray-2;
 }
 
@@ -882,7 +928,7 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
     border-color: $color-navy-1;
 
     .btn-accrodion {
-      background-color: $color-gray-8;
+      background-color: $color-gray-12;
       .txt {
         color: $color-navy-1;
       }
@@ -895,7 +941,7 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
     }
 
     .accrodion-panel {
-      display: block;
+      // display: block;
       // max-height: initial;
       // transition: max-height 0.4s ease-in;
     }
@@ -973,6 +1019,10 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   > li {
     margin-top: 20px;
   }
+
+  & ~ .co-ref-txt {
+    margin-top: 20px;
+  }
 }
 
 .co-terms-chk-card {
@@ -994,6 +1044,10 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   // terms-scroll
   &.terms-scroll {
     height: 240px;
+
+    &.type02 {
+      height: 360px;
+    }
   }
   .inner {
     padding: 15px;
@@ -1009,6 +1063,22 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
 
     & + .terms-cont {
       margin-top: 12px;
+    }
+  }
+
+  .terms-row {
+    & ~ .terms-row {
+      margin-top: 12px;
+    }
+
+    .title {
+      & ~ .cont {
+        margin-top: 12px;
+      }
+    }
+    .cont {
+      @include coTxtBasic;
+      color: $color-gray-2;
     }
   }
 
@@ -1040,7 +1110,89 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
 
 // = co-subcont-field
 .co-subcont-field {
-  & ~ .co-article {
+  & ~ .co-article,
+  & ~ .row {
     margin-top: 20px;
+  }
+}
+
+//  txtline
+
+.txtline-01 {
+  @include ellipsisLine01;
+}
+
+// = co-per-scroll-layout
+.co-per-scroll-layout {
+  overflow: hidden;
+  .left-wrap,
+  .right-wrap {
+    // height: calc(100vh - 330px);
+
+    padding: 0 20px;
+    overflow: hidden;
+    > .c-inner {
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: {
+        right: 10px;
+        bottom: 20px;
+      }
+
+      @include scrollType01;
+    }
+  }
+}
+
+// + date-period
+
+.co-date-period {
+  display: flex;
+  align-items: center;
+  .c-input-date {
+    width: 200px;
+
+    & ~ .c-input-date {
+      margin-left: 16px;
+    }
+  }
+}
+
+.co-detail-title-field {
+  display: flex;
+  align-items: center;
+
+  .btn-chkup-info-detail {
+    font-size: 0;
+  }
+}
+
+.btn-chkup-info-detail {
+  line-height: 1;
+  > i {
+    position: relative;
+  }
+}
+/*
+RV-02-003_1
+추가 검사 공통
+*/
+
+/* RV-02-005 */
+
+// + terms-type
+.terms-type {
+  .terms-all-chkbox {
+    .co-ref-txt {
+      margin-top: 4px;
+      color: $color-gray-2;
+    }
+    padding-bottom: 20px;
+    border-bottom: 1px solid$color-black-op1;
+
+    & + .co-terms-chk-list {
+      margin-top: 20px;
+    }
   }
 }

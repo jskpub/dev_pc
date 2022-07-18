@@ -22,24 +22,22 @@ var selectedTabList = function selectedTabList() {
     tabContList.find('.tab-content').removeClass('on').attr('tabindex', -1);
     $(".tab-content[aria-labelledby=".concat(tabControl, "]")).addClass('on').attr('tabindex', 0);
   });
-}; // +  toggleAccordion
+}; // =  toggleAccordion
 
 
 var toggleAccordion = function toggleAccordion() {
-  $('.co-accrodion-list').on('click', '.btn-accrodion', function (e) {
+  $('.co-accrodion-list').on('click', 'a.btn-accrodion', function (e) {
     e.preventDefault();
     var target = $(e.currentTarget),
         accordionBox = target.closest('.co-accordion'),
-        accordionPanel = target.next('.accrodion-panel'),
-        accordionPanelHeight = accordionPanel.children('.panel-cont').outerHeight();
+        accordionPanel = target.next('.accrodion-panel');
 
     if (accordionBox.hasClass('on') && accordionPanel.is(':visible')) {
-      accordionPanel.slideUp(350, function () {
-        accordionBox.removeClass('on').find('.is-blind').text('접기');
-      });
+      accordionBox.removeClass('on').find('.is-blind').text('접기');
+      accordionPanel.stop().slideUp(350);
     } else {
       accordionBox.addClass('on').find('.is-blind').text('펼치기');
-      accordionPanel.slideDown(350);
+      accordionPanel.stop().slideDown(350);
     }
   });
 }; // + goToTop
@@ -128,27 +126,24 @@ var sideMenuToggle = function sideMenuToggle() {
       seletedMenu.next().stop().slideToggle(350);
     }
   });
-}; // 검진센터 탐방
+}; // + 검진예약 Sidebar Floating
 
 
-var rsvCenterFloatingRight = function rsvCenterFloatingRight() {
+var reservationSideBarFloating = function reservationSideBarFloating() {
   var fixHeaderHeight = $('.header').height(),
-      currentLayoutOffsetY = $('.visiting-center-section').offset().top,
-      panelMargin = 40;
+      currentLayoutOffsetY = $('.reservation-sidebar .inner-wrap').offset().top;
   $(window).on('scroll', function () {
     var nowScrollY = $(window).scrollTop() + fixHeaderHeight;
-    var topPos = parseInt(nowScrollY - 175); // contents spacing
-
-    console.log(nowScrollY);
+    var topPos = parseInt(nowScrollY - fixHeaderHeight);
 
     if (nowScrollY > currentLayoutOffsetY) {
-      $('.floating-box').stop().animate({
+      $('.reservation-sidebar .inner-wrap').stop().animate({
         top: topPos
-      }, 300, 'linear');
+      }, 500);
     } else if (nowScrollY <= currentLayoutOffsetY) {
-      $('.floating-box').stop().animate({
+      $('.reservation-sidebar .inner-wrap').stop().animate({
         top: 0
-      }, 300, 'linear');
+      }, 500);
     }
   });
 };
@@ -188,9 +183,9 @@ var doctorInfo = function doctorInfo() {
     $('.doctor-card').removeClass('on');
     target.addClass('on');
     detailInfo.removeClass('on');
-    $('.medical-team-list').find("[data-target=\"".concat(targetName, "\"]")).addClass('on'); //  alert(detailInfo);
+    $('.medical-team-list').find("[data-target=\"".concat(targetName, "\"]")).addClass('on');
   });
-}; // = Reservation
+}; // = 검진 예약
 
 
 var reserveContSideNav = function reserveContSideNav() {
@@ -207,10 +202,11 @@ var checkupProduct = function checkupProduct() {
     $('.institution-datail-list .institution-detail-card').removeClass('on');
     nowChkupCard.addClass('on');
   });
-};
+}; // + 검진항목 하단 버튼 제어
+
 
 var btmCompareBar = function btmCompareBar() {
-  $('.btn-bar-toggle').on('click', function () {
+  $('.btn-bar-toggle').on('click', function (e) {
     $(this).toggleClass('is-open');
 
     if ($(this).hasClass('is-open')) {
@@ -218,8 +214,46 @@ var btmCompareBar = function btmCompareBar() {
     } else {
       $(this).find('.is-blind').text('펼치기');
     }
+
+    var target = $(e.currentTarget);
+    var btmCompareHeight = target.closest('.resevation-btmbar-wrap').height();
+    reservationBtmBarFixed(btmCompareHeight);
   });
-}; // 대상자 선택 활성화
+}; // + 검진예약 하단 bar Control
+
+
+var reservationBtmBarFixed = function reservationBtmBarFixed() {
+  var scrollPoint = 0;
+  var btmBarHeight = $('.resevation-btmbar-wrap').outerHeight();
+
+  if ($(window).scrollTop() <= 0) {
+    scrollPoint = 0;
+  } else {
+    scrollPoint = parseInt(window.innerHeight + $(window).scrollTop() + 15); // (41:btmbar-gradient
+  }
+
+  if ($('.resevation-btmbar-wrap').find('.btn-bar-toggle').hasClass('is-open')) {
+    scrollPoint = scrollPoint + 130;
+  } else {
+    btmBarHeight = $('.resevation-btmbar-wrap').outerHeight();
+  }
+
+  var contentsHeight = parseInt($('.co-location-wrap').outerHeight() + $('.co-cont-section').outerHeight() + btmBarHeight),
+      // 컨텐츠 내용 높이
+  leftWidth = $('#sideNav').width() + $('.reservation-sidebar').width(),
+      leftPosition = $(window).scrollLeft();
+
+  if ($('.resevation-btmbar-wrap').hasClass('no-side')) {
+    leftWidth = $('#sideNav').width();
+  }
+
+  if (scrollPoint <= contentsHeight) {
+    $('.resevation-btmbar-wrap').addClass('fixed');
+    $('.resevation-btmbar-wrap').css('left', leftWidth - leftPosition);
+  } else {
+    $('.resevation-btmbar-wrap').removeClass('fixed');
+  }
+}; //  + 대상자 선택 활성화
 
 
 var clientActiveCard = function clientActiveCard() {
@@ -229,26 +263,140 @@ var clientActiveCard = function clientActiveCard() {
     cliendCardList.removeClass('on');
     target.addClass('on');
   });
-}; // = institution-list
+}; // + 검진기관 및 항목 카드 선택
 
 
-var institutionContDetail = function institutionContDetail() {
-  var institutionWidth = $('.institution-list').width();
-  $('.institution-datail-wrap').css('width', institutionWidth);
-};
+var rsvInstitutionCard = function rsvInstitutionCard() {
+  $('.rsv-institution-card > a').on('click', function (e) {
+    e.preventDefault();
+    var target = $(e.currentTarget),
+        targetDataName = target.data('name'),
+        rsvCardList = $('.rsv-institution-list').find('.rsv-institution-card'),
+        rsvDetailView = $('.rsv-institution-list-wrap').find('.detail-card-list');
+    rsvCardList.removeClass('on');
+    target.parents('.rsv-institution-card').addClass('on');
+    rsvDetailView.find('.rsv-institution-datail-field').removeClass('on');
+    rsvDetailView.find(".rsv-institution-datail-field[data-target=".concat(targetDataName, "]")).addClass('on');
+  });
+}; // +  선택검사 Input Check
 
-$('.rsv-institution-card > a').on('click', function (e) {
-  e.preventDefault();
-  var target = $(e.currentTarget),
-      targetDataName = target.data('name'),
-      rsvCardList = $('.rsv-institution-list').find('.rsv-institution-card'),
-      rsvDetailView = $('.rsv-institution-list-wrap').find('.detail-card-list');
-  rsvCardList.removeClass('on');
-  target.parents('.rsv-institution-card').addClass('on');
-  rsvDetailView.find('.rsv-institution-datail-field').removeClass('on');
-  rsvDetailView.find(".rsv-institution-datail-field[data-target=".concat(targetDataName, "]")).addClass('on');
-});
-institutionContDetail(); // = 함수 호출
+
+var checkupCtgInputChk = function checkupCtgInputChk() {
+  var examChk = $('.healthexam-item-card .c-chkbox').find('input');
+  examChk.on('change', function (e) {
+    var target = $(e.currentTarget),
+        inputAttribute = target.attr('type'),
+        targetAccodion = target.closest('.chkup-ctg-accordion'),
+        targetItemCard = target.closest('.healthexam-item-card'),
+        targetAccodionPanel = target.closest('.accrodion-panel'); // active Style Control
+
+    switch (inputAttribute) {
+      case 'radio':
+        {
+          var targetName = target.attr('name');
+          $("input[name=".concat(targetName, "]")).closest('.healthexam-item-card').removeClass('on');
+          targetItemCard.addClass('on');
+          console.log(targetName);
+          break;
+        }
+
+      case 'checkbox':
+        {
+          if (target.is(':checked')) {
+            target.closest('.healthexam-item-card').addClass('on');
+          } else if (!target.is(':checked')) {
+            target.closest('.healthexam-item-card').removeClass('on');
+          }
+
+          break;
+        }
+    }
+  });
+}; // + 선택검사 Total Count 제어
+
+
+var checkupInputCntControl = function checkupInputCntControl() {
+  var examInnerChk = $('.healthexam-item-card .c-chkbox').find('input');
+  examInnerChk.on('change', function (e) {
+    var inChkItem = $(e.currentTarget),
+        inChkItemAccodion = inChkItem.closest('.chkup-ctg-accordion'),
+        inChkItemTotalCnt = parseInt(inChkItemAccodion.find('.total-cnt').text()),
+        inChkItemCurrentCnt = inChkItemAccodion.find('.current-cnt'),
+        inChkAccodionPanel = inChkItem.closest('.accrodion-panel'),
+        inChkAccodionLlstElement = inChkItemAccodion.parent('li'); //  Total Count Accordion Control
+
+    var seletedInputCnt = inChkItemAccodion.find('input:checked').length;
+
+    if (seletedInputCnt > inChkItemTotalCnt) {
+      return 0;
+    } else {
+      inChkItemCurrentCnt.text(seletedInputCnt);
+    }
+
+    if (seletedInputCnt === inChkItemTotalCnt && !inChkAccodionLlstElement.is(':last-child')) {
+      inChkItemAccodion.removeClass('on').find('.is-blind').text('접기');
+      inChkAccodionPanel.delay(200).slideUp(350);
+      setTimeout(function () {
+        inChkAccodionLlstElement.next('li').find('.accrodion-panel').stop().delay(400).slideDown(300);
+        inChkAccodionLlstElement.next('li').find('.chkup-ctg-accordion').addClass('on').find('.is-blind').text('펼치기');
+      }, 300);
+    }
+  });
+}; // + 선택검사 ToggleAccordion
+
+
+var ckupctgToggleAccordion = function ckupctgToggleAccordion() {
+  $('.medical-chkup-list').on('click', '.btn-ckupctg-accordion', function (e) {
+    e.preventDefault();
+    var mcTarget = $(e.currentTarget),
+        mcCntField = mcTarget.prev('.cnt'),
+        mcCurrentCnt = parseInt(mcCntField.children('.current-cnt').text()),
+        mcTotalCnt = parseInt(mcCntField.children('.total-cnt').text()),
+        mcAccordionBox = mcTarget.closest('.co-accordion'),
+        mcAccordionPanel = mcAccordionBox.children('.accrodion-panel');
+
+    if (mcAccordionBox.hasClass('on') && mcAccordionPanel.is(':visible')) {
+      mcAccordionPanel.slideUp(300, function () {
+        mcAccordionBox.removeClass('on').find('.is-blind').text('접기');
+      });
+    } else {
+      mcAccordionPanel.slideDown(300, function () {
+        mcAccordionBox.addClass('on').find('.is-blind').text('펼치기');
+      });
+    }
+  });
+}; // 검진센터 탐방
+
+
+var rsvCenterFloatingRight = function rsvCenterFloatingRight() {
+  var fixHeaderHeight = $('.header').height(),
+      currentLayoutOffsetY = $('.visiting-center-section').offset().top,
+      panelMargin = 40;
+  $(window).on('scroll', function () {
+    var nowScrollY = $(window).scrollTop() + fixHeaderHeight;
+    var topPos = parseInt(nowScrollY - 175); // contents spacing
+
+    console.log(nowScrollY);
+
+    if (nowScrollY > currentLayoutOffsetY) {
+      $('.floating-box').stop().animate({
+        top: topPos
+      }, 300, 'linear');
+    } else if (nowScrollY <= currentLayoutOffsetY) {
+      $('.floating-box').stop().animate({
+        top: 0
+      }, 300, 'linear');
+    }
+  });
+}; // + MainContSideNav
+
+
+var rsvContSideNav = function rsvContSideNav() {
+  var mainContentsArea = $('.resevation-container').find('.reserve-contents-area').innerHeight(),
+      mainContSideNav = $('.resevation-container').find('.reservation-sidebar');
+  mainContSideNav.css('max-height', mainContentsArea);
+}; // = 함수 호출
+
 
 openUserControl();
 goToTop();
@@ -256,5 +404,4 @@ sideMenuToggle();
 btnOpenPopup();
 btnClosePopup();
 selectedTabList();
-$(window).on('load resize', function () {});
 //# sourceMappingURL=maps/common.js.map

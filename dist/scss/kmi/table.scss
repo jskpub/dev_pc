@@ -9,7 +9,6 @@
 .co-table {
   overflow: hidden;
   border: 1px solid $color-gray-5;
-  border-right: 0;
   border-radius: $radius-12;
   table {
     width: 100%;
@@ -332,7 +331,7 @@
           text-align: center;
         }
         td {
-          @include ellipsisLine01;
+          // @include ellipsisLine01;
 
           &.is-ready {
             color: $color-gray-3;
@@ -391,6 +390,11 @@
     > em {
       color: $color-blue-1;
     }
+  }
+
+  &.type02 {
+    justify-content: space-between;
+    margin-top: 12px;
   }
 }
 
@@ -459,8 +463,6 @@
 .va-m {
   vertical-align: middle !important;
 }
-
-//
 
 .co-horizontal-scroll {
   overflow-y: hidden;

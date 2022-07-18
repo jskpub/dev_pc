@@ -9,8 +9,10 @@
     <title>KMI 한국의학연구소</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
     <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
     <link rel="stylesheet" href="../../css/style.css" />
     <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
 </head>
 
 <body>
@@ -124,7 +126,7 @@
             </header>
             <!-- // Header-->
 
-            <div class="contents-wrap">
+            <div class="contents-wrap examination-institue-items-wrap">
                 <!-- Contents -->
                 <section class="contents">
                     <div class="cont-wrap">
@@ -140,44 +142,42 @@
 																-->
                                     <ul class="reservation-step-list">
                                         <li class="is-end">
-                                            <a href="javascript:;">
-                                                <p class="rsv-title">01. 대상자 선택</p>
-                                                <p class="rsv-data">김크미</p>
-                                            </a>
+                                            <div class="rsv-step">
+                                                <a href="javascript:;">
+                                                    <p class="rsv-title">01. 대상자 선택</p>
+                                                    <p class="rsv-data">김크미</p>
+                                                </a>
+                                            </div>
                                         </li>
                                         <li class="is-now">
-                                            <a href="javascript:;">
+                                            <div class="rsv-step">
                                                 <p class="rsv-title">02. 검진기관 및 검진항목</p>
-                                            </a>
+                                            </div>
                                         </li>
                                         <li>
-                                            <a href="javascript:;">
+                                            <div class="rsv-step">
                                                 <p class="rsv-title">03. 선택검사</p>
-                                            </a>
+                                            </div>
                                         </li>
-
                                         <li>
-                                            <a href="javascript:;">
+                                            <div class="rsv-step">
                                                 <p class="rsv-title">04. 추가검사</p>
-                                            </a>
+                                            </div>
                                         </li>
-
                                         <li>
-                                            <a href="javascript:;">
+                                            <div class="rsv-step">
                                                 <p class="rsv-title">05. 검진일자</p>
-                                            </a>
+                                            </div>
                                         </li>
-
                                         <li>
-                                            <a href="javascript:;">
+                                            <div class="rsv-step">
                                                 <p class="rsv-title">06. 검진자 정보 입력</p>
-                                            </a>
+                                            </div>
                                         </li>
-
                                         <li>
-                                            <a href="javascript:;">
+                                            <div class="rsv-step">
                                                 <p class="rsv-title">07. 최종 확인</p>
-                                            </a>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -275,12 +275,12 @@
                                                     <div class="co-title-field">
                                                         <div class="title-box">
                                                             <p class="title">한국의학연구소 강남 센터</p>
-                                                            <button type="button" class="ico-bg-type is-blue ico-type01 info01-02"></button>
+                                                            <button type="button" class="ico-bg-type is-blue info01"></button>
                                                         </div>
                                                         <div class="c-chkbox">
                                                             <!-- input id / label 매칭 필수 -->
                                                             <input type="checkbox" id="chk-individual-add01" />
-                                                            <label for="chk-individual-add01l" class="chk-label"><i></i><span>개인추가금 없음</span></label>
+                                                            <label for="chk-individual-add01" class="chk-label"><i></i><span>개인추가금 없음</span></label>
                                                         </div>
                                                     </div>
                                                     <ul class="institution-datail-list">
@@ -296,9 +296,8 @@
                                                                     </div>
                                                                     <div class="cont">
                                                                         <p>
-                                                                            기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트)
-                                                                            프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이
-                                                                            높아진 질병을 체크 ...
+                                                                            기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를
+                                                                            강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크 ...
                                                                         </p>
                                                                     </div>
                                                                     <div class="btm-box">
@@ -325,9 +324,8 @@
                                                                     </div>
                                                                     <div class="cont">
                                                                         <p>
-                                                                            기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트)
-                                                                            프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이
-                                                                            높아진 질병을 체크 ...
+                                                                            기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를
+                                                                            강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크 ...
                                                                         </p>
                                                                     </div>
                                                                     <div class="btm-box">
@@ -351,9 +349,8 @@
                                                                     </div>
                                                                     <div class="cont">
                                                                         <p>
-                                                                            기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트)
-                                                                            프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이
-                                                                            높아진 질병을 체크 ...
+                                                                            기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를
+                                                                            강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크 ...
                                                                         </p>
                                                                     </div>
                                                                     <div class="btm-box">
@@ -375,7 +372,7 @@
                                                     <div class="co-title-field">
                                                         <div class="title-box">
                                                             <p class="title">한국의학연구소 강남 센터2</p>
-                                                            <button type="button" class="ico-bg-type is-blue ico-type01 info01-02"></button>
+                                                            <button type="button" class="ico-bg-type is-blue info01"></button>
                                                         </div>
                                                         <!-- input id / label 매칭 필수 -->
                                                         <div class="c-chkbox">
@@ -396,9 +393,8 @@
                                                                     </div>
                                                                     <div class="cont">
                                                                         <p>
-                                                                            기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트)
-                                                                            프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이
-                                                                            높아진 질병을 체크 ...
+                                                                            기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를
+                                                                            강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크 ...
                                                                         </p>
                                                                     </div>
                                                                     <div class="btm-box">
@@ -425,9 +421,8 @@
                                                                     </div>
                                                                     <div class="cont">
                                                                         <p>
-                                                                            기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트)
-                                                                            프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이
-                                                                            높아진 질병을 체크 ...
+                                                                            기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를
+                                                                            강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크 ...
                                                                         </p>
                                                                     </div>
                                                                     <div class="btm-box">
@@ -451,9 +446,8 @@
                                                                     </div>
                                                                     <div class="cont">
                                                                         <p>
-                                                                            기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트)
-                                                                            프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이
-                                                                            높아진 질병을 체크 ...
+                                                                            기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를
+                                                                            강화했습니다. 기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크 ...
                                                                         </p>
                                                                     </div>
                                                                     <div class="btm-box">
@@ -499,7 +493,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="rsv-institution-card">
-                                                    <a href="javascript:;" role="button" data-name="center07">
+                                                    <a href="javascript:;" role="button" data-name="center06">
                                                         <div class="thumbnail">
                                                             <div class="img" style="background-image: url(../../images/center/institution_01.jpg)"></div>
                                                         </div>
@@ -575,62 +569,62 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="resevation-btmbar-wrap fixed">
-                                <div class="resevation-btm-bar-wrap fixed">
-                                    <div class="resevation-btm-bar type02">
-                                        <button type="button" class="btn-bar-toggle"><span class="is-blind">접기</span></button>
-                                        <div class="top-box">
-                                            <div class="compare-product">
-                                                <i class="ico-bg-type is-red favorite"></i>
-                                                <p>상품 비교하기 <span class="cnt">(2/3)</span></p>
-                                            </div>
-                                            <button type="button" class="btn-reset-product">
-                                                <span>상품 초기화</span>
-                                            </button>
+                            <div class="resevation-btmbar-wrap">
+                                <div class="resevation-btm-bar type02">
+                                    <button type="button" class="btn-bar-toggle"><span class="is-blind">접기</span></button>
+                                    <div class="top-box">
+                                        <div class="compare-product">
+                                            <i class="ico-bg-type is-red favorite"></i>
+                                            <p>상품 비교하기
+                                            <div class="cnt">(<span>2</span>/<span>3</span>)</div>
+                                            </p>
                                         </div>
-                                        <div class="btm-compare-list-field">
-                                            <ul class="btm-compare-list">
-                                                <li>
-                                                    <div class="compare-card is-has">
-                                                        <button class="btn-del-compare"><span class="ico-type01 t-i-close01-01">삭제</span></button>
-                                                        <p class="name">정밀종합검진 MRI형 종합검종합검종합검</p>
-                                                        <div class="price-info">
-                                                            <span>개인 추가금</span>
-                                                            <em>100,000</em>원
+                                        <button type="button" class="btn-reset-product">
+                                            <span>상품 초기화</span>
+                                        </button>
+                                    </div>
+                                    <div class="btm-compare-list-field">
+                                        <ul class="btm-compare-list">
+                                            <li>
+                                                <div class="compare-card is-has">
+                                                    <button class="btn-del-compare"><span class="ico-type01 t-i-close01-01">삭제</span></button>
+                                                    <p class="name">정밀종합검진 MRI형 종합검종합검종합검</p>
+                                                    <div class="price-info">
+                                                        <span>개인 추가금</span>
+                                                        <em>100,000</em>원
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="compare-card"></div>
+                                            </li>
+                                            <li>
+                                                <div class="compare-card"></div>
+                                            </li>
+                                            <li>
+                                                <div class="myhistory-card">
+                                                    <div class="label-input">
+                                                        <label class="c-label-txt" for="chkupMyHistory">나의 검진이력</label>
+                                                        <div class="c-select">
+                                                            <select id="chkupMyHistory">
+                                                                <option value="" selected="">선택</option>
+                                                                <option value="">option</option>
+                                                                <option value="">option</option>
+                                                                <option value="">option</option>
+                                                            </select>
                                                         </div>
                                                     </div>
-                                                </li>
-                                                <li>
-                                                    <div class="compare-card"></div>
-                                                </li>
-                                                <li>
-                                                    <div class="compare-card"></div>
-                                                </li>
-                                                <li>
-                                                    <div class="myhistory-card">
-                                                        <div class="label-input">
-                                                            <label class="c-label-txt" for="chkupMyHistory">나의 검진이력</label>
-                                                            <div class="c-select">
-                                                                <select id="chkupMyHistory">
-                                                                    <option value="" selected="">선택</option>
-                                                                    <option value="">option</option>
-                                                                    <option value="">option</option>
-                                                                    <option value="">option</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="buttons">
+                                        <div class="left">
+                                            <a href="javascript:;" class="co-btn btn-reservation-prev is-active"><span>이전</span></a>
                                         </div>
-                                        <div class="buttons">
-                                            <div class="left">
-                                                <a href="javascript:;" class="co-btn btn-reservation-prev is-has"><span>이전</span></a>
-                                            </div>
-                                            <div class="right">
-                                                <button type="button" class="co-btn is-outline-navy-1"><span>비교하기</span></button>
-                                                <a href="javascript:;" class="co-btn bg-navy-1 btn-reservation-next"><span>다음</span></a>
-                                            </div>
+                                        <div class="right">
+                                            <button type="button" class="co-btn is-outline-navy-1"><span>비교하기</span></button>
+                                            <a href="javascript:;" class="co-btn bg-navy-1 btn-reservation-next"><span>다음</span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -670,12 +664,17 @@
     <script src="../../lib/swiper/js/swiper.js"></script>
     <script src="../../js/common.js"></script>
 
-    <script defer>
+    <script>
         $(window).on('resize load', function() {
-            institutionContDetail();
+            rsvInstitutionCard();
+            reservationSideBarFloating();
         });
         checkupProduct();
         btmCompareBar();
+
+        $(window).on('load resize scroll', function() {
+            reservationBtmBarFixed();
+        });
     </script>
 </body>
 
