@@ -96,7 +96,7 @@
     th,
     td {
       &.checkbox {
-        width: 80px;
+        width: 38px;
       }
     }
   }
@@ -113,11 +113,13 @@
   // + tbl-chk
   .tbl-chk {
     margin: 0 auto;
-    .c-chkbox {
+    .c-chkbox,
+    .c-rdochk {
       display: block;
       text-align: center;
       width: 18px;
     }
+
     .chk-label {
       display: block;
     }

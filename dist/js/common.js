@@ -63,25 +63,27 @@ var mainContSideNav = function mainContSideNav() {
 }; // + rollingTxtBanner
 
 
+var $nowFirstRow = null,
+    rollingTxtList = null,
+    duration = 1000; // +  Auto Rolling
+
+var rollingAuto = setInterval(function () {
+  rollingTxtList = $('.rolling-banner > .list');
+  $nowFirstRow = rollingTxtList.children('li:first-child');
+
+  var listRow = function listRow() {
+    $nowFirstRow.appendTo(rollingTxtList).show(400);
+  };
+
+  $nowFirstRow.hide(1000, listRow);
+}, 2000); // + rolling banner txt
+
 var rollingTxtBanner = function rollingTxtBanner() {
   var $rollingPrevbtn = $('.rolling-banner').find('.prev-btn'),
-      $rollingNextbtn = $('.rolling-banner').find('.next-btn'),
-      duration = 1000;
-  var $nowFirstRow = null,
-      rollingTxtList = null; // Auto Rolling
-
-  var rollingAuto = setInterval(function () {
-    rollingTxtList = $('.rolling-banner > .list');
-    $nowFirstRow = rollingTxtList.children('li:first-child');
-
-    var listRow = function listRow() {
-      $nowFirstRow.appendTo(rollingTxtList).show(duration);
-    };
-
-    $nowFirstRow.hide(duration, listRow);
-  }, 2000); // Prev Btn
+      $rollingNextbtn = $('.rolling-banner').find('.next-btn'); // Prev Btn
 
   $rollingPrevbtn.on('click', function () {
+    clearInterval(rollingAuto);
     rollingTxtList = $('.rolling-banner > .list');
     $nowFirstRow = rollingTxtList.children('li:last-child');
 
@@ -93,6 +95,7 @@ var rollingTxtBanner = function rollingTxtBanner() {
   }); // Next Btn
 
   $rollingNextbtn.on('click', function () {
+    clearInterval(rollingAuto);
     rollingTxtList = $('.rolling-banner > .list');
     $nowFirstRow = rollingTxtList.children('li:first-child');
 

@@ -135,6 +135,19 @@
   }
 }
 
+.c-modal-body {
+  &.co-modal-scroll {
+    overflow-x: auto;
+    margin-bottom: 10px;
+
+    .c-modal-inner {
+      padding-bottom: 0;
+    }
+    .co-table-field {
+      overflow: initial;
+    }
+  }
+}
 // = type02
 .c-layer-popup {
   &.type02 {
