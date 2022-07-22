@@ -10,26 +10,26 @@
 button.co-btn,
 a.co-btn,
 .co-btn {
-  padding: 7px 20px;
+  padding: 6px 20px;
   min-width: 80px;
-  border-radius: $radius-8;
+  border-radius: 12px;
   text-align: center;
   color: $color-white-1;
   transition: opacity 0.3s;
   background-color: $color-navy-1;
   display: inline-block;
-  line-height: $p-lineheight-normal;
   vertical-align: top;
   cursor: pointer;
+  min-height: 44px;
+  @include coBodyBtn;
 
   > span {
     position: relative;
     text-align: center;
-    @include coTxtBasic;
   }
   + .co-btn {
     margin: {
-      left: $gap-12;
+      left: 16px;
     }
   }
 

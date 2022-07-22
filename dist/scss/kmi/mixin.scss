@@ -117,12 +117,12 @@
 // + basic
 @mixin inputText {
   border-radius: $input-border-radius;
-  padding: 7px 12px;
+  padding: 6px 12px;
   outline: 0;
   min-height: $input-text-height;
   font: {
     size: $fs-nomal;
-    weight: $weight-400;
+    weight: $weight-300;
     family: $font-name;
   }
 }
@@ -201,6 +201,36 @@
 
 // = Scroll
 
+$scrollbarWidth: 8px;
+$scrollbarHeight: 8px;
+$scrollbarColor: $color-gray-5;
+$scrollbarRadius: 12px;
+
+// + scrollDefault
+@mixin scrollStyle($bgColor, $barColor: $scrollbarColor) {
+  &::-webkit-scrollbar {
+    width: $scrollbarWidth;
+    height: $scrollbarHeight;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $bgColor;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $bgColor;
+    border-radius: 3px;
+    transition: background-color 1s;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: $barColor;
+    }
+
+    transition: background-color 1s;
+  }
+}
+
 @mixin ieScroll {
   scrollbar-arrow-color: $color-gray-5;
   scrollbar-track-color: $color-white-1;
@@ -210,10 +240,11 @@
   scrollbar-shadow-color: $color-gray-5;
 }
 
+// + scrollType01
 @mixin scrollType01 {
   &::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
+    height: $scrollbarHeight;
+    width: $scrollbarWidth;
     background-color: $color-white-1;
   }
 
@@ -229,81 +260,39 @@
   &::-webkit-scrollbar-corner {
     background-color: $color-gray-5;
   }
-  @include ieScroll;
+  // @include ieScroll;
+  &:hover {
+  }
 }
 
-// Terms Scroll
+// + scrollType02
+/*
+	terms scroll
+*/
+
 @mixin scrollType02 {
-  &::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
-    background-color: transparent;
+  &:hover {
+    //@include isScrollHover;
   }
-
-  ::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: $color-gray-5;
-    border-radius: 50px;
-    background-clip: padding-box;
-  }
-
-  &::-webkit-scrollbar-corner {
-    background-color: $color-gray-5;
-  }
-  @include ieScroll;
 }
+
+// + scrollType03
 
 @mixin scrollType03 {
-  &::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
-    background-color: $color-white-3;
+  &:hover {
+    //@include isScrollHover;
   }
-
-  ::-webkit-scrollbar-track {
-    background-color: $color-white-3;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: $color-gray-5;
-    border-radius: 50px;
-    background-clip: padding-box;
-  }
-
-  &::-webkit-scrollbar-corner {
-    background-color: $color-gray-5;
-  }
-
-  @include ieScroll;
 }
-
 // coTermsScroll01
 @mixin coTermsScroll01 {
-  &::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
-    background-color: transparent;
+  &:hover {
+    //    @include isScrollHover;
   }
-
-  ::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: $color-gray-5;
-    border-radius: 50px;
-    background-clip: padding-box;
-  }
-
-  &::-webkit-scrollbar-corner {
-    background-color: $color-gray-5;
-  }
-  @include ieScroll;
 }
 
 @mixin fontStyle($font-size, $line-height, $font-weight) {
   $calc-line-height: calc($line-height / $font-size);
-  @if ($font-weight == 400) {
+  @if ($font-weight == 300) {
     font: {
       size: $font-size;
     }
@@ -323,7 +312,7 @@
 
 // = font Style
 @mixin fontStyleSmall01 {
-  @include fontStyle(12px, 20px, 400);
+  @include fontStyle(12px, 24px, 300);
   color: $color-gray-3;
 }
 
@@ -340,11 +329,23 @@
 }
 
 @mixin coTxtSmall01 {
-  @include fontStyle(12px, 20px, 400);
+  @include fontStyle(12px, 20px, 300);
 }
 
-@mixin coTxtBasic {
-  @include fontStyle(14px, 30px, 400);
+@mixin coBodyTxt {
+  @include fontStyle(14px, 30px, 300);
+}
+
+@mixin coTxtCaption {
+  @include fontStyle(12px, 24px, 400);
+}
+
+@mixin coBodyBtn {
+  @include fontStyle(14px, 30px, 500);
+}
+
+@mixin coBodyTxt {
+  @include fontStyle(14px, 30px, 300);
 }
 
 // = Card List

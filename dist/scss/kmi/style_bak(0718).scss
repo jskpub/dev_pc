@@ -65,7 +65,7 @@
     dd {
       font: {
         size: $fs-small;
-        weight: $weight-300;
+        weight: $weight-400;
       }
       display: table-cell;
       font-size: $fs-small;
@@ -282,7 +282,7 @@
       line-height: 1.9;
       color: $color-blue-1;
       font: {
-        weight: 400;
+        weight: 500;
         size: $p-fs-large-2;
       }
     }
@@ -383,7 +383,7 @@
         > p {
           font: {
             size: 28px;
-            weight: $weight-400;
+            weight: $weight-500;
           }
           line-height: 41px;
         }
@@ -442,7 +442,7 @@
       line-height: 23px;
       font: {
         size: 16px;
-        weight: $weight-400;
+        weight: $weight-500;
       }
     }
   }
@@ -492,7 +492,7 @@
     .day {
       font: {
         size: $p-fs-large-2;
-        weight: $weight-400;
+        weight: $weight-500;
       }
       line-height: 29px;
     }
@@ -806,7 +806,7 @@
       text-align: left;
       font: {
         size: $p-fs-large-1;
-        weight: $weight-400;
+        weight: $weight-500;
       }
       line-height: 58px;
     }
@@ -839,6 +839,30 @@
           right: $gap;
         }
       }
+
+      &.search-btn-group {
+        &.row {
+          width: auto;
+        }
+        $gap: 8px;
+        margin: {
+          left: -$gap;
+          right: -$gap;
+        }
+
+        .col {
+          padding: {
+            left: $gap;
+            right: $gap;
+          }
+        }
+        .input-button {
+          flex: 0 0 80px;
+          button {
+            width: 80px;
+          }
+        }
+      }
     }
 
     .login-input {
@@ -856,76 +880,6 @@
 
       .row {
         width: 100%;
-      }
-
-      .search-btn-group {
-        position: relative;
-        &.row {
-          width: auto;
-        }
-        $gap: 8px;
-        margin: {
-          left: 0;
-          right: 0;
-        }
-
-        .col {
-          padding: {
-            left: $gap;
-            right: $gap;
-          }
-        }
-        .input-button {
-          flex: 0 0 80px;
-          button {
-            width: 80px;
-          }
-        }
-        .c-input-search {
-          input[type='text'] {
-            width: 100%;
-            flex: 1;
-          }
-        }
-        & ~ input[type='text'],
-        & ~ input[type='password'] {
-          margin-top: 12px;
-        }
-      }
-
-      .search-related-field {
-        position: absolute;
-        top: 48px;
-        left: 0;
-        right: 0;
-        z-index: 10;
-        .search-list {
-          background-color: $color-white-1;
-          border-radius: 8px;
-          border: 1px solid $color-gray-5;
-          overflow: hidden;
-          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-          min-width: 100%;
-          padding: {
-            top: 4px;
-            bottom: 4px;
-          }
-
-          > li {
-            & ~ li {
-              border-top: 1px solid $color-gray-5;
-            }
-            a {
-              padding: 7px 20px;
-              display: block;
-              color: $color-gray-1;
-              @include coBodyTxt;
-              &:hover {
-                color: $color-navy-1;
-              }
-            }
-          }
-        }
       }
     }
 
@@ -1006,8 +960,11 @@
     }
 
     > li {
-      color: $color-gray-3;
-      @include coTxtCaption;
+      color: $color-gray-2;
+      font : {
+        size: $fs-small;
+      }
+      line-height: 1.6;
       float: left;
       position: relative;
       & ~ li {
@@ -1067,8 +1024,12 @@
     .slogan {
       padding-left: 20px;
       p {
-        @include coMainTitle;
+        font: {
+          size: $p-fs-large-2;
+          weight: $weight-700;
+        }
         color: $color-gray-1;
+        line-height: 35px;
       }
     }
   }
@@ -1112,7 +1073,7 @@
           @include fontStyle(32px, 46px, 300);
           font: {
             size: 1.667vw;
-            weight: 300;
+            weight: 400;
           }
           line-height: 1.437;
         }
@@ -1227,6 +1188,18 @@
     padding: 22px 40px;
     border-bottom: 1px solid $color-gray-5;
     background-color: $color-white-3;
+
+    .slogan {
+      padding-left: 20px;
+      p {
+        font: {
+          size: $p-fs-large-2;
+          weight: $weight-700;
+        }
+        color: $color-gray-1;
+        line-height: 35px;
+      }
+    }
   }
 }
 
@@ -1275,9 +1248,6 @@
     }
     .c-input-list-basic {
       margin-top: 40px;
-    }
-    .c-input-list-view {
-      margin-top: 20px;
     }
   }
 
@@ -1328,7 +1298,7 @@
     display: flex;
     align-items: center;
     .name {
-      @include coMainTitle;
+      @include fontStyle(20px, 36px, 400);
       color: $color-black-1;
     }
     .reg-number {
@@ -1406,6 +1376,49 @@
   }
 }
 .contents-area.main-contents-area {
+  // + rolling banner
+  .rolling-banner {
+    border: 1px solid $color-gray-5;
+    border-radius: 12px;
+    position: relative;
+    padding: 2px 20px;
+    .list {
+      position: relative;
+      height: 30px;
+      overflow: hidden;
+      padding-right: 64px;
+      > li {
+        @include ellipsisLine01;
+        display: flex;
+        align-items: center;
+        height: 30px;
+
+        .co-badge {
+          color: $color-navy-1;
+          margin-right: 20px;
+        }
+      }
+    }
+
+    .rolling-btn-group {
+      position: absolute;
+      top: 8px;
+      right: 20px;
+
+      .buttons {
+        &:after {
+          @include after;
+        }
+      }
+      button {
+        float: left;
+        & + button {
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+
   // none-data
   .co-list-field {
     &.main-notice {
@@ -1439,52 +1452,6 @@
     // .main-notice-list {
     //   display: none;
     // }
-  }
-}
-
-// = rolling Banner
-
-// + rolling banner
-.rolling-banner {
-  border: 1px solid $color-gray-5;
-  border-radius: 12px;
-  position: relative;
-  padding: 2px 20px;
-  .list {
-    position: relative;
-    height: 30px;
-    overflow: hidden;
-    padding-right: 64px;
-    color: $color-gray-1;
-    > li {
-      @include ellipsisLine01;
-      display: flex;
-      align-items: center;
-      height: 30px;
-
-      .co-badge {
-        color: $color-navy-1;
-        margin-right: 20px;
-      }
-    }
-  }
-
-  .rolling-btn-group {
-    position: absolute;
-    top: 8px;
-    right: 20px;
-
-    .buttons {
-      &:after {
-        @include after;
-      }
-    }
-    button {
-      float: left;
-      & + button {
-        margin-left: 4px;
-      }
-    }
   }
 }
 
@@ -2801,7 +2768,7 @@
     top: 20px;
     bottom: 20px;
   }
-  padding: 40px 20px 40px 40px;
+  padding: 40px 12px 40px 60px;
   border-radius: 12px;
   background-color: $color-white-2;
 
@@ -2817,8 +2784,8 @@
     .title {
       @include coMainTitle;
     }
-    .co-link {
-      margin-left: 12px;
+    .info01 {
+      margin-left: 8px;
     }
   }
 
@@ -2828,18 +2795,16 @@
 }
 
 .institution-datail-list {
+  height: 700px;
+  padding-right: 40px;
+  overflow-x: hidden;
+  overflow-y: scroll;
   @include scrollType03;
   > li {
     & + li {
       margin-top: 20px;
     }
   }
-}
-.institution-datail-list-article {
-  height: 700px;
-  padding-right: 20px;
-  overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 .institution-detail-card {
@@ -2855,11 +2820,6 @@
     box-shadow: 0 0 0 2px $color-blue-1;
 
     border-color: $color-white-1;
-    .top-box {
-      > em {
-        color: $color-blue-1;
-      }
-    }
   }
 
   .top-box {
@@ -2867,9 +2827,6 @@
     justify-content: space-between;
     align-items: center;
 
-    > em {
-      @include coSubTitle;
-    }
     .title {
       @include coSubTitle;
       color: $color-gray-1;
@@ -2886,7 +2843,7 @@
           color: $color-gray-3;
         }
         & ~ a {
-          margin-left: 32px;
+          margin-left: 20px;
         }
       }
       .is-red {
@@ -2928,29 +2885,6 @@
       margin: 7px 0 0 4px;
       @include coSubTitle;
       color: $color-blue-1;
-    }
-  }
-
-  .special-examination {
-    margin-bottom: 8px;
-    > span {
-      display: inline-block;
-      padding: 0 8px 0 22px;
-      background-color: $color-navy-1;
-      color: $color-yellow-1;
-      @include coTxtCaption;
-      position: relative;
-      border-radius: 8px;
-      &:before {
-        content: '';
-        position: absolute;
-        left: 4px;
-        top: 4px;
-        background: url($image-ico-path + 'ico_special_01.svg') center/18px no-repeat;
-        width: 18px;
-        height: 18px;
-        display: inline-block;
-      }
     }
   }
 }
@@ -3055,19 +2989,12 @@
     .col {
       border: 2px solid $color-white-1;
       width: 50%;
-      display: flex;
-      flex-direction: column;
       padding: {
         left: 20px;
         right: 20px;
       }
       flex: 0 0 50%;
       max-width: 50%;
-      > a {
-        display: flex;
-        flex: 1;
-        height: 100%;
-      }
     }
   }
 
@@ -3075,11 +3002,9 @@
     margin-top: 4px;
     display: flex;
     align-items: flex-start;
-    @include coBodyTxt;
 
     span {
-      @include coTxtCaption;
-      line-height: 30px;
+      @include fontStyle(12px, 30px, 300);
       color: $color-blue-1;
       padding-right: 4px;
       flex: 0 0 auto;
@@ -3110,23 +3035,6 @@
 
     .doctor-info {
       padding-left: 20px;
-      @include coBodyTxt;
-      @include ellipsisLine01;
-
-      .ctg-info {
-        display: block;
-      }
-      .title {
-        display: block;
-        @include coTxtCaption;
-        color: $color-blue-1;
-      }
-
-      .cont {
-        margin-top: 4px;
-        @include coBodyTxt;
-        @include ellipsisLine01;
-      }
     }
   }
 
@@ -3245,17 +3153,6 @@
       td {
         padding: 10px;
       }
-    }
-  }
-}
-
-/* VGT-01-004 */
-.chkup-deliver-field {
-  .c-input-list-view {
-    margin-top: 20px;
-
-    & ~ .c-input-list-basic {
-      margin-top: 32px;
     }
   }
 }
@@ -3673,7 +3570,6 @@
 
   .ref-txt {
     color: $color-gray-3;
-    @include coTxtCaption;
   }
   .client-card {
     display: flex;
@@ -3778,11 +3674,7 @@
 }
 
 // [RV]
-.select-target-wrap {
-  .rolling-banner {
-    margin-bottom: 20px;
-  }
-}
+
 .rsv-institution-list-wrap {
   padding-top: 20px;
   .list-field {
@@ -3892,74 +3784,58 @@
 .co-table-field {
   overflow-y: hidden;
   overflow-x: auto;
-}
-
-.tbl-detail-chkctg-compare {
-  @include scrollType01;
-
-  @include fontStyle(14px, 24px, 300);
-
-  table {
-    border-radius: 12px;
-
-    thead {
-      border-bottom: 1px solid $color-gray-5;
-      th:last-child {
-        border-right: 1px solid $color-gray-5;
-      }
-      .title-sub {
-        font-weight: 300;
-        @include ellipsisLine01;
-      }
+  &.tbl-detail-chkctg-compare {
+    .co-table {
+      display: table;
+      overflow: hidden;
     }
-    tbody {
-      tr {
-        &:last-child {
-          td {
-            &:last-child {
-              border-bottom-right-radius: 12px;
+    @include scrollType01;
+    padding-bottom: 10px;
+
+    @include fontStyle(14px, 24px, 300);
+
+    table {
+      border-radius: 12px;
+
+      thead {
+        border-bottom: 1px solid $color-gray-5;
+        th:last-child {
+          border-right: 1px solid $color-gray-5;
+        }
+      }
+      tbody {
+        tr {
+          &:last-child {
+            td {
+              &:last-child {
+                border-bottom-right-radius: 12px;
+              }
             }
           }
         }
-      }
-      .tbl-in-cont {
-        padding: 4px;
-      }
-    }
-
-    th,
-    td {
-      padding: 8px;
-    }
-  }
-  .peronal-add-price {
-    @include ellipsisLine01;
-    font-weight: 300;
-    .price {
-      padding-left: 8px;
-      display: inline;
-      color: $color-gray-3-op4;
-
-      em {
-        padding: {
-          left: 8px;
+        .tbl-in-cont {
+          padding: 4px;
         }
-        color: $color-black-op8;
+      }
+
+      th,
+      td {
+        padding: 8px;
       }
     }
-  }
-}
+    .peronal-add-price {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .price {
+        margin-left: 8px;
+        color: $color-black-op4;
 
-.co-table {
-  &.tbl-chkup-detail-compare {
-    thead {
-      th {
-        &:last-child {
-          border-right: 1px solid $table-border-color;
+        em {
+          color: $color-black-op8;
         }
       }
     }
-    border-right: 0;
   }
 }
 
@@ -4321,162 +4197,44 @@
 // + rsv-final-confirm-wrap
 
 // = reservation-detail
-.final-confirm-wrap {
-  .left-wrap,
-  .right-wrap {
-    .co-sub-title-01 {
-      color: $color-gray-1;
-    }
-  }
+.co-per-scroll-layout {
+  &.final-confirm-wrap {
+    .left-wrap,
+    .right-wrap {
+      height: calc(100vh - 330px);
 
-  .right-wrap {
-    width: 428px;
-    max-width: 428px;
-    .c-inner {
-      padding-top: 32px;
-    }
-  }
-
-  > {
-    .row {
-      $gap: 20px;
-      margin: {
-        left: -$gap;
-        right: -$gap;
+      .co-sub-title-01 {
+        color: $color-gray-1;
       }
     }
-  }
 
-  .info-txt {
-    margin-bottom: 40px;
+    .right-wrap {
+      width: 428px;
+      max-width: 428px;
+      .c-inner {
+        padding-top: 32px;
+      }
+    }
+
+    > {
+      .row {
+        $gap: 20px;
+        margin: {
+          left: -$gap;
+          right: -$gap;
+        }
+      }
+    }
+
+    .info-txt {
+      margin-bottom: 40px;
+    }
   }
 }
 
 .c-input-view {
   &.type01 {
     padding: 32px;
-  }
-}
-
-.final-confirm-article {
-  .title-field {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .title {
-    @include coSubTitle;
-    color: $color-black-1;
-  }
-  > .row {
-    $gap: 20px;
-    margin: {
-      left: -$gap;
-      right: -$gap;
-    }
-    padding-bottom: 40px;
-    > .column {
-      padding: {
-        left: $gap;
-        right: $gap;
-      }
-      &.left {
-        flex: 1 1 auto;
-        max-width: calc(100% - 428px);
-      }
-      &.right {
-        width: 428px;
-      }
-    }
-  }
-
-  .final-confirm-row {
-    .input-type {
-      &.view01 {
-        > label {
-          min-width: 82px;
-        }
-      }
-    }
-
-    .in-input-row {
-      & ~ .in-input-row {
-        margin-top: 12px;
-      }
-    }
-  }
-  & ~ .final-confirm-article {
-    padding-top: 40px;
-    border-top: 1px solid $color-black-op1;
-  }
-
-  // + type01
-  .title-field {
-    margin-bottom: 16px;
-  }
-
-  // + type02 (2column)
-  &.type02 {
-    .right {
-      margin-top: 42px;
-    }
-  }
-
-  // + chkup-type-row
-  .chkup-type-row {
-    display: flex;
-    flex: 1 1 auto;
-    .label-col {
-      width: 86px;
-      flex: 0 0 80px;
-    }
-    .chkup-exp-column {
-      flex: 1;
-    }
-
-    & ~ .chkup-type-row {
-      margin-top: 58px;
-    }
-  }
-
-  .c-input-unit {
-    input[type='text'] {
-      padding: {
-        left: 20px;
-        right: 20px;
-      }
-    }
-    .unit {
-      right: 20px;
-    }
-  }
-  .c-input-unit-field {
-    .c-input-unit {
-      input[type='text'] {
-        padding: {
-          left: 0;
-          right: 0;
-        }
-      }
-
-      .unit {
-        right: 0;
-      }
-    }
-    &.type02 {
-      background-color: $color-white-3;
-      input[type='text'] {
-        background-color: $color-white-3;
-      }
-    }
-  }
-  // + choice-chkup
-  &.choice-chkup {
-    > .final-confirm-row {
-      &:not(:last-child) {
-        padding-bottom: 12px;
-      }
-    }
   }
 }
 
@@ -4528,6 +4286,41 @@
   }
 }
 
+.surcharges-sum-wrap {
+  padding: 40px 4px;
+
+  .in-input-row {
+    & ~ .in-input-row {
+      margin-top: 12px;
+    }
+  }
+
+  .c-input-unit {
+    input[type='text'] {
+      padding: {
+        left: 20px;
+        right: 20px;
+      }
+    }
+    .unit {
+      right: 20px;
+    }
+  }
+  .c-input-unit-field {
+    .c-input-unit {
+      input[type='text'] {
+        padding: {
+          left: 0;
+          right: 0;
+        }
+      }
+      .unit {
+        right: 0;
+      }
+    }
+  }
+}
+
 .surcharges-before-chklist {
   > li {
     ~ li {
@@ -4537,6 +4330,23 @@
 }
 
 /* RV-02-001 */
+.co-table {
+  &.tbl-rsv-details {
+    table {
+      thead {
+        tr {
+          padding: {
+            left: 20px;
+            right: 20px;
+          }
+        }
+        th {
+          padding: 16px 0;
+        }
+      }
+    }
+  }
+}
 .status-badge {
   @include fontStyle(12px, 24px, 400);
   padding: 0 12px;
@@ -4606,7 +4416,7 @@
   .rsv-details-info {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     @media screen and (max-width: 1600px) {
       display: block;
     }
@@ -4694,9 +4504,9 @@
   .title-field {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 12px;
     .title {
-      @include coTxtCaption;
+      @include coBodyTxt;
+      color: $color-gray-2;
     }
 
     & + .healthexam-item-card {
@@ -4735,54 +4545,6 @@
   }
 }
 
-/* RV-01-016-1 */
-.total-surcharges-wrap {
-  .total-surcharges-list {
-    > li {
-      margin-bottom: 12px;
-    }
-  }
-
-  .price-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .name {
-      @include coTxtCaption;
-      color: $color-gray-2;
-    }
-
-    .price {
-      display: flex;
-      align-items: center;
-
-      em {
-        color: $color-gray-1;
-        padding-right: 4px;
-        @include coSubTitle;
-      }
-      @include coBodyTxt;
-      color: $color-gray-3;
-    }
-  }
-
-  .btm-total-price {
-    padding-top: 12px;
-    border-top: 2px solid $color-gray-3;
-    .name {
-      @include coBodyBtn;
-    }
-    .price {
-      @include coSubTitle;
-      > em {
-        color: $color-blue-1;
-        @include coSubTitle;
-      }
-    }
-  }
-}
-
 // = healthexam-item-card
 .healthexam-item-card {
   @include coBodyTxt;
@@ -4810,7 +4572,6 @@
 
     .chk-label {
       > span {
-        padding-left: 8px;
         @include coSubTitle;
       }
     }
@@ -4828,11 +4589,23 @@
   }
 
   .chkup-info-detail {
-    margin: {
-      top: 2px;
-      left: 4px;
-    }
+    margin-top: 2px;
     font-size: 0;
+  }
+
+  .per-surcharges {
+    color: $color-gray-3;
+    display: flex;
+    align-items: center;
+
+    > em {
+      @include coSubTitle;
+      color: $color-gray-1;
+      padding: {
+        left: 12px;
+        right: 4px;
+      }
+    }
   }
 
   .date-box,
@@ -4842,10 +4615,10 @@
     justify-content: flex-end;
   }
   .date-confirm {
-    color: $color-gray-3;
+    color: $color-gray-2;
     .date {
       @include coSubTitle;
-      color: $color-gray-2;
+      color: $color-black-op8;
       padding: {
         left: 12px;
         right: 4px;
@@ -4876,50 +4649,6 @@
         @include fontStyle(14px, 30px, 400);
         color: $color-blue-1;
         margin-right: 4px;
-      }
-    }
-
-    .select-list {
-      padding-left: 16px;
-      ul {
-        display: flex;
-        align-items: center;
-        > li {
-          @include coBodyTxt;
-          & ~ li {
-            position: relative;
-            padding-left: 22px;
-            &:before {
-              position: absolute;
-              left: 11px;
-              content: '/';
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .btn-accrodion {
-    .right {
-      .inner {
-        justify-content: flex-end;
-      }
-    }
-  }
-
-  .per-surcharges {
-    color: $color-gray-3;
-    display: flex;
-    align-items: center;
-    @include coBodyTxt;
-
-    > em {
-      @include coSubTitle;
-      color: $color-gray-1;
-      padding: {
-        left: 12px;
-        right: 4px;
       }
     }
   }
@@ -4992,163 +4721,6 @@
       & ~ .type-sub {
         padding-top: 4px;
       }
-    }
-  }
-}
-
-/*
-LO_01_005
-*/
-.personal-default-info {
-  .c-input-list-view {
-    .input-type.view01 {
-      label {
-        flex-basis: 80px;
-      }
-    }
-  }
-}
-
-.chkup-apply-criteria-cont {
-}
-
-.depth-order-list {
-  &.type01 {
-    > li {
-      & ~ li {
-        margin-top: 32px;
-      }
-    }
-
-    ol {
-      margin-top: 4px;
-    }
-    .in-depth {
-      padding-left: 16px;
-    }
-
-    .depth01 {
-      > li {
-        & ~ li {
-          margin-top: 12px;
-        }
-      }
-    }
-  }
-}
-
-// = Scroll Customizing
-
-//+ c-layer-popup
-.c-layer-popup {
-  .scrollbar-track {
-    background-color: $color-white-1;
-  }
-  .scrollbar-thumb {
-    background-color: $scrollbarColor;
-    border-radius: $scrollbarRadius;
-  }
-}
-
-//+ terms-scroll
-.terms-scroll {
-  .scrollbar-track {
-    background-color: $color-white-2;
-  }
-  .scrollbar-thumb {
-    background-color: $scrollbarColor;
-    border-radius: $scrollbarRadius;
-  }
-}
-
-//+ table-scroll
-.co-horizontal-scroll {
-  .scrollbar-track {
-    background-color: $color-white-2;
-  }
-  .scrollbar-thumb {
-    background-color: $scrollbarColor;
-    border-radius: $scrollbarRadius;
-  }
-}
-
-// + sidebar Scroll
-#sideNav {
-  .sidebar-wrap {
-    .scrollbar-track {
-      background-color: $color-navy-1;
-    }
-    .scrollbar-thumb {
-      background-color: #64709c;
-      border-radius: $scrollbarRadius;
-    }
-  }
-}
-
-// + checkup-sidebar
-.checkup-sidebar {
-  .inner-wrap {
-    .scrollbar-track {
-      background-color: $color-white-3;
-    }
-    .scrollbar-thumb {
-      background-color: $scrollbarColor;
-      border-radius: $scrollbarRadius;
-    }
-  }
-}
-// + checkup-sidebar
-.institution-datail-list-article {
-  .scrollbar-track {
-    background-color: $color-white-2;
-  }
-  .scrollbar-thumb {
-    background-color: $color-gray-4;
-    border-radius: $scrollbarRadius;
-  }
-}
-
-.certify-info-cont {
-  .title {
-    @include coTxtCaption;
-    color: $color-black-1;
-  }
-  .info-cont-box {
-    @include coTxtCaption;
-    .co-list-card {
-      > li {
-        @include coTxtCaption;
-        color: $color-gray-2;
-      }
-    }
-  }
-}
-
-.chkup-exp-list {
-  $gap: 6px;
-  display: flex;
-  flex-wrap: wrap;
-  margin: -$gap;
-
-  li {
-    padding: $gap;
-  }
-}
-.btn-chkup-exp-detail {
-  padding: 2px 8px;
-  background-color: $color-gray-5;
-  border-radius: 8px;
-  transition: all 0.4s;
-
-  > span {
-    color: $color-gray-2;
-    @include coTxtCaption;
-  }
-
-  &:hover {
-    background-color: $color-gray-8;
-    > span {
-      color: $color-navy-1;
     }
   }
 }

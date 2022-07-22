@@ -51,7 +51,7 @@
 .modal-wrap {
   display: flex;
   align-items: center;
-  max-height: calc(100% - 200px);
+  max-height: calc(100% - 80px);
   flex-direction: column;
   justify-content: center;
   height: 100%;
@@ -79,62 +79,6 @@
   transition: all 0.3s ease-out;
   max-height: none;
 }
-
-// = type01
-.c-layer-popup {
-  &.type01 {
-    .modal-field {
-      width: 360px;
-    }
-
-    .c-modal-body {
-      margin: {
-        top: 32px;
-        bottom: 0;
-      }
-      text-align: center;
-
-      .c-modal-inner {
-        padding-bottom: 0;
-      }
-
-      .in-cont {
-        @include coTxtBasic;
-        > p {
-          & ~ p {
-            margin-top: 12px;
-          }
-        }
-      }
-    }
-    .c-modal-footer {
-      .inner {
-        border-top: none;
-        justify-content: center;
-      }
-
-      .buttons {
-        $gap: 6px;
-        margin: {
-          left: -$gap;
-          right: -$gap;
-        }
-
-        justify-content: center;
-        width: 100%;
-
-        > button {
-          width: 100%;
-          padding: {
-            left: $gap;
-            right: $gap;
-          }
-        }
-      }
-    }
-  }
-}
-
 .c-modal-body {
   &.co-modal-scroll {
     overflow-x: auto;
@@ -145,36 +89,6 @@
     }
     .co-table-field {
       overflow: initial;
-    }
-  }
-}
-// = type02
-.c-layer-popup {
-  &.type02 {
-    .modal-field {
-      width: 480px;
-    }
-
-    .c-modal-inner {
-      padding-bottom: 20px;
-    }
-  }
-}
-
-// = type03
-.c-layer-popup {
-  &.type03 {
-    .modal-field {
-      width: 720px;
-    }
-  }
-}
-
-// = type04
-.c-layer-popup {
-  &.type04 {
-    .modal-field {
-      width: 1180px;
     }
   }
 }
@@ -220,23 +134,23 @@
 
 //  = modal-body
 .c-modal-body {
-  margin: 0 32px 0 40px;
+  margin: 0 40px;
+
   position: relative;
-  // flex: 1;
   overflow-x: hidden;
   overflow-y: auto;
-  @include scrollType02;
+
+  @include scrollStyle($color-white-1);
+
   .cont-box {
+    color: $color-gray-2;
     .title {
       @include coSubTitle;
       color: $color-black-1;
-
-      & + .cont {
-        margin-top: $gap-8;
-      }
     }
     .cont {
       color: $color-gray-2;
+      @include coBodyTxt;
     }
 
     & + .co-table-field {
@@ -245,10 +159,7 @@
   }
 
   .c-modal-inner {
-    padding: {
-      right: 5px;
-      bottom: 40px;
-    }
+    padding-bottom: 20px;
   }
 }
 // = modal-footer
@@ -270,7 +181,6 @@
     .co-btn {
       width: auto;
       min-width: 80px;
-      padding: 8px 20px;
       border-radius: $radius-12;
     }
   }
@@ -289,3 +199,136 @@
 }
 
 // = modal input
+
+// = type01
+.c-layer-popup {
+  &.type01 {
+    .modal-field {
+      width: 360px;
+    }
+
+    .c-modal-body {
+      margin: {
+        top: 32px;
+        bottom: 0;
+      }
+
+      text-align: center;
+
+      .c-modal-inner {
+        padding-bottom: 0;
+      }
+
+      .in-cont {
+        @include coBodyTxt;
+        > p {
+          & ~ p {
+            margin-top: 12px;
+          }
+        }
+      }
+    }
+    .c-modal-footer {
+      .inner {
+        border-top: none;
+        justify-content: center;
+      }
+
+      .buttons {
+        $gap: 6px;
+        margin: {
+          left: -$gap;
+          right: -$gap;
+        }
+
+        justify-content: center;
+        width: 100%;
+
+        > button {
+          width: 100%;
+          padding: {
+            left: $gap;
+            right: $gap;
+          }
+        }
+      }
+    }
+  }
+}
+
+// = type02
+.c-layer-popup {
+  &.type02 {
+    .modal-field {
+      width: 480px;
+    }
+
+    .c-modal-inner {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+// = type03
+.c-layer-popup {
+  &.type03 {
+    .c-modal-inner {
+      padding: {
+        left: 20px;
+        right: 20px;
+      }
+    }
+    .modal-field {
+      width: 720px;
+    }
+  }
+}
+
+// = type04
+.c-layer-popup {
+  &.type04 {
+    .c-modal-inner {
+      padding: {
+        left: 20px;
+        right: 20px;
+      }
+    }
+    .modal-field {
+      width: 1180px;
+    }
+  }
+}
+
+// = type05 (full)
+.c-layer-popup {
+  &.type05 {
+    .c-modal-inner {
+      padding: {
+        left: 20px;
+        right: 20px;
+      }
+    }
+    .modal-wrap {
+      padding: 0 40px;
+      width: 100%;
+    }
+    .modal-field {
+      width: 100%;
+    }
+  }
+}
+
+// = surcharge (추가금 별도 type)
+.c-layer-popup {
+  &.surcharges {
+    .modal-field {
+      width: 480px;
+    }
+    .c-modal-body {
+      padding: {
+        left: 20px;
+        right: 20px;
+      }
+    }
+  }
+}

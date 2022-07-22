@@ -1,5 +1,7 @@
 "use strict";
 
+var _this = void 0;
+
 /*
  = Common
 */
@@ -281,6 +283,15 @@ var rsvInstitutionCard = function rsvInstitutionCard() {
     rsvDetailView.find('.rsv-institution-datail-field').removeClass('on');
     rsvDetailView.find(".rsv-institution-datail-field[data-target=".concat(targetDataName, "]")).addClass('on');
   });
+}; // + 선택검사 체크박스 상태에 따른 스타일 init
+
+
+var checkupCtgInputChkInit = function checkupCtgInputChkInit() {
+  $('.healthexam-item-card .c-chkbox').find('input').each(function () {
+    if ($(this).is(':checked')) {
+      $(this).closest('.healthexam-item-card').closest('.healthexam-item-card').addClass('on');
+    }
+  });
 }; // +  선택검사 Input Check
 
 
@@ -349,6 +360,10 @@ var checkupInputCntControl = function checkupInputCntControl() {
 
 
 var ckupctgToggleAccordion = function ckupctgToggleAccordion() {
+  if ($('.chkup-ctg-accordion').hasClass('on')) {
+    $(_this).find('.accrodion-panel').show();
+  }
+
   $('.medical-chkup-list').on('click', '.btn-ckupctg-accordion', function (e) {
     e.preventDefault();
     var mcTarget = $(e.currentTarget),
@@ -398,7 +413,45 @@ var rsvContSideNav = function rsvContSideNav() {
   var mainContentsArea = $('.resevation-container').find('.reserve-contents-area').innerHeight(),
       mainContSideNav = $('.resevation-container').find('.reservation-sidebar');
   mainContSideNav.css('max-height', mainContentsArea);
-}; // = 함수 호출
+}; // = Scroll Customazing
+// + scrollbarCustom (individual)
+
+
+var scrollbarCustom = function scrollbarCustom() {
+  for (var i = 0; i < arguments.length; i++) {
+    window.Scrollbar.init(document.querySelector(i < 0 || arguments.length <= i ? undefined : arguments[i]));
+  }
+}; // + basicScrollbarCustom  (common)
+// - 팝업 내용 많을 경우 custom scrollbar 실행
+
+
+var basicScrollbarCustom = function basicScrollbarCustom() {
+  if ($('.c-layer-popup').hasClass('type03') || $('.c-layer-popup').hasClass('type04') || $('.c-layer-popup').hasClass('type05')) {
+    window.Scrollbar.init(document.querySelector('.c-modal-body'));
+  }
+
+  if ($('#sideNav').find('.sidebar-menu').length > 0) {
+    window.Scrollbar.init(document.querySelector('.sidebar-wrap'));
+  }
+
+  if ($('.checkup-sidebar').length > 0) {
+    window.Scrollbar.init(document.querySelector('.checkup-sidebar .inner-wrap'));
+  }
+
+  if ($('.reservation-sidebar').length > 0) {
+    window.Scrollbar.init(document.querySelector('.reservation-sidebar'));
+  }
+}; // + sidebarScrollbarCustom (terms)
+
+
+var termsSrollbarCustom = function termsSrollbarCustom() {
+  var temsScrollCnt = $('.terms-scroll').length;
+
+  for (var i = 0; i < temsScrollCnt; i++) {
+    $('.terms-scroll').eq(i).children('.inner').addClass("scroll-effect".concat(i));
+    window.Scrollbar.init(document.querySelector(".scroll-effect".concat(i)));
+  }
+}; // = Function()
 
 
 openUserControl();
@@ -406,5 +459,7 @@ goToTop();
 sideMenuToggle();
 btnOpenPopup();
 btnClosePopup();
+basicScrollbarCustom();
+termsSrollbarCustom();
 selectedTabList();
 //# sourceMappingURL=maps/common.js.map

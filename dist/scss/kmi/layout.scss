@@ -94,7 +94,7 @@ body {
         transform: translateY(-50%);
       }
 
-      @include fontStyle(16px, 32px, 500);
+      @include fontStyle(16px, 32px, 400);
 
       &:only-child {
         &:after {
@@ -234,7 +234,7 @@ body {
   }
 
   .slogan {
-    @include fontStyle(16px, 32px, 500);
+    @include coMainTitle;
     color: $color-gray-1;
   }
   .user-profile {
@@ -257,7 +257,7 @@ body {
     }
 
     .name {
-      @include fontStyle(16px, 32px, 500);
+      @include fontStyle(16px, 32px, 400);
       color: $color-white-op6;
       padding-left: 16px;
       > em {
@@ -303,7 +303,7 @@ body {
           display: block;
           padding: 11px 20px;
           color: $color-gray-1;
-          @include fontStyle(14px, 30px, 400);
+          @include fontStyle(14px, 30px, 300);
         }
       }
     }

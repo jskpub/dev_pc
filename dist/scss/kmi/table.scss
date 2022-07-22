@@ -30,15 +30,28 @@
       }
     }
 
+    thead {
+      th {
+        padding: 8px;
+        font-weight: 400;
+      }
+    }
+    tbody {
+      th,
+      td {
+        font-weight: 300;
+        padding: 12px;
+      }
+    }
+
     th,
     td {
-      border-collapse: collapse;
       font: {
         size: 14px;
-        weight: 400;
       }
+      line-height: 28px;
+      border-collapse: collapse;
       white-space: initial;
-      line-height: 30px;
       vertical-align: middle;
       white-space: initial;
 
@@ -50,6 +63,7 @@
 
       &.tbl-in-cont {
         font-size: 0;
+        line-height: 1;
       }
     }
 
@@ -59,7 +73,7 @@
         border-right: 1px solid $color-gray-5;
       }
       .co-link {
-        @include fontStyle(14px, 24px, 400);
+        @include fontStyle(14px, 24px, 300);
       }
     }
 
@@ -81,22 +95,11 @@
       }
     }
 
-    tbody {
-      th,
-      td {
-        @include fontStyle(14px, 24px, 400);
-      }
-
-      td {
-        border-right: 1px solid $color-gray-5;
-      }
-    }
-
     col,
     th,
     td {
       &.checkbox {
-        width: 38px;
+        width: 48px;
       }
     }
   }
@@ -111,8 +114,10 @@
   }
 
   // + tbl-chk
-  .tbl-chk {
+  th.tbl-chk,
+  td.tbl-chk {
     margin: 0 auto;
+
     .c-chkbox,
     .c-rdochk {
       display: block;
@@ -120,20 +125,25 @@
       width: 18px;
     }
 
+    .c-rdochk input[type='radio'] {
+      & + .chk-label {
+        i {
+          margin-left: 3px;
+        }
+      }
+    }
+
     .chk-label {
       display: block;
     }
   }
 
-  // =  pop-type02
-  &.pop-type02 {
-    border: 1px solid $color-gray-5;
+  // =  table-type02
+  &.table-type02 {
     overflow: hidden;
-    @include scrollType02;
 
     thead {
       th {
-        padding: 8px 20px;
         text-align: center;
         background-color: $color-gray-1;
         color: $color-white-1;
@@ -144,21 +154,10 @@
             margin-right: 0;
           }
         }
-
-        &:not(:last-child) {
-          border-right: 1px solid #454545;
-        }
       }
     }
 
     tbody {
-      th,
-      td {
-        color: $color-gray-1;
-        padding: 10px 20px;
-        @include fontStyle(14px, 24px, 400);
-      }
-
       td:last-child {
         border-right: 0;
       }
@@ -177,7 +176,7 @@
     .co-list-card {
       > li {
         color: $color-black-1;
-        @include coTxtBasic;
+        @include coBodyTxt;
       }
 
       &.circle01 {
@@ -268,15 +267,17 @@
 
   //  = cont-type04
   &.cont-type04 {
+    border-right: 0;
     table {
       thead {
         th {
           background-color: $color-gray-8;
+          font-weight: 500;
         }
       }
-      th,
       td {
-        padding: 8px 12px;
+        padding: 8px;
+        border-right: 1px solid $table-border-color;
       }
     }
   }
@@ -309,7 +310,7 @@
       table-layout: fixed;
       thead {
         th {
-          padding: 16px 20px;
+          padding: 8px;
         }
       }
       th {
@@ -327,7 +328,7 @@
         th,
         td {
           color: $color-gray-1;
-          padding: 20px;
+          padding: 12px;
         }
         th {
           text-align: center;
@@ -339,6 +340,9 @@
             color: $color-gray-3;
           }
         }
+      }
+      tr:not(:last-child) {
+        border-bottom: 0;
       }
     }
   }
@@ -384,7 +388,7 @@
   align-items: center;
   .page-info {
     font: {
-      weight: $weight-500;
+      weight: $weight-400;
       size: $fs-small;
     }
     color: $color-gray-4;
@@ -397,6 +401,10 @@
   &.type02 {
     justify-content: space-between;
     margin-top: 12px;
+  }
+
+  .co-ref-txt {
+    @include coTxtCaption;
   }
 }
 
@@ -469,7 +477,12 @@
 .co-horizontal-scroll {
   overflow-y: hidden;
   overflow-x: auto;
-  @include scrollType03;
+  @include scrollType01;
+
+  .co-table {
+    display: table;
+    overflow: hidden;
+  }
 
   table {
     table-layout: fixed;

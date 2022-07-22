@@ -33,7 +33,7 @@ a.co-link,
   display: inline-block;
   text-decoration: underline;
   color: $color-blue-1;
-  @include fontStyle(12px, 17px, 400);
+  @include fontStyle(12px, 17px, 300);
 }
 
 // = color
@@ -233,7 +233,7 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   padding: 2px 8px;
   border-radius: 8px;
   color: $color-white-1;
-  @include fontStyle(12px, 20px, 400);
+  @include fontStyle(12px, 20px, 300);
 
   &.type01 {
     color: $color-navy-1;
@@ -274,6 +274,22 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
     display: flex;
     align-items: center;
     justify-content: center;
+    > div {
+      display: block;
+      text-align: center;
+      position: relative;
+    }
+    img {
+      display: block;
+    }
+    .txt {
+      @include coSubTitle;
+      color: $color-gray-2;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
   }
 }
 
@@ -302,7 +318,7 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   &.circle01 {
     li {
       color: $color-gray-2;
-      @include fontStyle(12px, 20px, 400);
+      @include coTxtCaption;
       padding-left: 14px;
       &:before {
         top: 8px;
@@ -313,7 +329,7 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   // circle02
   &.circle02 {
     li {
-      @include fontStyle(14px, 30px, 400);
+      @include fontStyle(14px, 30px, 300);
       padding-left: 12px;
       &:before {
         top: 14px;
@@ -332,18 +348,18 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
       &:before {
         content: counter(list-cnt);
         position: absolute;
-        top: 9px;
+        top: 4px;
         left: 0;
         display: inline-block;
         text-align: center;
         line-height: 1;
-        font-size: 12px;
-        width: 13px;
-        height: 13px;
+        font-size: 9px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
         border: 1px solid $color-gray-2;
       }
-      @include coTxtBasic;
+      @include coBodyTxt;
     }
   }
 
@@ -371,7 +387,7 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
 
 // + list none
 .co-none-txt {
-  @include coSubTitle;
+  @include coBodyTxt;
   color: $color-gray-6;
   text-align: center;
 }
@@ -442,7 +458,7 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
         border-radius: 8px;
         border: 1px solid $color-gray-6;
         padding: 4px 16px;
-        @include fontStyle(12px, 20px, 400);
+        @include fontStyle(12px, 20px, 300);
       }
     }
   }
@@ -454,17 +470,6 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
       }
     }
   }
-}
-
-// + align
-.ta-l {
-  text-align: left;
-}
-.ta-c {
-  text-align: center;
-}
-.ta-r {
-  text-align: right;
 }
 
 // flex-align
@@ -562,7 +567,7 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   border-radius: $radius-12;
   > li {
     height: 45px;
-    @include coTxtSmall01;
+    @include coTxtCaption;
     padding: 10px 20px;
 
     &:nth-child(odd) {
@@ -600,7 +605,6 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   }
   .date {
     padding-left: 12px;
-    @include fontStyle(10px, 14px, 500);
     color: $color-gray-2;
   }
 }
@@ -620,7 +624,8 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   font-size: 0;
   align-items: center;
   > p {
-    @include fontStyleSmall01;
+    @include coTxtCaption;
+    font-weight: 400;
     & ~ p {
       &:before {
         content: '/';
@@ -682,14 +687,14 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   &.type01 {
     background-color: $color-white-2;
     .inner {
-      padding: 15px 20px 15px 15px;
+      padding: 20px;
     }
   }
   // + type02
   &.type02 {
     background-color: $color-white-1;
     .inner {
-      padding: 15px 20px 15px 15px;
+      padding: 20px;
     }
   }
   // + input-cont-article
@@ -704,8 +709,25 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
     padding: 20px;
   }
 
-  // = input-view-type
-  // + input-view-type01
+  // + input-cont-article02
+  &.input-view-cont {
+    &.type02 {
+      background-color: $color-white-2;
+      > .inner {
+        padding: {
+          left: 20px;
+          right: 20px;
+        }
+      }
+
+      .c-input-list-view {
+        padding: 0;
+      }
+    }
+  }
+
+  // = input-view
+  // + input-view
   &.input-view {
     background-color: $color-white-2;
 
@@ -771,15 +793,15 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
 
 // = cont-txt
 .txt-type01 {
-  @include coTxtBasic;
+  @include coBodyTxt;
   color: $color-gray-1;
 }
 .txt-type02 {
-  @include fontStyle(12px, 20px, 400);
+  @include fontStyle(12px, 20px, 300);
   color: $color-gray-2;
 }
 .txt-type03 {
-  @include fontStyle(14px, 30px, 400);
+  @include fontStyle(14px, 30px, 300);
   color: $color-gray-2;
 }
 
@@ -816,7 +838,10 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
 
 // = co-complete-field
 .co-complete-field {
-  padding-top: 40px;
+  padding: {
+    top: 120px;
+    bottom: 60px;
+  }
   align-items: stretch;
   text-align: center;
   display: flex;
@@ -860,7 +885,7 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   .accrodion-title {
     background-color: $color-white-1;
     .txt {
-      @include fontStyle(16px, 23px, 500);
+      @include fontStyle(16px, 23px, 400);
       color: $color-gray-1;
       padding-right: 56px;
       @include ellipsisLine01;
@@ -895,11 +920,11 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
       align-items: center;
     }
     .txt {
-      @include fontStyle(16px, 32px, 500);
+      @include fontStyle(16px, 32px, 400);
     }
 
     .cnt {
-      @include coTxtBasic;
+      @include coBodyTxt;
       color: $color-gray-2;
 
       & + .ico-accordion {
@@ -910,7 +935,7 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
 
   // + on
   &.on {
-    border-color: $color-navy-1;
+    border-color: $color-blue-1;
 
     .btn-accrodion {
       background-color: $color-gray-12;
@@ -1018,17 +1043,22 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   }
 }
 
+.co-title-field {
+  & + .co-terms-chk-card {
+    margin-top: 12px;
+  }
+}
 .co-terms-detail {
   border-radius: $radius-12;
   border: 1px solid $color-gray-5;
   background-color: $color-white-2;
-  @include fontStyle(12px, 20px, 400);
+  @include fontStyle(12px, 20px, 300);
   color: $color-gray-2;
   padding: 5px;
 
   // terms-scroll
   &.terms-scroll {
-    height: 240px;
+    height: 180px;
 
     &.type02 {
       height: 360px;
@@ -1039,11 +1069,12 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    @include coTermsScroll01;
+
+    color: $color-white-2;
   }
+
   .title {
-    font-size: $fs-small;
-    line-height: 1.7;
+    @include coTxtCaption;
     color: $color-black-1;
 
     & + .terms-cont {
@@ -1062,13 +1093,13 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
       }
     }
     .cont {
-      @include coTxtBasic;
+      @include coTxtCaption;
       color: $color-gray-2;
     }
   }
 
   .terms-cont {
-    @include coTxtBasic;
+    @include coBodyTxt;
     color: $color-gray-2;
   }
 
@@ -1090,7 +1121,7 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
 }
 
 .co-caption-txt {
-  @include fontStyle(12px, 20px, 400);
+  @include fontStyle(12px, 20px, 300);
 }
 
 // = co-subcont-field
@@ -1177,6 +1208,12 @@ RV-02-003_1
 
     & + .co-terms-chk-list {
       margin-top: 20px;
+    }
+
+    .cont {
+      margin-top: 8px;
+      @include coTxtCaption;
+      color: $color-gray-3;
     }
   }
 }
