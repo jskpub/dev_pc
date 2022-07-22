@@ -1,180 +1,198 @@
 <!DOCTYPE html>
 <html lang="ko">
-  @@include('../include/head.html', { 'title' : 'KMI 한국의학연구소' })
-  <body>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
     <div id="container">
-      <!-- Content-Wrapper -->
-      <div class="content-wrapper">
-        <div class="contents-wrap">
-          <!-- Contents -->
-          <section class="contents">
-            <!-- [popup source] -->
-            <!-- [comment]
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <div class="contents-wrap">
+                <!-- Contents -->
+                <section class="contents">
+                    <!-- [popup source] -->
+                    <!-- [comment]
 						- 팝업 연결 button [data-target] - .c-layer-popup [id] 동일 속성값 부여 
 						-  .c-layer-popup [aria-labelledby] - .c-modal-title-field > .c-title  동일 속성값 부여 
 					-->
 
-            <!-- popup -->
-            <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupHopeFirstApplyDate"><span>1차 희망 신청일자</span></button>
+                    <!-- popup -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupHopeFirstApplyDate"><span>1차 희망 신청일자</span></button>
 
-            <div class="c-layer-popup rsv-his-confirm-popup" id="popupHopeFirstApplyDate" role="dialog" aria-labelledby="popupHopeFirstApplyDate_Label" aria-modal="true" aria-hidden="true">
-              <div class="modal-wrap">
-                <div class="modal-field" tabindex="0">
-                  <div class="c-modal-header">
-                    <div class="c-modal-title-field">
-                      <h4 class="c-title" id="popupHopeFirstApplyDate_Label">1차 희망 신청일자</h4>
-                    </div>
-                  </div>
-                  <div class="c-modal-body">
-                    <div class="c-modal-inner">
-                      <div class="c-input-list-basic">
-                        <div class="row">
-                          <div class="col label-input">
-                            <label for="popupInputHopeApplyDate_01">예약일자</label>
-                            <input type="text" class="c-input" id="popupInputHopeApplyDate_01" value="2021.05.07" readonly="readonly" />
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col label-input">
-                            <label for="popupInputHopeApplyTime_01">예약시간</label>
-                            <input type="text" class="c-input" id="popupInputHopeApplyTime_01" value="09:00" readonly="readonly" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="c-modal-footer">
-                    <div class="inner">
-                      <div class="buttons">
-                        <button class="co-btn bg-navy-1 popup-cls-btn"><span>다시 선택하기</span></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <br />
-            <!-- popup -->
-            <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupDelayChkupApplyDetails"><span>연기검사 신청 내역</span></button>
-
-            <div class="c-layer-popup rsv-his-confirm-popup" id="popupDelayChkupApplyDetails" role="dialog" aria-labelledby="popupDelayChkupApplyDetails_Label" aria-modal="true" aria-hidden="true">
-              <div class="modal-wrap">
-                <div class="modal-field" tabindex="0">
-                  <div class="c-modal-header">
-                    <div class="c-modal-title-field">
-                      <h4 class="c-title" id="popupDelayChkupApplyDetails_Label">1차 희망 신청일자</h4>
-                    </div>
-                  </div>
-                  <div class="c-modal-body">
-                    <div class="c-modal-inner">
-                      <div class="c-input-list-basic">
-                        <div class="row">
-                          <div class="col label-input">
-                            <label>신청 내역</label>
-                            <div class="in-input-row">
-                              <input type="text" class="c-input" value="MP2K" readonly="readonly" />
+                    <div class="c-layer-popup rsv-his-confirm-popup" id="popupHopeFirstApplyDate" role="dialog" aria-labelledby="popupHopeFirstApplyDate_Label" aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-header">
+                                    <div class="c-modal-title-field">
+                                        <h4 class="c-title" id="popupHopeFirstApplyDate_Label">1차 희망 신청일자</h4>
+                                    </div>
+                                </div>
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <div class="c-input-list-basic">
+                                            <div class="row">
+                                                <div class="col label-input">
+                                                    <label for="popupInputHopeApplyDate_01">예약일자</label>
+                                                    <input type="text" class="c-input" id="popupInputHopeApplyDate_01" value="2021.05.07" readonly="readonly" />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col label-input">
+                                                    <label for="popupInputHopeApplyTime_01">예약시간</label>
+                                                    <input type="text" class="c-input" id="popupInputHopeApplyTime_01" value="09:00" readonly="readonly" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-modal-footer">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>다시 선택하기</span></button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="in-input-row">
-                              <input type="text" class="c-input" value="심장초음파" readonly="readonly" />
+                        </div>
+                    </div>
+
+                    <br />
+                    <!-- popup -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupDelayChkupApplyDetails"><span>연기검사 신청 내역</span></button>
+
+                    <div class="c-layer-popup rsv-his-confirm-popup" id="popupDelayChkupApplyDetails" role="dialog" aria-labelledby="popupDelayChkupApplyDetails_Label" aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-header">
+                                    <div class="c-modal-title-field">
+                                        <h4 class="c-title" id="popupDelayChkupApplyDetails_Label">1차 희망 신청일자</h4>
+                                    </div>
+                                </div>
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <div class="c-input-list-basic">
+                                            <div class="row">
+                                                <div class="col label-input">
+                                                    <label>신청 내역</label>
+                                                    <div class="in-input-row">
+                                                        <input type="text" class="c-input" value="MP2K" readonly="readonly" />
+                                                    </div>
+                                                    <div class="in-input-row">
+                                                        <input type="text" class="c-input" value="심장초음파" readonly="readonly" />
+                                                    </div>
+                                                    <div class="in-input-row">
+                                                        <input type="text" class="c-input" value="CT" readonly="readonly" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row type-sub">
+                                                <div class="col">
+                                                    <div class="c-chkbox">
+                                                        <input type="checkbox" id="popupInputDelayChkupHisChk" />
+                                                        <label for="popupInputDelayChkupHisChk" class="chk-label"><i></i><span>연기검사 신청일자</span></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row type-sub">
+                                                <div class="col label-input">
+                                                    <label for="popupInputDelayChkupHisDate">예약일자</label>
+                                                    <input type="text" class="c-input" id="popupInputDelayChkupHisDate" value="2021.05.07" readonly="readonly" />
+                                                </div>
+                                            </div>
+                                            <div class="row type-sub">
+                                                <div class="col label-input">
+                                                    <label for="popupInputDelayChkupHisTime">예약시간</label>
+                                                    <input type="text" class="c-input" id="popupInputDelayChkupHisTime" value="09:00" readonly="readonly" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-modal-footer">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>다시 선택하기</span></button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="in-input-row">
-                              <input type="text" class="c-input" value="CT" readonly="readonly" />
+                        </div>
+                    </div>
+
+                    <br />
+                    <!-- [popup] -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupHopeDate01"><span>popup (희망 검진 일자 1,2차 모두 선택하여 주시기 바랍니다.)</span></button>
+
+                    <div class="c-layer-popup type01" id="popupHopeDate01" role="dialog" aria-labelledby="popupHopeDate01_Label" aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <h4 class="c-title skip" id="popupHopeDate01_Label">희망검진 일자 안내 팝업</h4>
+                                        <p>
+                                            희망 검진 일자 1,2차 모두 <br />
+                                            선택하여 주시기 바랍니다.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="c-modal-footer">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
                         </div>
-                        <div class="row type-sub">
-                          <div class="col">
-                            <div class="c-chkbox">
-                              <input type="checkbox" id="popupInputDelayChkupHisChk" />
-                              <label for="popupInputDelayChkupHisChk" class="chk-label"><i></i><span>연기검사 신청일자</span></label>
+                    </div>
+
+                    <br />
+                    <!-- [popup] -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupHopeDate02"><span>popup (2차 희망 신청일자를 선택하여 주시기 바랍니다.)</span></button>
+
+                    <div class="c-layer-popup type01" id="popupHopeDate02" role="dialog" aria-labelledby="popupHopeDate02_Label" aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <h4 class="c-title skip" id="popupHopeDate02_Label">희망검진 일자 안내 팝업</h4>
+                                        <p>2차 희망 신청일자를 선택하여 주시기 바랍니다.</p>
+                                    </div>
+                                </div>
+
+                                <div class="c-modal-footer">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                          </div> 
                         </div>
-                        <div class="row type-sub">
-                          <div class="col label-input">
-                            <label for="popupInputDelayChkupHisDate">예약일자</label>
-                            <input type="text" class="c-input" id="popupInputDelayChkupHisDate" value="2021.05.07" readonly="readonly" />
-                          </div>
-                        </div>
-                        <div class="row type-sub">
-                          <div class="col label-input">
-                            <label for="popupInputDelayChkupHisTime">예약시간</label>
-                            <input type="text" class="c-input" id="popupInputDelayChkupHisTime" value="09:00" readonly="readonly" />
-                          </div>
-                        </div>
-                      </div>
                     </div>
-                  </div>
-                  <div class="c-modal-footer">
-                    <div class="inner">
-                      <div class="buttons">
-                        <button class="co-btn bg-navy-1 popup-cls-btn"><span>다시 선택하기</span></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                </section>
+                <!-- // Contents -->
             </div>
-
-            <br />
-            <!-- [popup] -->
-            <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupHopeDate01"><span>popup (희망 검진 일자 1,2차 모두 선택하여 주시기 바랍니다.)</span></button>
-
-            <div class="c-layer-popup type01" id="popupHopeDate01" role="dialog" aria-labelledby="popupHopeDate01_Label" aria-modal="true" aria-hidden="true">
-              <div class="modal-wrap">
-                <div class="modal-field" tabindex="0">
-                  <div class="c-modal-body">
-                    <div class="c-modal-inner">
-                      <h4 class="c-title skip" id="popupHopeDate01_Label">희망검진 일자 안내 팝업</h4>
-                      <p>
-                        희망 검진 일자 1,2차 모두 <br />
-                        선택하여 주시기 바랍니다.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="c-modal-footer">
-                    <div class="inner">
-                      <div class="buttons">
-                        <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <br />
-            <!-- [popup] -->
-            <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupHopeDate02"><span>popup (2차 희망 신청일자를 선택하여 주시기 바랍니다.)</span></button>
-
-            <div class="c-layer-popup type01" id="popupHopeDate02" role="dialog" aria-labelledby="popupHopeDate02_Label" aria-modal="true" aria-hidden="true">
-              <div class="modal-wrap">
-                <div class="modal-field" tabindex="0">
-                  <div class="c-modal-body">
-                    <div class="c-modal-inner">
-                      <h4 class="c-title skip" id="popupHopeDate02_Label">희망검진 일자 안내 팝업</h4>
-                      <p>2차 희망 신청일자를 선택하여 주시기 바랍니다.</p>
-                    </div>
-                  </div>
-
-                  <div class="c-modal-footer">
-                    <div class="inner">
-                      <div class="buttons">
-                        <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- // Contents -->
         </div>
-      </div>
-      <!-- // Content-Wrapper -->
+        <!-- // Content-Wrapper -->
     </div>
-    @@include('../include/script.html')
-  </body>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
 </html>
