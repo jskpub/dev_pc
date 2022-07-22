@@ -525,7 +525,6 @@ label {
     text-align: center;
     color: $color-gray-3;
     @include coSubTitle;
-    color: $color-gray-3;
 
     // + input view
     @at-root .c-input-unit.input-view {
@@ -1405,7 +1404,7 @@ textarea,
     }
 
     & + .row {
-      margin-top: 20px;
+      margin-top: 16px;
     }
   }
 

@@ -227,7 +227,7 @@ body {
       align-items: center;
       > li {
         vertical-align: middle;
-        padding-left: 10px;
+        padding-left: 20px;
         color: $color-gray-2;
       }
     }
@@ -257,9 +257,9 @@ body {
     }
 
     .name {
-      @include fontStyle(16px, 32px, 400);
+      @include coSubTitle;
       color: $color-white-op6;
-      padding-left: 16px;
+      padding-left: 12px;
       > em {
         color: $color-white-1;
       }

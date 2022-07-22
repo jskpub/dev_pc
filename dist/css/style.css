@@ -106,7 +106,7 @@ body {
 		font-size: 14px;
 		font-family: "NotoSansKR", sans-serif;
 		font-weight: 300;
-		line-height: 2.14;
+		line-height: 28px;
 }
 
 body {
@@ -1108,9 +1108,6 @@ button > span {
 		line-height: 1.5;
 		color: #253981;
 }
-.c-modal-header .c-modal-title-field .popup-cls-btn:hover {
-		opacity: 0.6;
-}
 .c-modal-header .popup-cls-btn {
 		position: absolute;
 		top: 32px;
@@ -1119,6 +1116,9 @@ button > span {
 		background: url("../images/ico/ico_close_01.svg") center/28px no-repeat;
 		width: 28px;
 		height: 28px;
+}
+.c-modal-header .popup-cls-btn:hover {
+		opacity: 0.6;
 }
 
 .c-modal-body {
@@ -1152,7 +1152,7 @@ button > span {
 }
 .c-modal-body .cont-box .title {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		color: #1c1c1b;
 }
@@ -1437,9 +1437,8 @@ label.title-md {
 		width: 100%;
 }
 .c-input-search input[type=text]:focus {
-		-webkit-transition: all 0.5s;
-		transition: all 0.5s;
-		-ms-transition: all 0.5s;
+		-webkit-transition: all 0;
+		transition: all 0;
 		border-color: #2f7ad3;
 }
 .c-input-search input[type=text][readonly=readonly]:focus {
@@ -1729,7 +1728,7 @@ label + .c-m-input-list {
 }
 .c-input-unit input[type=text][readonly=readonly] {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 }
 .c-input-unit .unit {
@@ -1742,9 +1741,8 @@ label + .c-m-input-list {
 		text-align: center;
 		color: #a4a4a4;
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
-		color: #a4a4a4;
 }
 .c-input-unit.input-view input[type=text] {
 		padding-right: 36px;
@@ -1782,9 +1780,8 @@ label + .c-m-input-list {
 		opacity: 0;
 }
 .c-input-file-group label:focus {
-		-webkit-transition: all 0.5s;
-		transition: all 0.5s;
-		-ms-transition: all 0.5s;
+		-webkit-transition: all 0;
+		transition: all 0;
 		border-color: #2f7ad3;
 }
 .c-input-file-group .c-file-label {
@@ -2064,10 +2061,10 @@ input[type=text]:focus, input[type=password]:focus,
 input[type=text]:focus,
 input[type=password]:focus {
 		outline: 0;
-		-webkit-transition: all 0.5s;
-		transition: all 0.5s;
-		-ms-transition: all 0.5s;
+		-webkit-transition: all 0;
+		transition: all 0;
 		border-color: #2f7ad3;
+		-webkit-transition: all 0.5s;
 		transition: all 0.5s;
 }
 input[type=text]:disabled, input[type=password]:disabled,
@@ -2127,9 +2124,8 @@ textarea,
 }
 textarea:focus,
 .c-txt-area:focus {
-		-webkit-transition: all 0.5s;
-		transition: all 0.5s;
-		-ms-transition: all 0.5s;
+		-webkit-transition: all 0;
+		transition: all 0;
 		border-color: #2f7ad3;
 }
 textarea textarea[readonly=readonly],
@@ -2144,9 +2140,8 @@ textarea textarea[readonly=readonly],
 }
 textarea textarea[readonly=readonly]:focus,
 .c-txt-area textarea[readonly=readonly]:focus {
-		-webkit-transition: all 0.5s;
-		transition: all 0.5s;
-		-ms-transition: all 0.5s;
+		-webkit-transition: all 0;
+		transition: all 0;
 		border-color: #2f7ad3;
 		border: 0;
 		box-shadow: none;
@@ -2383,9 +2378,8 @@ textarea.type02,
 		line-height: 2.1428571429;
 }
 .c-select select:focus {
-		-webkit-transition: all 0.5s;
-		transition: all 0.5s;
-		-ms-transition: all 0.5s;
+		-webkit-transition: all 0;
+		transition: all 0;
 		border-color: #2f7ad3;
 }
 .c-select.type02 select {
@@ -2569,7 +2563,7 @@ textarea.type02,
 		min-width: auto;
 }
 .c-input-email-group > .row + .row {
-		margin-top: 20px;
+		margin-top: 16px;
 }
 .c-input-email-group.certified .row.w-btn {
 		margin-right: -6px;
@@ -2674,9 +2668,8 @@ textarea.type02,
 		overflow: hidden;
 }
 .c-input-date input[type=text]:focus {
-		-webkit-transition: all 0.5s;
-		transition: all 0.5s;
-		-ms-transition: all 0.5s;
+		-webkit-transition: all 0;
+		transition: all 0;
 		border-color: #2f7ad3;
 }
 .c-input-date input[type=text][readonly=readonly]:focus {
@@ -2963,6 +2956,7 @@ textarea.type02,
 .co-table table th,
 .co-table table td {
 		font-size: 14px;
+		letter-spacing: -0.3px;
 		line-height: 28px;
 		border-collapse: collapse;
 		white-space: initial;
@@ -3048,7 +3042,6 @@ textarea.type02,
 		border-bottom: none;
 }
 .co-table.cont-type01 .co-list-card > li, .co-table.cont-type02 .co-list-card > li {
-		color: #1c1c1b;
 		font-size: 14px;
 		line-height: 2.1428571429;
 }
@@ -3064,7 +3057,7 @@ textarea.type02,
 }
 .co-table.cont-type01 table tbody th {
 		text-align: center;
-		color: rgba(28, 28, 27, 0.8);
+		font-weight: 400;
 }
 .co-table.cont-type02 table th,
 .co-table.cont-type02 table td {
@@ -4053,7 +4046,7 @@ textarea.type02,
 }
 .header .top-right .user-info > li {
 		vertical-align: middle;
-		padding-left: 10px;
+		padding-left: 20px;
 		color: #777776;
 }
 .header .slogan {
@@ -4092,7 +4085,7 @@ textarea.type02,
 		font-weight: 400;
 		line-height: 2;
 		color: rgba(255, 255, 255, 0.6);
-		padding-left: 16px;
+		padding-left: 12px;
 }
 .header .user-profile .name > em {
 		color: #fff;
@@ -5618,7 +5611,7 @@ a.co-link,
 }
 .c-loading-wrapper .is-loading .txt {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		color: #777776;
 		position: absolute;
@@ -5650,7 +5643,7 @@ a.co-link,
 		padding-left: 14px;
 }
 .co-list-card.circle01 li:before {
-		top: 8px;
+		top: 11px;
 		left: 0;
 }
 .co-list-card.circle02 li {
@@ -5875,7 +5868,7 @@ a.co-link,
 
 .co-sub-title-01 {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 }
 
@@ -5917,7 +5910,7 @@ a.co-link,
 .co-list-field.none-data p {
 		margin-top: 19px;
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		color: #a4a4a4;
 }
@@ -6043,7 +6036,7 @@ a.co-link,
 }
 .co-cont-section .sub-title {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		color: #1c1c1b;
 }
@@ -6468,11 +6461,15 @@ a.co-link,
 
 .co-caption-txt {
 		font-size: 12px;
-		line-height: 1.6666666667;
+		font-weight: 400;
+		line-height: 2;
 }
 
 .co-subcont-field ~ .co-article, .co-subcont-field ~ .row {
 		margin-top: 20px;
+}
+.co-subcont-field .co-ref-txt {
+		color: rgba(28, 28, 27, 0.8);
 }
 
 .txtline-01 {
@@ -6619,6 +6616,10 @@ RV-02-003_1
 
 .w-auto {
 		width: auto !important;
+}
+
+.c-space-letter {
+		letter-spacing: -0.3px;
 }
 
 /*
@@ -7300,6 +7301,7 @@ RV-02-003_1
 #container .etc-wrapper {
 		min-width: 1200px;
 		padding-left: 0;
+		background-color: #f8f9fb;
 }
 
 .c-full-info-wrap {
@@ -7326,7 +7328,6 @@ RV-02-003_1
 		-webkit-justify-content: space-between;
 		    -ms-flex-pack: justify;
 		        justify-content: space-between;
-		background-color: #fff;
 		-webkit-box-align: center;
 		-webkit-align-items: center;
 		    -ms-flex-align: center;
@@ -7633,7 +7634,7 @@ RV-02-003_1
 }
 .login-wrapper .login-box .info-cont {
 		color: #777776;
-		margin-top: 20px;
+		margin-top: 12px;
 }
 .login-wrapper .login-box .info-chk {
 		margin-top: 40px;
@@ -7669,7 +7670,7 @@ RV-02-003_1
 		color: #2f7ad3;
 		line-height: 1.6;
 		display: inline-block;
-		border-bottom: 1px solid #2f7ad3;
+		text-decoration: underline;
 }
 .login-wrapper .login-btn {
 		width: 100%;
@@ -7707,7 +7708,7 @@ RV-02-003_1
 }
 .login-wrapper .login-info-list > li ~ li:before {
 		position: absolute;
-		top: 3px;
+		top: 6px;
 		left: 8px;
 		content: "";
 		width: 1px;
@@ -7726,7 +7727,7 @@ RV-02-003_1
 .login-wrapper .use-info p {
 		color: #777776;
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 }
 .login-wrapper .use-info p ~ p {
@@ -7943,6 +7944,9 @@ RV-02-003_1
 .join-login-field.step03 .c-input-list-basic {
 		margin-top: 32px;
 }
+.join-login-field.step03 .c-input-list-basic > .row ~ .row {
+		padding-top: 0;
+}
 .join-login-field.step04 .co-cont-article.type01 {
 		margin-top: 40px;
 }
@@ -8041,7 +8045,7 @@ RV-02-003_1
 }
 
 .ctg-list-slide-wrap {
-		margin-top: 20px;
+		margin-top: 12px;
 		width: 100%;
 		overflow: hidden;
 		position: relative;
@@ -8088,7 +8092,7 @@ RV-02-003_1
 		height: 46.8px;
 }
 .contents-area.main-contents-area .main-notice-list > li:hover {
-		background-color: #f3f3f3;
+		background-color: #f8f9fb;
 }
 .contents-area.main-contents-area .main-notice-list .co-badge {
 		min-width: 50px;
@@ -8145,6 +8149,13 @@ RV-02-003_1
 }
 .rolling-banner .rolling-btn-group button + button {
 		margin-left: 4px;
+}
+.rolling-banner.type02 {
+		border: 0;
+		padding: 0;
+}
+.rolling-banner .rolling-btn-group {
+		right: 0;
 }
 
 .main-slide-swiper {
@@ -8720,7 +8731,7 @@ RV-02-003_1
 }
 .institution-info-list-field .institution-info-card .title {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -8820,7 +8831,7 @@ RV-02-003_1
 }
 .checkup-item-list .items-card .name {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		color: #777776;
 		margin-top: 4px;
@@ -8846,7 +8857,7 @@ RV-02-003_1
 }
 .checkup-item-detail-field .datail-card .title {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		color: #1c1c1b;
 }
@@ -8893,11 +8904,8 @@ RV-02-003_1
 		overflow: hidden;
 }
 .video-card.co-none-data {
-		position: absolute;
-		top: 20px;
-		left: 20px;
-		right: 20px;
-		bottom: 20px;
+		position: relative;
+		padding-bottom: calc(50.704% + 90px);
 }
 .video-card.co-none-data > div {
 		position: absolute;
@@ -9069,7 +9077,7 @@ RV-02-003_1
 		text-align: center;
 		color: #777776;
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		max-width: 50%;
 }
@@ -9242,7 +9250,7 @@ RV-02-003_1
 }
 .visit-center-card.none-data .none-txt {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		color: #a4a4a4;
 }
@@ -9336,11 +9344,8 @@ RV-02-003_1
 		line-height: 2.1428571429;
 }
 .event-card.co-none-data {
-		position: absolute;
-		top: 20px;
-		left: 20px;
-		right: 20px;
-		bottom: 20px;
+		position: relative;
+		padding-bottom: calc(56.338% + 90px);
 }
 .event-card.co-none-data > div {
 		position: absolute;
@@ -9519,7 +9524,7 @@ RV-02-003_1
 }
 .institution-list-field .institution-card .title {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -9529,11 +9534,7 @@ RV-02-003_1
 .institution-list-field .institution-card.none-data {
 		border-radius: 12px;
 		background-color: #fcfcfc;
-		position: absolute;
-		top: 20px;
-		left: 20px;
-		right: 20px;
-		bottom: 20px;
+		position: relative;
 }
 .institution-list-field .institution-card.none-data > div {
 		position: absolute;
@@ -9636,12 +9637,12 @@ RV-02-003_1
 }
 .institution-detail-card .top-box > em {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 }
 .institution-detail-card .top-box .title {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		color: #494949;
 }
@@ -9718,7 +9719,7 @@ RV-02-003_1
 .institution-detail-card .price-info > em {
 		margin: 7px 0 0 4px;
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		color: #2f7ad3;
 }
@@ -10151,14 +10152,14 @@ RV-02-003_1
 }
 .reservation-sidebar .inner-wrap .top-title {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		color: #253981;
 }
 .reservation-sidebar.rsv-sidebar-fixed .inner-wrap {
 		position: fixed;
-		top: 80px;
-		left: 260px;
+		top: 0;
+		left: 0;
 		max-width: 300px;
 		min-width: 300px;
 		min-height: 430px;
@@ -10322,7 +10323,7 @@ RV-02-003_1
 .resevation-btm-bar.type02 .compare-product > p {
 		margin-left: 8px;
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 }
 .resevation-btm-bar.type02 .compare-product .cnt {
@@ -10584,7 +10585,7 @@ RV-02-003_1
 }
 .compare-card .name {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		color: #494949;
 		overflow: hidden;
@@ -10626,10 +10627,6 @@ RV-02-003_1
 
 .myhistory-card {
 		padding: 11px 27px;
-}
-
-.select-target-wrap .rolling-banner {
-		margin-bottom: 20px;
 }
 
 .rsv-institution-list-wrap {
@@ -10706,9 +10703,10 @@ RV-02-003_1
 		font-size: 0;
 }
 .rsv-institution-list-wrap .rsv-institution-card .location {
-		position: relative;
 		font-size: 12px;
-		line-height: 1.6666666667;
+		font-weight: 400;
+		line-height: 2;
+		position: relative;
 		color: #2f7ad3;
 		padding-left: 17px;
 }
@@ -10727,7 +10725,7 @@ RV-02-003_1
 }
 .rsv-institution-list-wrap .rsv-institution-card .title {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -10737,11 +10735,7 @@ RV-02-003_1
 .rsv-institution-list-wrap .rsv-institution-card.none-data {
 		border-radius: 12px;
 		background-color: #fcfcfc;
-		position: absolute;
-		top: 20px;
-		left: 20px;
-		right: 20px;
-		bottom: 20px;
+		position: relative;
 }
 .rsv-institution-list-wrap .rsv-institution-card.none-data > div {
 		position: absolute;
@@ -11006,7 +11000,7 @@ RV-02-003_1
 }
 .result-article .co-title-field .title {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 }
 .result-article .list-field {
@@ -11134,6 +11128,11 @@ RV-02-003_1
 		margin-top: 40px;
 }
 
+/* RV-01-013 */
+.co-subcont-field ~ .examination-date-article {
+		margin-top: 60px;
+}
+
 .graph-chkupresult-compare-wrap .co-detail-title-field {
 		display: -webkit-box;
 		display: -webkit-flex;
@@ -11208,7 +11207,7 @@ RV-02-003_1
 }
 .final-confirm-article .title {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		color: #1c1c1b;
 }
@@ -11581,10 +11580,8 @@ RV-02-003_1
 		        align-items: center;
 }
 .total-surcharges-wrap .price-row .name {
-		font-size: 12px;
-		font-weight: 400;
-		line-height: 2;
-		color: #777776;
+		font-size: 14px;
+		line-height: 2.1428571429;
 }
 .total-surcharges-wrap .price-row .price {
 		display: -webkit-box;
@@ -11603,7 +11600,7 @@ RV-02-003_1
 		color: #494949;
 		padding-right: 4px;
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 }
 .total-surcharges-wrap .btm-total-price {
@@ -11617,13 +11614,13 @@ RV-02-003_1
 }
 .total-surcharges-wrap .btm-total-price .price {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 }
 .total-surcharges-wrap .btm-total-price .price > em {
 		color: #2f7ad3;
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 }
 
@@ -11670,7 +11667,7 @@ RV-02-003_1
 .healthexam-item-card .category .chk-label > span {
 		padding-left: 8px;
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 }
 .healthexam-item-card .c-chkbox.type02 i {
@@ -11702,7 +11699,7 @@ RV-02-003_1
 }
 .healthexam-item-card .date-confirm .date {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		color: #777776;
 		padding-left: 12px;
@@ -11710,7 +11707,7 @@ RV-02-003_1
 }
 .healthexam-item-card .date-unable-txt {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		color: #253981;
 }
@@ -11757,6 +11754,7 @@ RV-02-003_1
 .chkup-ctg-accordion .info-title-field .select-list ul > li {
 		font-size: 14px;
 		line-height: 2.1428571429;
+		color: #777776;
 }
 .chkup-ctg-accordion .info-title-field .select-list ul > li ~ li {
 		position: relative;
@@ -11764,7 +11762,8 @@ RV-02-003_1
 }
 .chkup-ctg-accordion .info-title-field .select-list ul > li ~ li:before {
 		position: absolute;
-		left: 11px;
+		color: #d2d2d1;
+		left: 8px;
 		content: "/";
 }
 .chkup-ctg-accordion .btn-accrodion .right .inner {
@@ -11788,7 +11787,7 @@ RV-02-003_1
 }
 .chkup-ctg-accordion .per-surcharges > em {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		color: #494949;
 		padding-left: 12px;
@@ -11813,7 +11812,7 @@ RV-02-003_1
 }
 .c-layer-popup.rsv-his-confirm-popup .c-title {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 2;
 		color: #253981;
 }
@@ -11920,6 +11919,14 @@ LO_01_005
 }
 .institution-datail-list-article .scrollbar-thumb {
 		background-color: #d2d2d1;
+		border-radius: 12px;
+}
+
+.reservation-sidebar .scrollbar-track {
+		background-color: #f8f9fb;
+}
+.reservation-sidebar .scrollbar-thumb {
+		background-color: #e9e9e9;
 		border-radius: 12px;
 }
 

@@ -144,21 +144,18 @@ var reservationSideBarFloating = function reservationSideBarFloating() {
     if (nowScrollY > currentLayoutOffsetY) {
       $('.reservation-sidebar .inner-wrap').stop().animate({
         top: topPos
-      }, 500);
+      }, 250);
     } else if (nowScrollY <= currentLayoutOffsetY) {
       $('.reservation-sidebar .inner-wrap').stop().animate({
         top: 0
-      }, 500);
+      }, 250);
     }
   });
 };
 /*
  = Popup
 */
-// + openPopup
-
-
-var openPopup = function openPopup() {}; // + btnOpenPopup
+// + btnOpenPopup
 
 
 var btnOpenPopup = function btnOpenPopup() {
@@ -439,7 +436,7 @@ var basicScrollbarCustom = function basicScrollbarCustom() {
   }
 
   if ($('.reservation-sidebar').length > 0) {
-    window.Scrollbar.init(document.querySelector('.reservation-sidebar .inner-wrap'));
+    window.Scrollbar.init(document.querySelector('.reservation-sidebar'));
   }
 }; // + sidebarScrollbarCustom (terms)
 

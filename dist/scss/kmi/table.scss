@@ -49,6 +49,7 @@
       font: {
         size: 14px;
       }
+      letter-spacing: -0.3px;
       line-height: 28px;
       border-collapse: collapse;
       white-space: initial;
@@ -175,7 +176,6 @@
   &.cont-type02 {
     .co-list-card {
       > li {
-        color: $color-black-1;
         @include coBodyTxt;
       }
 
@@ -202,7 +202,7 @@
       tbody {
         th {
           text-align: center;
-          color: $color-black-op8;
+          font-weight: 400;
         }
       }
     }

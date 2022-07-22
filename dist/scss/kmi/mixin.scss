@@ -159,8 +159,7 @@
 
 // + focus
 @mixin inputTextFocus {
-  transition: all 0.5s;
-  -ms-transition: all 0.5s;
+  transition: all 0;
   border-color: $input-focus-border-color;
 }
 
@@ -325,7 +324,7 @@ $scrollbarRadius: 12px;
 }
 
 @mixin coSubTitle {
-  @include fontStyle(16px, 32px, 500);
+  @include fontStyle(16px, 32px, 400);
 }
 
 @mixin coTxtSmall01 {
@@ -350,11 +349,7 @@ $scrollbarRadius: 12px;
 
 // = Card List
 @mixin cardListNoneData {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
+  position: relative;
   > div {
     position: absolute;
     top: 50%;

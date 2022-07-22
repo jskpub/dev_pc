@@ -119,12 +119,6 @@
       line-height: 1.5;
       color: $color-navy-1;
     }
-
-    .popup-cls-btn {
-      &:hover {
-        opacity: 0.6;
-      }
-    }
   }
 
   .popup-cls-btn {
@@ -135,6 +129,9 @@
     background: url($image-ico-path + 'ico_close_01.svg') center/28px no-repeat;
     width: 28px;
     height: 28px;
+    &:hover {
+      opacity: 0.6;
+    }
   }
 }
 

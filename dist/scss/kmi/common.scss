@@ -321,7 +321,7 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
       @include coTxtCaption;
       padding-left: 14px;
       &:before {
-        top: 8px;
+        top: 11px;
         left: 0;
       }
     }
@@ -1121,7 +1121,7 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
 }
 
 .co-caption-txt {
-  @include fontStyle(12px, 20px, 300);
+  @include coTxtCaption;
 }
 
 // = co-subcont-field
@@ -1129,6 +1129,10 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   & ~ .co-article,
   & ~ .row {
     margin-top: 20px;
+  }
+
+  .co-ref-txt {
+    color: $color-black-op8;
   }
 }
 
@@ -1254,4 +1258,9 @@ RV-02-003_1
 // width
 .w-auto {
   width: auto !important;
+}
+
+// + letter-spacing
+.c-space-letter {
+  letter-spacing: -0.3px;
 }

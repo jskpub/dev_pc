@@ -635,6 +635,7 @@
   .etc-wrapper {
     min-width: 1200px;
     padding-left: 0;
+    background-color: $color-gray-12;
   }
 }
 // + c-full-info-wrap
@@ -652,7 +653,6 @@
 
   .c-full-info-field {
     justify-content: space-between;
-    background-color: #fff;
     align-items: center;
     display: flex;
     width: 100%;
@@ -931,7 +931,7 @@
 
     .info-cont {
       color: $color-gray-2;
-      margin-top: $gap-20;
+      margin-top: 12px;
     }
 
     .info-chk {
@@ -979,7 +979,7 @@
     color: $color-blue-1;
     line-height: 1.6;
     display: inline-block;
-    border-bottom: 1px solid $color-blue-1;
+    text-decoration: underline;
   }
 
   .login-btn {
@@ -1014,7 +1014,7 @@
         padding-left: 16px;
         &:before {
           position: absolute;
-          top: 3px;
+          top: 6px;
           left: 8px;
           content: '';
           width: 1px;
@@ -1264,7 +1264,13 @@
     }
 
     .c-input-list-basic {
-      margin-top:32px;
+      margin-top: 32px;
+
+      > .row {
+        & ~ .row {
+          padding-top: 0;
+        }
+      }
     }
   }
 
@@ -1372,7 +1378,7 @@
 
 // + ctg-list swiper
 .ctg-list-slide-wrap {
-  margin-top: 20px;
+  margin-top: 12px;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -1418,7 +1424,7 @@
     > li {
       height: 46.8px;
       &:hover {
-        background-color: $color-gray-7;
+        background-color: $color-white-3;
       }
     }
     .co-badge {
@@ -1485,6 +1491,15 @@
         margin-left: 4px;
       }
     }
+  }
+
+  // + type02
+  &.type02 {
+    border: 0;
+    padding: 0;
+  }
+  .rolling-btn-group {
+    right: 0;
   }
 }
 
@@ -2233,6 +2248,7 @@
 
   &.co-none-data {
     @include cardListNoneData;
+    padding-bottom: calc(50.704% + 90px);
   }
 
   .thumbnail {
@@ -2622,6 +2638,7 @@
 
   &.co-none-data {
     @include cardListNoneData;
+    padding-bottom: calc(56.338% + 90px);
   }
 
   &.is-end {
@@ -3331,8 +3348,8 @@
   &.rsv-sidebar-fixed {
     .inner-wrap {
       position: fixed;
-      top: 80px;
-      left: 260px;
+      top: 0;
+      left: 0;
       max-width: 300px;
       min-width: 300px;
       min-height: 430px;
@@ -3778,11 +3795,6 @@
 }
 
 // [RV]
-.select-target-wrap {
-  .rolling-banner {
-    margin-bottom: 20px;
-  }
-}
 .rsv-institution-list-wrap {
   padding-top: 20px;
   .list-field {
@@ -3861,8 +3873,8 @@
       font-size: 0;
     }
     .location {
+      @include coTxtCaption;
       position: relative;
-      @include fontStyle(12px, 20px, 300);
       color: $color-blue-1;
       padding-left: 17px;
 
@@ -4273,6 +4285,13 @@
         }
       }
     }
+  }
+}
+
+/* RV-01-013 */
+.co-subcont-field {
+  & ~ .examination-date-article {
+    margin-top: 60px;
   }
 }
 
@@ -4749,8 +4768,7 @@
     align-items: center;
 
     .name {
-      @include coTxtCaption;
-      color: $color-gray-2;
+      @include coBodyTxt;
     }
 
     .price {
@@ -4886,12 +4904,14 @@
         align-items: center;
         > li {
           @include coBodyTxt;
+          color: $color-gray-2;
           & ~ li {
             position: relative;
             padding-left: 22px;
             &:before {
               position: absolute;
-              left: 11px;
+              color: $color-gray-4;
+              left: 8px;
               content: '/';
             }
           }
@@ -5104,6 +5124,17 @@ LO_01_005
   }
   .scrollbar-thumb {
     background-color: $color-gray-4;
+    border-radius: $scrollbarRadius;
+  }
+}
+
+// +reservation-sidebar
+.reservation-sidebar {
+  .scrollbar-track {
+    background-color: $color-white-3;
+  }
+  .scrollbar-thumb {
+    background-color: $scrollbarColor;
     border-radius: $scrollbarRadius;
   }
 }
