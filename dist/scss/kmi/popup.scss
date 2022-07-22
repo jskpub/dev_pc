@@ -119,6 +119,12 @@
       line-height: 1.5;
       color: $color-navy-1;
     }
+
+    .popup-cls-btn {
+      &:hover {
+        opacity: 0.6;
+      }
+    }
   }
 
   .popup-cls-btn {

@@ -1108,6 +1108,9 @@ button > span {
 		line-height: 1.5;
 		color: #253981;
 }
+.c-modal-header .c-modal-title-field .popup-cls-btn:hover {
+		opacity: 0.6;
+}
 .c-modal-header .popup-cls-btn {
 		position: absolute;
 		top: 32px;
@@ -5705,7 +5708,7 @@ a.co-link,
 .co-none-txt {
 		font-size: 14px;
 		line-height: 2.1428571429;
-		color: #d2d2d1;
+		color: #777776;
 		text-align: center;
 }
 
@@ -6048,7 +6051,7 @@ a.co-link,
 		margin-top: 40px;
 }
 .co-cont-section .co-btn-field.form-btn-field {
-		margin-top: 12px;
+		margin-top: 60px;
 }
 
 .co-article .co-title-field.co-cont-list {
@@ -6417,7 +6420,7 @@ a.co-link,
 		padding: 5px;
 }
 .co-terms-detail.terms-scroll {
-		height: 180px;
+		height: 140px;
 }
 .co-terms-detail.terms-scroll.type02 {
 		height: 360px;
@@ -7938,7 +7941,7 @@ RV-02-003_1
 		margin-top: 40px;
 }
 .join-login-field.step03 .c-input-list-basic {
-		margin-top: 40px;
+		margin-top: 32px;
 }
 .join-login-field.step04 .co-cont-article.type01 {
 		margin-top: 40px;
@@ -7950,7 +7953,7 @@ RV-02-003_1
 		margin-top: 20px;
 }
 .join-login-field .cont-box + .c-input-list-basic {
-		margin-top: 40px;
+		margin-top: 32px;
 }
 
 .find-accinfo-field .co-tab-list + .tab-cont-wrap {

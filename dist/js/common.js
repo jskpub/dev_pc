@@ -439,7 +439,7 @@ var basicScrollbarCustom = function basicScrollbarCustom() {
   }
 
   if ($('.reservation-sidebar').length > 0) {
-    window.Scrollbar.init(document.querySelector('.reservation-sidebar'));
+    window.Scrollbar.init(document.querySelector('.reservation-sidebar .inner-wrap'));
   }
 }; // + sidebarScrollbarCustom (terms)
 

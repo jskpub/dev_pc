@@ -1264,7 +1264,7 @@
     }
 
     .c-input-list-basic {
-      margin-top: $gap-40;
+      margin-top:32px;
     }
   }
 
@@ -1283,7 +1283,7 @@
 
   .cont-box {
     & + .c-input-list-basic {
-      margin-top: 40px;
+      margin-top: 32px;
     }
   }
 }

@@ -388,7 +388,7 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
 // + list none
 .co-none-txt {
   @include coBodyTxt;
-  color: $color-gray-6;
+  color: $color-gray-2;
   text-align: center;
 }
 
@@ -664,7 +664,7 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
   .co-btn-field {
     margin-top: 40px;
     &.form-btn-field {
-      margin-top: 12px;
+      margin-top: 60px;
     }
   }
 }
@@ -1058,7 +1058,7 @@ $spacing: (0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 35, 40, 42,
 
   // terms-scroll
   &.terms-scroll {
-    height: 180px;
+    height: 140px;
 
     &.type02 {
       height: 360px;
