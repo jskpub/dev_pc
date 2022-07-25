@@ -1068,7 +1068,7 @@
     background-color: $color-white-3;
 
     .slogan {
-      padding-left: 20px;
+      padding-left: 32px;
       p {
         @include coMainTitle;
         color: $color-gray-1;
@@ -2838,6 +2838,7 @@
     .title {
       @include coMainTitle;
     }
+
     .co-link {
       margin-left: 12px;
     }
@@ -3086,7 +3087,7 @@
       max-width: 50%;
       > a {
         display: flex;
-        flex: 1;
+        flex: 1 1 auto;
         height: 100%;
       }
     }

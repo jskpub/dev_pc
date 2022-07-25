@@ -3421,6 +3421,15 @@ textarea.type02,
 .ico-type01.t-i-eye {
 		background-position: -1064px 0;
 }
+.ico-type01.t-i-menu-hamburger {
+		background-position: -1102px 0;
+}
+.ico-type01.t-i-special {
+		background-position: -1140px 0;
+}
+.ico-type01.t-i-center-info {
+		background-position: -1178px 0;
+}
 .ico-type01.t-i-help01-02 {
 		background-position: 0 -38px;
 }
@@ -7765,7 +7774,7 @@ RV-02-003_1
 		background-color: #f8f9fb;
 }
 .login-wrapper .top-header .slogan {
-		padding-left: 20px;
+		padding-left: 32px;
 }
 .login-wrapper .top-header .slogan p {
 		font-size: 20px;

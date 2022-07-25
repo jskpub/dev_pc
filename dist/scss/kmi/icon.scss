@@ -7,7 +7,39 @@ $ico-sprite01-res: 0; // 첫번째 x
   background-position: 0 #{-$result}px;
 }
 
-$ico-list01: (info01, arrow01-01, arrow01-double, arrow03-01, arrow02-01, date, time, search, close01-01, home, profile, nav01, nav02, nav03, nav04, nav05, add-ci, datepick, document-search, arrow-full, map, favorite01, assignment, refresh, check, close02, down, eye);
+$ico-list01: (
+  info01,
+  arrow01-01,
+  arrow01-double,
+  arrow03-01,
+  arrow02-01,
+  date,
+  time,
+  search,
+  close01-01,
+  home,
+  profile,
+  nav01,
+  nav02,
+  nav03,
+  nav04,
+  nav05,
+  add-ci,
+  datepick,
+  document-search,
+  arrow-full,
+  map,
+  favorite01,
+  assignment,
+  refresh,
+  check,
+  close02,
+  down,
+  eye,
+  menu-hamburger,
+  special,
+  center-info
+);
 
 .ico-type01 {
   $size: 28px !default;

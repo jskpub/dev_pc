@@ -39,7 +39,7 @@
           <a href="javascript: d.openAll();"><img src="./img/btn_expand.gif" alt="Expand All" /></a> <a href="javascript: d.closeAll();"><img src="./img/btn_collapse.gif" alt="Collapse All" /></a>
         </p>
         <!-- = Dist 목록 -->
-        <script type="text/javascript">
+        <script>
           var dir2 = '../html/';
           var tree = {
             Publishing: {
@@ -47,6 +47,7 @@
                 'LO-01-001 / 로그인': [dir2 + 'lo/LO_01_001.html', '', 'blank'],
                 'LO-01-002 / 회원 가입 및 확인_01': [dir2 + 'lo/LO_01_002.html', '', 'blank'],
                 'LO-01-003 / 회원 가입 및 확인_02': [dir2 + 'lo/LO_01_003.html', '', 'blank'],
+                'LO-01-003-01 / 회원 가입 및 확인_02': [dir2 + 'lo/LO_01_003_01.html', '', 'blank'],
                 'LO-01-004 / 회원 가입 및 확인_03': [dir2 + 'lo/LO_01_004.html', '', 'blank'],
                 'LO-01-005 / 회원 가입 및 확인_04': [dir2 + 'lo/LO_01_005.html', '', 'blank'],
                 'LO-01-006 / 로그인': [dir2 + 'lo/LO_01_006.html', '', 'blank'],
@@ -58,6 +59,7 @@
                 'LO-01-012-2 / 본인확인': [dir2 + 'lo/LO_01_012_2.html', '', 'blank'],
                 'LO-01-012-3 / 비밀번호 재설정': [dir2 + 'lo/LO_01_012_3.html', '', 'blank'],
                 'LO-01-013 / 휴면계정안내': [dir2 + 'lo/LO_01_013.html', '', 'blank'],
+                ' ': [],
               },
               '검진결과 새칭(LO)': {
                 'LO-01-010 / 검진결과 보기': [dir2 + 'lo/LO_01_010.html', '', 'blank'],
@@ -155,8 +157,8 @@
               },
             },
           };
-          var d = new dTree('d', tree);
-          document.write(d);
+          var tree2 = new dTree('d', tree);
+          document.write(tree2);
         </script>
       </div>
     </div>
