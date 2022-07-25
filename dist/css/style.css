@@ -10160,9 +10160,6 @@ RV-02-003_1
 		color: #253981;
 }
 .reservation-sidebar.rsv-sidebar-fixed .inner-wrap {
-		position: fixed;
-		top: 0;
-		left: 0;
 		max-width: 300px;
 		min-width: 300px;
 		min-height: 430px;
