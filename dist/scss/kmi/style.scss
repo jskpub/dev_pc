@@ -51,6 +51,9 @@
     }
   }
 }
+.co-table.cont-type04.tbl-chkup-result01 {
+  border-right: 1px solid $table-border-color;
+}
 
 // = c-titcont-list
 .c-titcont-list {
@@ -1034,8 +1037,8 @@
     margin-top: 100px;
     text-align: center;
     p {
-      color: $color-gray-2;
-      @include coSubTitle;
+      color: $color-gray-3;
+      @include coBodyTxt;
       & ~ p {
         margin-top: 8px;
       }
@@ -1497,9 +1500,10 @@
   &.type02 {
     border: 0;
     padding: 0;
-  }
-  .rolling-btn-group {
-    right: 0;
+
+    .rolling-btn-group {
+      right: 0;
+    }
   }
 }
 

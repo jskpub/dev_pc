@@ -1894,15 +1894,15 @@ label + .c-m-input-list {
 }
 .c-input-address-group .input-addr-01 {
 		-webkit-box-flex: 0;
-		-webkit-flex: 0 0 112px;
-		    -ms-flex: 0 0 112px;
-		        flex: 0 0 112px;
+		-webkit-flex: 0 0 116px;
+		    -ms-flex: 0 0 116px;
+		        flex: 0 0 116px;
 }
 .c-input-address-group .input-addr-03 {
 		-webkit-box-flex: 0;
-		-webkit-flex: 0 0 104px;
-		    -ms-flex: 0 0 104px;
-		        flex: 0 0 104px;
+		-webkit-flex: 0 0 108px;
+		    -ms-flex: 0 0 108px;
+		        flex: 0 0 108px;
 }
 .c-input-address-group .input-addr-03 .co-btn {
 		padding: 6px;
@@ -6669,6 +6669,10 @@ RV-02-003_1
 		right: 0;
 }
 
+.co-table.cont-type04.tbl-chkup-result01 {
+		border-right: 1px solid #e9e9e9;
+}
+
 .c-titcont-list {
 		display: -webkit-box;
 		display: -webkit-flex;
@@ -7725,10 +7729,9 @@ RV-02-003_1
 		text-align: center;
 }
 .login-wrapper .use-info p {
-		color: #777776;
-		font-size: 16px;
-		font-weight: 400;
-		line-height: 2;
+		color: #a4a4a4;
+		font-size: 14px;
+		line-height: 2.1428571429;
 }
 .login-wrapper .use-info p ~ p {
 		margin-top: 8px;
@@ -8154,7 +8157,7 @@ RV-02-003_1
 		border: 0;
 		padding: 0;
 }
-.rolling-banner .rolling-btn-group {
+.rolling-banner.type02 .rolling-btn-group {
 		right: 0;
 }
 

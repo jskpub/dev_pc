@@ -668,10 +668,10 @@ label {
   }
 
   .input-addr-01 {
-    @include colFixedWidth(100px, 6px);
+    @include colFixedWidth(100px, 8px);
   }
   .input-addr-03 {
-    @include colFixedWidth(92px, 6px);
+    @include colFixedWidth(92px, 8px);
     .co-btn {
       padding: 6px;
     }
@@ -686,8 +686,6 @@ label {
         padding: 0;
         display: inline-block;
       }
-    }
-    .input-addr-01 {
     }
     input[type='text'] {
       border-bottom: 0;
