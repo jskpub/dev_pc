@@ -9876,9 +9876,9 @@ RV-02-003_1
 		display: -ms-flexbox;
 		display: flex;
 		-webkit-box-flex: 1;
-		-webkit-flex: 1;
-		    -ms-flex: 1;
-		        flex: 1;
+		-webkit-flex: 1 1 auto;
+		    -ms-flex: 1 1 auto;
+		        flex: 1 1 auto;
 		height: 100%;
 }
 .medical-team-list .ctg-info {
