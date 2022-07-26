@@ -1526,7 +1526,7 @@
     background: {
       position: center;
       repeat: no-repeat;
-      size: cover;
+      size: 100% 100%;
     }
   }
 }
@@ -1745,7 +1745,7 @@
     justify-content: center;
     align-items: center;
     background-color: $color-white-2;
-    border: 1px solid $color-gray-5;
+    border-radius: 12px;
     overflow: hidden;
   }
 

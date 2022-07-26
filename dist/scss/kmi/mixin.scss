@@ -373,3 +373,11 @@ $scrollbarRadius: 12px;
     margin-top: 12px;
   }
 }
+
+// = Responsive
+@mixin responsive($device) {
+  @if $device == laptop {
+    @media screen and (max-width: 1200px) {
+    }
+  }
+}

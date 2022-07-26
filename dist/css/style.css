@@ -8185,7 +8185,7 @@ RV-02-003_1
 		max-height: 280px;
 		background-position: center;
 		background-repeat: no-repeat;
-		background-size: cover;
+		background-size: 100% 100%;
 }
 
 .main-card .card-cont {
@@ -8409,7 +8409,7 @@ RV-02-003_1
 		    -ms-flex-align: center;
 		        align-items: center;
 		background-color: #fcfcfc;
-		border: 1px solid #e9e9e9;
+		border-radius: 12px;
 		overflow: hidden;
 }
 .main-slide-swiper .txt-cont {
