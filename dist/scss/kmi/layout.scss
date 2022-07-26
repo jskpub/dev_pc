@@ -134,7 +134,7 @@ body {
       background: {
         image: url($image-ico-sprite01);
         position-y: $ico-sprite01-t-y;
-        size: 1092px auto;
+        size: $image-ico-sprite01-size;
       }
     }
     vertical-align: middle;

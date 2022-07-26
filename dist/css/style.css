@@ -3964,7 +3964,7 @@ textarea.type02,
 		height: 28px;
 		background-image: url("../images/ico/ico_sprites_01.svg");
 		background-position-y: 0;
-		background-size: 1092px auto;
+		background-size: auto 218px;
 }
 .sidebar-menu .s-menu.nav01:before {
 		background-position-x: -456px;
