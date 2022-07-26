@@ -1423,6 +1423,12 @@
     }
   }
 
+  // @
+  @include responsive(laptop) {
+    min-width: initial;
+    padding: 40px 32px;
+  }
+
   .main-notice-list {
     > li {
       height: 46.8px;

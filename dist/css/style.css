@@ -8100,6 +8100,12 @@ RV-02-003_1
 		position: relative;
 		min-height: 226px;
 }
+@media screen and (max-width: 1200px) {
+		.contents-area.main-contents-area {
+				min-width: initial;
+				padding: 40px 32px;
+		}
+}
 .contents-area.main-contents-area .main-notice-list > li {
 		height: 46.8px;
 }
