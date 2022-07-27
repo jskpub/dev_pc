@@ -316,12 +316,6 @@ em {
 /*
 	button
 */
-/*
-	terms scroll
-*/
-/*
-	button
-*/
 .buttons {
 		display: -webkit-box;
 		display: -webkit-flex;
@@ -459,12 +453,6 @@ button > span {
 		        justify-content: flex-end;
 }
 
-/*
-	button
-*/
-/*
-	terms scroll
-*/
 /*
 	= Panel
 */
@@ -1290,12 +1278,6 @@ button > span {
 		padding-right: 20px;
 }
 
-/*
-	button
-*/
-/*
-	terms scroll
-*/
 .c-layer-popup textarea[readonly=readonly] {
 		background-color: #fcfcfc;
 }
@@ -2912,12 +2894,6 @@ textarea.type02,
 		color: #ff6859;
 }
 
-/*
-	button
-*/
-/*
-	terms scroll
-*/
 .co-table-field {
 		overflow: hidden;
 }
@@ -3315,12 +3291,6 @@ textarea.type02,
 		table-layout: fixed;
 }
 
-/*
-	button
-*/
-/*
-	terms scroll
-*/
 .t-i-help01 {
 		background-position: 0 0px;
 }
@@ -4377,12 +4347,6 @@ footer.footer .btn-go-top {
 		clear: both;
 }
 
-/*
-	button
-*/
-/*
-	terms scroll
-*/
 /* 
 	Common 
 */
@@ -8099,12 +8063,6 @@ RV-02-003_1
 .contents-area.main-contents-area .co-list-field.main-notice {
 		position: relative;
 		min-height: 226px;
-}
-@media screen and (max-width: 1200px) {
-		.contents-area.main-contents-area {
-				min-width: initial;
-				padding: 40px 32px;
-		}
 }
 .contents-area.main-contents-area .main-notice-list > li {
 		height: 46.8px;

@@ -1424,10 +1424,10 @@
   }
 
   // @
-  @include responsive(laptop) {
-    min-width: initial;
-    padding: 40px 32px;
-  }
+  // @include responsive(laptop) {
+  //   min-width: initial;
+  //   padding: 40px 32px;
+  // }
 
   .main-notice-list {
     > li {
