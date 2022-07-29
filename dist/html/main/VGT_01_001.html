@@ -500,7 +500,7 @@
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <!--  Image 등록 case -->
-                                                <div class="slide-card img-type" style="background-image: url(../../images/main_banner_01.jpg)">
+                                                <div class="slide-card img-type" style="background-image: url(../../images/main_banner_03.jpg)">
                                                     <div class="co-slide-cont">
                                                         <div class="inner">
                                                             <!-- <img src="../../images/mainslide_01.jpg" alt="" /> -->
@@ -520,7 +520,7 @@
                                             </div>
                                             <div class="swiper-slide">
                                                 <!--  Text 등록 case -->
-                                                <div class="slide-card txt-type" style="background-image: url(../../images/mainslide_bg_01.jpg)">
+                                                <div class="slide-card txt-type" style="background-image: url(../../images/main_banner_01.jpg)">
                                                     <div class="co-slide-cont">
                                                         <div class="inner">
                                                             <div class="txt-cont">
@@ -539,6 +539,7 @@
                                         <div class="main-slide-btn-next">
                                             <i class="ico"></i>
                                         </div>
+                                        <div class="main-banner-pagination"></div>
                                     </div>
                                 </div>
                                 <div class="co-article">
@@ -818,10 +819,18 @@
             loop: true,
             touchRatio: 1,
             allowTouchMove: true,
-            autoplay: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
             navigation: {
                 prevEl: '.main-slide-btn-prev',
                 nextEl: '.main-slide-btn-next',
+            },
+            pagination: {
+                el: '.main-banner-pagination',
+                type: 'bullets',
+                clickable: true,
             },
         });
 
