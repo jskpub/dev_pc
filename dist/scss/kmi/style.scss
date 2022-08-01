@@ -1331,6 +1331,8 @@
   .relationship {
     @include coTxtSmall01;
     color: $color-blue-1;
+    display: flex;
+    align-items: center;
   }
 
   .client-info {
@@ -3675,6 +3677,26 @@
     max-width: 25%;
   }
 
+  .btn-chkup-type {
+    @include coTxtCaption;
+    color: $color-gray-3;
+    margin-left: 12px;
+    > span {
+      text-decoration: underline;
+      padding-right: 20px;
+      &:after {
+        position: absolute;
+        top: 4px;
+        right: 0;
+        content: '';
+        background: url($image-ico-sprite01) -8px -84px / $image-ico-sprite01-size no-repeat;
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        @include hide;
+      }
+    }
+  }
   .client-card.person {
     &.on {
       box-shadow: 0 0 0 1px $color-blue-1;

@@ -3403,6 +3403,9 @@ textarea.type02,
 .ico-type01.t-i-help01-02 {
 		background-position: 0 -38px;
 }
+.ico-type01.t-i-help01-03 {
+		background-position: 0 -76px;
+}
 
 .ico-type01.t-i-arrow01-02 {
 		background-position: -76px -38px;
@@ -7962,6 +7965,14 @@ RV-02-003_1
 		font-size: 12px;
 		line-height: 1.6666666667;
 		color: #2f7ad3;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		    -ms-flex-align: center;
+		        align-items: center;
 }
 .client-card .client-info {
 		display: -webkit-box;
@@ -10452,6 +10463,30 @@ RV-02-003_1
 		    -ms-flex: 0 0 25%;
 		        flex: 0 0 25%;
 		max-width: 25%;
+}
+.targets-list .btn-chkup-type {
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 2;
+		color: #a4a4a4;
+		margin-left: 12px;
+}
+.targets-list .btn-chkup-type > span {
+		text-decoration: underline;
+		padding-right: 20px;
+}
+.targets-list .btn-chkup-type > span:after {
+		position: absolute;
+		top: 4px;
+		right: 0;
+		content: "";
+		background: url("../images/ico/ico_sprites_01.svg") -8px -84px/auto 218px no-repeat;
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		overflow: hidden;
+		text-indent: 100%;
+		white-space: nowrap;
 }
 .targets-list .client-card.person.on {
 		box-shadow: 0 0 0 1px #2f7ad3;
